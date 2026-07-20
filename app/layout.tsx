@@ -1,8 +1,11 @@
 import type { Metadata, Viewport } from 'next'
 import { Cormorant_Garamond, Inter } from 'next/font/google'
+
 import AmbientStageEffects from '@/components/effects/ambient-stage-effects'
 import GlobalTechnicalHud from '@/components/effects/global-technical-hud'
 import './globals.css'
+import Navbar from '@/components/navbar'
+import Footer from '@/components/footer'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -49,7 +52,13 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-background font-body text-foreground antialiased">
         <div className="relative min-h-screen">
-          {children}
+          <Navbar />
+
+          <main className="relative z-10">
+            {children}
+          </main>
+
+          <Footer />
 
           <AmbientStageEffects />
           <GlobalTechnicalHud />
