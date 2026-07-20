@@ -251,3 +251,6 @@
 {"timestamp":"00:58:34.949","source":"Browser","level":"WARN","message":"\u001b[33mImage with src \"/images/ale-fuoco.png\" is using quality \"95\" which is not configured in images.qualities [75]. Please update your config to [75, 95].\nRead more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities\u001b[39m"}
 {"timestamp":"01:00:17.693","source":"Server","level":"LOG","message":"✓ Compiled in 107ms"}
 {"timestamp":"01:00:56.741","source":"Server","level":"LOG","message":"✓ Compiled in 470ms"}
+{"timestamp":"01:09:03.957","source":"Server","level":"LOG","message":"✓ Compiled in 456ms"}
+{"timestamp":"01:11:22.576","source":"Server","level":"LOG","message":"✓ Compiled in 562ms"}
+{"timestamp":"01:11:36.278","source":"Server","level":"LOG","message":"✓ Finished filesystem cache database compaction in 10.9s"}
