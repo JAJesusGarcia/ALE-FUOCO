@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Inter } from 'next/font/google'
 
 import AmbientStageEffects from '@/components/effects/ambient-stage-effects'
 import GlobalTechnicalHud from '@/components/effects/global-technical-hud'
+import FloatingWhatsApp from '@/components/ui/floating-whatsapp'
 import './globals.css'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
@@ -24,7 +25,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Ale Fuoco | Iluminación, Sonido y Producción Técnica',
+    default:
+      'Ale Fuoco | Iluminación, Sonido y Producción Técnica',
     template: '%s | Ale Fuoco',
   },
   description:
@@ -61,7 +63,10 @@ export default function RootLayout({
           <Footer />
 
           <AmbientStageEffects />
+
           <GlobalTechnicalHud />
+
+          <FloatingWhatsApp />
         </div>
       </body>
     </html>
