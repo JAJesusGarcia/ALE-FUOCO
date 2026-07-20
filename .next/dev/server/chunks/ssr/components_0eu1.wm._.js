@@ -1041,58 +1041,272 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$in$2d$view$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/utils/use-in-view.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$down$2d$right$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowDownRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-down-right.mjs [app-ssr] (ecmascript) <export default as ArrowDownRight>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lightbulb$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Lightbulb$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/lightbulb.mjs [app-ssr] (ecmascript) <export default as Lightbulb>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$play$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Play$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/play.mjs [app-ssr] (ecmascript) <export default as Play>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sliders$2d$horizontal$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__SlidersHorizontal$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/sliders-horizontal.mjs [app-ssr] (ecmascript) <export default as SlidersHorizontal>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$volume$2d$2$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Volume2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/volume-2.mjs [app-ssr] (ecmascript) <export default as Volume2>");
 'use client';
+;
 ;
 ;
 ;
 ;
 const galleryItems = [
     {
+        type: 'image',
         src: '/images/gallery-1.png',
-        title: 'Boda en Villa Allende',
-        description: 'Ceremonia y recepción para 200 personas en una estancia privada.',
-        category: 'Bodas'
+        title: 'Diseño para una noche única',
+        description: 'Iluminación ambiental y escénica diseñada para acompañar cada momento del evento.',
+        category: 'Diseño de iluminación',
+        number: '01',
+        layout: 'md:col-span-2 md:row-span-2',
+        position: 'object-center'
     },
     {
+        type: 'image',
         src: '/images/gallery-2.png',
-        title: 'Cumpleaños de 50',
-        description: 'Celebración íntima al aire libre con diseño botánico y cálida ambientación.',
-        category: 'Social'
+        title: 'Atmósfera cálida',
+        description: 'Temperatura, intensidad y dirección de luz pensadas para transformar el espacio.',
+        category: 'Ambientación lumínica',
+        number: '02',
+        layout: 'md:col-span-1',
+        position: 'object-center'
     },
     {
+        type: 'image',
         src: '/images/gallery-3.png',
-        title: 'Gala Corporativa',
-        description: 'Cena de gala para empresa multinacional con producción de alto nivel.',
-        category: 'Corporativo'
+        title: 'Producción corporativa',
+        description: 'Diseño técnico preciso para presentaciones, galas y experiencias de marca.',
+        category: 'Producción técnica',
+        number: '03',
+        layout: 'md:col-span-1',
+        position: 'object-center'
     },
     {
+        type: 'image',
         src: '/images/gallery-4.png',
-        title: 'Cocktail al Jardín',
-        description: 'Evento de casamiento en jardín privado con decoración floral frondosa.',
-        category: 'Bodas'
+        title: 'Luz integrada al espacio',
+        description: 'Iluminación decorativa y funcional adaptada a la arquitectura y al entorno.',
+        category: 'Iluminación',
+        number: '04',
+        layout: 'md:col-span-1',
+        position: 'object-center'
     },
     {
+        type: 'image',
         src: '/images/gallery-5.png',
-        title: 'Lanzamiento de Producto',
-        description: 'Presentación de marca con producción escénica y ambientación exclusiva.',
-        category: 'Corporativo'
+        title: 'Escena y movimiento',
+        description: 'Operación de luces sincronizada con el ritmo, la música y los momentos principales.',
+        category: 'Operación en vivo',
+        number: '05',
+        layout: 'md:col-span-2',
+        position: 'object-center'
     },
     {
+        type: 'image',
         src: '/images/gallery-6.png',
-        title: 'Cena Privada',
-        description: 'Velada para 30 personas en terraza con atmósfera bohemia y romantica.',
-        category: 'Privado'
+        title: 'Sonido que acompaña',
+        description: 'Cobertura clara y equilibrada para que cada palabra y cada canción lleguen correctamente.',
+        category: 'Sonido',
+        number: '06',
+        layout: 'md:col-span-1',
+        position: 'object-center'
     }
 ];
+const disciplines = [
+    {
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lightbulb$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Lightbulb$3e$__["Lightbulb"],
+        label: 'Iluminación'
+    },
+    {
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$volume$2d$2$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Volume2$3e$__["Volume2"],
+        label: 'Sonido'
+    },
+    {
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sliders$2d$horizontal$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__SlidersHorizontal$3e$__["SlidersHorizontal"],
+        label: 'Operación'
+    }
+];
+function Gallery() {
+    const headerRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const headerInView = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$in$2d$view$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useInView"])(headerRef, {
+        once: true,
+        margin: '-80px'
+    });
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        id: "galeria",
+        className: "relative overflow-hidden bg-background section-spacing",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "pointer-events-none absolute left-0 top-1/4 h-[35rem] w-[35rem] -translate-x-1/2 rounded-full bg-warm/5 blur-[150px]"
+            }, void 0, false, {
+                fileName: "[project]/components/gallery.tsx",
+                lineNumber: 134,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "site-container relative",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                        ref: headerRef,
+                        initial: {
+                            opacity: 0,
+                            y: 35
+                        },
+                        animate: headerInView ? {
+                            opacity: 1,
+                            y: 0
+                        } : {},
+                        transition: {
+                            duration: 0.9,
+                            ease: [
+                                0.16,
+                                1,
+                                0.3,
+                                1
+                            ]
+                        },
+                        className: "grid gap-10 border-b border-white/10 pb-12 lg:grid-cols-[1fr_0.8fr] lg:items-end",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "mb-6 flex items-center gap-4",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "h-px w-10 bg-warm"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/gallery.tsx",
+                                                lineNumber: 150,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "section-eyebrow",
+                                                children: "Trabajos seleccionados"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/gallery.tsx",
+                                                lineNumber: 152,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/gallery.tsx",
+                                        lineNumber: 149,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                        className: "max-w-[10ch] font-display text-[clamp(4rem,9vw,8rem)] font-light leading-[0.82] tracking-[-0.05em] text-foreground",
+                                        children: [
+                                            "Luz, sonido",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "block italic text-foreground/55",
+                                                children: "y movimiento."
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/gallery.tsx",
+                                                lineNumber: 159,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/gallery.tsx",
+                                        lineNumber: 157,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/gallery.tsx",
+                                lineNumber: 148,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "lg:justify-self-end",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "max-w-lg font-body text-sm font-light leading-7 text-muted-foreground md:text-base",
+                                        children: "Una selección de espacios transformados mediante diseño de iluminación, sonido profesional y operación técnica en vivo."
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/gallery.tsx",
+                                        lineNumber: 166,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "mt-7 flex flex-wrap gap-3",
+                                        children: disciplines.map((discipline)=>{
+                                            const Icon = discipline.icon;
+                                            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "flex items-center gap-2 border border-white/10 px-3 py-2 font-body text-[0.55rem] font-medium uppercase tracking-[0.17em] text-foreground/60",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
+                                                        size: 13,
+                                                        strokeWidth: 1.5,
+                                                        className: "text-warm"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/gallery.tsx",
+                                                        lineNumber: 180,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    discipline.label
+                                                ]
+                                            }, discipline.label, true, {
+                                                fileName: "[project]/components/gallery.tsx",
+                                                lineNumber: 176,
+                                                columnNumber: 19
+                                            }, this);
+                                        })
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/gallery.tsx",
+                                        lineNumber: 171,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/gallery.tsx",
+                                lineNumber: 165,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/gallery.tsx",
+                        lineNumber: 138,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mt-12 grid auto-rows-[24rem] grid-cols-1 gap-4 md:auto-rows-[21rem] md:grid-cols-3 md:gap-5",
+                        children: galleryItems.map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(GalleryCard, {
+                                item: item,
+                                index: index
+                            }, `${item.number}-${item.title}`, false, {
+                                fileName: "[project]/components/gallery.tsx",
+                                lineNumber: 197,
+                                columnNumber: 13
+                            }, this))
+                    }, void 0, false, {
+                        fileName: "[project]/components/gallery.tsx",
+                        lineNumber: 195,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/gallery.tsx",
+                lineNumber: 136,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/gallery.tsx",
+        lineNumber: 130,
+        columnNumber: 5
+    }, this);
+}
 function GalleryCard({ item, index }) {
-    const ref = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
-    const inView = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$in$2d$view$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useInView"])(ref, {
+    const cardRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const inView = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$in$2d$view$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useInView"])(cardRef, {
         once: true,
         margin: '-80px'
     });
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].article, {
-        ref: ref,
-        className: "group relative overflow-hidden",
+        ref: cardRef,
         initial: {
             opacity: 0,
             y: 40
@@ -1102,163 +1316,304 @@ function GalleryCard({ item, index }) {
             y: 0
         } : {},
         transition: {
-            duration: 0.8,
-            delay: index * 0.1,
-            ease: 'easeOut'
+            duration: 0.85,
+            delay: Math.min(index * 0.08, 0.32),
+            ease: [
+                0.16,
+                1,
+                0.3,
+                1
+            ]
         },
+        className: `group relative isolate overflow-hidden bg-surface ${item.layout}`,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "relative overflow-hidden aspect-[3/4]",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                        src: item.src,
-                        alt: item.title,
-                        fill: true,
-                        className: "object-cover transition-transform duration-700 ease-out group-hover:scale-105",
-                        sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    }, void 0, false, {
-                        fileName: "[project]/components/gallery.tsx",
-                        lineNumber: 66,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500"
-                    }, void 0, false, {
-                        fileName: "[project]/components/gallery.tsx",
-                        lineNumber: 74,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/components/gallery.tsx",
-                lineNumber: 65,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "pt-4 pb-2",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-xs tracking-[0.2em] uppercase text-muted-foreground mb-1",
-                        style: {
-                            fontFamily: 'var(--font-body)'
-                        },
-                        children: item.category
-                    }, void 0, false, {
-                        fileName: "[project]/components/gallery.tsx",
-                        lineNumber: 79,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                        className: "text-xl text-foreground font-light leading-snug mb-1",
-                        style: {
-                            fontFamily: 'var(--font-display)'
-                        },
-                        children: item.title
-                    }, void 0, false, {
-                        fileName: "[project]/components/gallery.tsx",
-                        lineNumber: 85,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-sm text-muted-foreground leading-relaxed",
-                        style: {
-                            fontFamily: 'var(--font-body)'
-                        },
-                        children: item.description
-                    }, void 0, false, {
-                        fileName: "[project]/components/gallery.tsx",
-                        lineNumber: 91,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/components/gallery.tsx",
-                lineNumber: 78,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "[project]/components/gallery.tsx",
-        lineNumber: 57,
-        columnNumber: 5
-    }, this);
-}
-function Gallery() {
-    const headerRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
-    const headerInView = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$in$2d$view$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useInView"])(headerRef, {
-        once: true,
-        margin: '-60px'
-    });
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        id: "galeria",
-        className: "py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                ref: headerRef,
-                className: "mb-16 md:mb-20",
-                initial: {
-                    opacity: 0,
-                    y: 30
-                },
-                animate: headerInView ? {
-                    opacity: 1,
-                    y: 0
-                } : {},
-                transition: {
-                    duration: 0.8,
-                    ease: 'easeOut'
-                },
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-xs tracking-[0.25em] uppercase text-muted-foreground mb-4",
-                        style: {
-                            fontFamily: 'var(--font-body)'
-                        },
-                        children: "Trabajos"
-                    }, void 0, false, {
-                        fileName: "[project]/components/gallery.tsx",
-                        lineNumber: 116,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-5xl md:text-7xl font-light text-foreground leading-none",
-                        style: {
-                            fontFamily: 'var(--font-display)'
-                        },
-                        children: "Galería"
-                    }, void 0, false, {
-                        fileName: "[project]/components/gallery.tsx",
-                        lineNumber: 122,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/components/gallery.tsx",
-                lineNumber: 109,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10",
-                children: galleryItems.map((item, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(GalleryCard, {
-                        item: item,
-                        index: i
-                    }, item.title, false, {
-                        fileName: "[project]/components/gallery.tsx",
-                        lineNumber: 133,
-                        columnNumber: 11
-                    }, this))
+                className: "absolute inset-0 overflow-hidden",
+                children: item.type === 'video' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
+                    src: item.src,
+                    poster: item.poster,
+                    muted: true,
+                    loop: true,
+                    autoPlay: true,
+                    playsInline: true,
+                    preload: "metadata",
+                    "aria-label": item.title,
+                    className: `h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04] ${item.position ?? 'object-center'}`
+                }, void 0, false, {
+                    fileName: "[project]/components/gallery.tsx",
+                    lineNumber: 238,
+                    columnNumber: 11
+                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                    src: item.src,
+                    alt: item.title,
+                    fill: true,
+                    quality: 90,
+                    className: `object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.045] ${item.position ?? 'object-center'}`,
+                    sizes: item.layout.includes('md:col-span-2') ? '(max-width: 768px) 100vw, 66vw' : '(max-width: 768px) 100vw, 33vw'
+                }, void 0, false, {
+                    fileName: "[project]/components/gallery.tsx",
+                    lineNumber: 252,
+                    columnNumber: 11
+                }, this)
             }, void 0, false, {
                 fileName: "[project]/components/gallery.tsx",
-                lineNumber: 131,
+                lineNumber: 236,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-0 bg-black/15 transition-colors duration-700 group-hover:bg-black/25"
+            }, void 0, false, {
+                fileName: "[project]/components/gallery.tsx",
+                lineNumber: 270,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-0 bg-[linear-gradient(180deg,rgba(8,7,6,0.05)_20%,rgba(8,7,6,0.3)_55%,rgba(8,7,6,0.94)_100%)]"
+            }, void 0, false, {
+                fileName: "[project]/components/gallery.tsx",
+                lineNumber: 272,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-0 opacity-0 ring-1 ring-inset ring-warm/50 transition-opacity duration-500 group-hover:opacity-100"
+            }, void 0, false, {
+                fileName: "[project]/components/gallery.tsx",
+                lineNumber: 274,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-x-0 top-0 z-10 flex items-start justify-between p-5 md:p-6",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "font-body text-[0.55rem] font-medium uppercase tracking-[0.2em] text-white/55",
+                        children: item.number
+                    }, void 0, false, {
+                        fileName: "[project]/components/gallery.tsx",
+                        lineNumber: 278,
+                        columnNumber: 9
+                    }, this),
+                    item.type === 'video' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/20 text-white backdrop-blur-md",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$play$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Play$3e$__["Play"], {
+                            size: 14,
+                            strokeWidth: 1.5,
+                            fill: "currentColor"
+                        }, void 0, false, {
+                            fileName: "[project]/components/gallery.tsx",
+                            lineNumber: 284,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/components/gallery.tsx",
+                        lineNumber: 283,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/gallery.tsx",
+                lineNumber: 277,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-x-0 bottom-0 z-10 p-5 md:p-7",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex items-end justify-between gap-6",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "max-w-xl",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "font-body text-[0.55rem] font-medium uppercase tracking-[0.2em] text-warm",
+                                    children: item.category
+                                }, void 0, false, {
+                                    fileName: "[project]/components/gallery.tsx",
+                                    lineNumber: 297,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                    className: "mt-3 font-display text-3xl font-light leading-none tracking-[-0.025em] text-white md:text-4xl",
+                                    children: item.title
+                                }, void 0, false, {
+                                    fileName: "[project]/components/gallery.tsx",
+                                    lineNumber: 301,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "mt-3 max-w-md translate-y-3 font-body text-xs font-light leading-6 text-white/0 transition-all duration-500 group-hover:translate-y-0 group-hover:text-white/65 md:text-sm",
+                                    children: item.description
+                                }, void 0, false, {
+                                    fileName: "[project]/components/gallery.tsx",
+                                    lineNumber: 305,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/gallery.tsx",
+                            lineNumber: 296,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: "hidden h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/15 text-white/60 transition-all duration-500 group-hover:border-warm group-hover:bg-warm group-hover:text-warm-foreground sm:flex",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$down$2d$right$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowDownRight$3e$__["ArrowDownRight"], {
+                                size: 16,
+                                strokeWidth: 1.5
+                            }, void 0, false, {
+                                fileName: "[project]/components/gallery.tsx",
+                                lineNumber: 311,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/components/gallery.tsx",
+                            lineNumber: 310,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/gallery.tsx",
+                    lineNumber: 295,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/components/gallery.tsx",
+                lineNumber: 294,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/gallery.tsx",
-        lineNumber: 107,
+        lineNumber: 224,
         columnNumber: 5
     }, this);
-}
+} // 'use client'
+ // import { useRef } from 'react'
+ // import { motion, useInView } from 'framer-motion'
+ // import Image from 'next/image'
+ // const galleryItems = [
+ //   {
+ //     src: '/images/gallery-1.png',
+ //     title: 'Boda en Villa Allende',
+ //     description: 'Ceremonia y recepción para 200 personas en una estancia privada.',
+ //     category: 'Bodas',
+ //   },
+ //   {
+ //     src: '/images/gallery-2.png',
+ //     title: 'Cumpleaños de 50',
+ //     description: 'Celebración íntima al aire libre con diseño botánico y cálida ambientación.',
+ //     category: 'Social',
+ //   },
+ //   {
+ //     src: '/images/gallery-3.png',
+ //     title: 'Gala Corporativa',
+ //     description: 'Cena de gala para empresa multinacional con producción de alto nivel.',
+ //     category: 'Corporativo',
+ //   },
+ //   {
+ //     src: '/images/gallery-4.png',
+ //     title: 'Cocktail al Jardín',
+ //     description: 'Evento de casamiento en jardín privado con decoración floral frondosa.',
+ //     category: 'Bodas',
+ //   },
+ //   {
+ //     src: '/images/gallery-5.png',
+ //     title: 'Lanzamiento de Producto',
+ //     description: 'Presentación de marca con producción escénica y ambientación exclusiva.',
+ //     category: 'Corporativo',
+ //   },
+ //   {
+ //     src: '/images/gallery-6.png',
+ //     title: 'Cena Privada',
+ //     description: 'Velada para 30 personas en terraza con atmósfera bohemia y romantica.',
+ //     category: 'Privado',
+ //   },
+ // ]
+ // function GalleryCard({
+ //   item,
+ //   index,
+ // }: {
+ //   item: (typeof galleryItems)[0]
+ //   index: number
+ // }) {
+ //   const ref = useRef(null)
+ //   const inView = useInView(ref, { once: true, margin: '-80px' })
+ //   return (
+ //     <motion.article
+ //       ref={ref}
+ //       className="group relative overflow-hidden"
+ //       initial={{ opacity: 0, y: 40 }}
+ //       animate={inView ? { opacity: 1, y: 0 } : {}}
+ //       transition={{ duration: 0.8, delay: index * 0.1, ease: 'easeOut' }}
+ //     >
+ //       {/* Image */}
+ //       <div className="relative overflow-hidden aspect-[3/4]">
+ //         <Image
+ //           src={item.src}
+ //           alt={item.title}
+ //           fill
+ //           className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+ //           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+ //         />
+ //         {/* Subtle overlay on hover */}
+ //         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
+ //       </div>
+ //       {/* Text */}
+ //       <div className="pt-4 pb-2">
+ //         <p
+ //           className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-1"
+ //           style={{ fontFamily: 'var(--font-body)' }}
+ //         >
+ //           {item.category}
+ //         </p>
+ //         <h3
+ //           className="text-xl text-foreground font-light leading-snug mb-1"
+ //           style={{ fontFamily: 'var(--font-display)' }}
+ //         >
+ //           {item.title}
+ //         </h3>
+ //         <p
+ //           className="text-sm text-muted-foreground leading-relaxed"
+ //           style={{ fontFamily: 'var(--font-body)' }}
+ //         >
+ //           {item.description}
+ //         </p>
+ //       </div>
+ //     </motion.article>
+ //   )
+ // }
+ // export default function Gallery() {
+ //   const headerRef = useRef(null)
+ //   const headerInView = useInView(headerRef, { once: true, margin: '-60px' })
+ //   return (
+ //     <section id="galeria" className="py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto">
+ //       {/* Header */}
+ //       <motion.div
+ //         ref={headerRef}
+ //         className="mb-16 md:mb-20"
+ //         initial={{ opacity: 0, y: 30 }}
+ //         animate={headerInView ? { opacity: 1, y: 0 } : {}}
+ //         transition={{ duration: 0.8, ease: 'easeOut' }}
+ //       >
+ //         <p
+ //           className="text-xs tracking-[0.25em] uppercase text-muted-foreground mb-4"
+ //           style={{ fontFamily: 'var(--font-body)' }}
+ //         >
+ //           Trabajos
+ //         </p>
+ //         <h2
+ //           className="text-5xl md:text-7xl font-light text-foreground leading-none"
+ //           style={{ fontFamily: 'var(--font-display)' }}
+ //         >
+ //           Galería
+ //         </h2>
+ //       </motion.div>
+ //       {/* Grid */}
+ //       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+ //         {galleryItems.map((item, i) => (
+ //           <GalleryCard key={item.title} item={item} index={i} />
+ //         ))}
+ //       </div>
+ //     </section>
+ //   )
+ // }
 }),
 "[project]/components/about.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
