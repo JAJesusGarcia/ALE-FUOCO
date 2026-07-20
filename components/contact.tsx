@@ -26,19 +26,19 @@ const contactInfo = [
   {
     icon: Phone,
     label: 'Teléfono',
-    value: '+54 351 000 0000',
+    value: '+54 341 667 9247',
     href: 'tel:+543510000000',
   },
   {
     icon: Mail,
     label: 'Email',
-    value: 'hola@alefuoco.com',
-    href: 'mailto:hola@alefuoco.com',
+    value: 'alejandrofuoco@hotmail.com',
+    href: 'mailto:alejandrofuoco@hotmail.com',
   },
   {
     icon: Camera,
     label: 'Instagram',
-    value: '@alefuoco',
+    value: '@ale_fuoco',
     href: 'https://instagram.com/alefuoco',
   },
 ]
@@ -416,19 +416,19 @@ function Field({
 //   {
 //     icon: Phone,
 //     label: 'Teléfono',
-//     value: '+54 351 000 0000',
+//     value: '+54 341 667 9247',
 //     href: 'tel:+543510000000',
 //   },
 //   {
 //     icon: Mail,
 //     label: 'Email',
-//     value: 'hola@alefuoco.com',
-//     href: 'mailto:hola@alefuoco.com',
+//     value: 'alejandrofuoco@hotmail.com',
+//     href: 'mailto:alejandrofuoco@hotmail.com',
 //   },
 //   {
 //     icon: ExternalLink,
 //     label: 'Instagram',
-//     value: '@alefuoco',
+//     value: '@ale_fuoco',
 //     href: 'https://instagram.com/alefuoco',
 //   },
 // ]
@@ -596,7 +596,7 @@ function Field({
 //                     type="tel"
 //                     value={form.phone}
 //                     onChange={handleChange}
-//                     placeholder="+54 351 000 0000"
+//                     placeholder="+54 341 667 9247"
 //                     className="bg-transparent border-b border-background/20 focus:border-background/60 outline-none py-3 text-background placeholder:text-background/30 transition-colors duration-300 text-sm"
 //                     style={{ fontFamily: 'var(--font-body)' }}
 //                   />

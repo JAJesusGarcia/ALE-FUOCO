@@ -112,13 +112,13 @@ export default function Footer() {
                     className="text-warm"
                   />
 
-                  <span>+54 351 000 0000</span>
+                  <span>+54 341 667 9247</span>
                 </a>
               </li>
 
               <li>
                 <a
-                  href="mailto:hola@alefuoco.com"
+                  href="mailto:alejandrofuoco@hotmail.com"
                   className="group flex items-center gap-3 font-body text-sm text-foreground/65 transition-colors duration-300 hover:text-foreground"
                 >
                   <Mail
@@ -127,7 +127,7 @@ export default function Footer() {
                     className="text-warm"
                   />
 
-                  <span>hola@alefuoco.com</span>
+                  <span>alejandrofuoco@hotmail.com</span>
                 </a>
               </li>
 
@@ -144,7 +144,7 @@ export default function Footer() {
                     className="text-warm"
                   /> */}
 
-                  <span>@alefuoco</span>
+                  <span>@ale_fuoco</span>
                 </a>
               </li>
 
@@ -261,17 +261,17 @@ export default function Footer() {
 //                   style={{ fontFamily: 'var(--font-body)' }}
 //                 >
 //                   <Phone size={14} strokeWidth={1.5} />
-//                   +54 351 000 0000
+//                   +54 341 667 9247
 //                 </a>
 //               </li>
 //               <li>
 //                 <a
-//                   href="mailto:hola@alefuoco.com"
+//                   href="mailto:alejandrofuoco@hotmail.com"
 //                   className="flex items-center gap-2 text-sm text-foreground/70 hover:text-foreground transition-colors duration-200"
 //                   style={{ fontFamily: 'var(--font-body)' }}
 //                 >
 //                   <Mail size={14} strokeWidth={1.5} />
-//                   hola@alefuoco.com
+//                   alejandrofuoco@hotmail.com
 //                 </a>
 //               </li>
 //               <li>
@@ -283,7 +283,7 @@ export default function Footer() {
 //                   style={{ fontFamily: 'var(--font-body)' }}
 //                 >
 //                   <ExternalLink size={14} strokeWidth={1.5} />
-//                   @alefuoco
+//                   @ale_fuoco
 //                 </a>
 //               </li>
 //             </ul>
