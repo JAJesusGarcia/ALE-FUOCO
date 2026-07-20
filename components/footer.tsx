@@ -155,7 +155,7 @@ export default function Footer() {
                   className="text-warm"
                 />
 
-                <span>Córdoba, Argentina</span>
+                <span>Rosario, Santa Fe.  Argentina</span>
               </li>
             </ul>
           </div>
@@ -218,7 +218,7 @@ export default function Footer() {
 //               className="text-sm text-muted-foreground leading-relaxed max-w-xs"
 //               style={{ fontFamily: 'var(--font-body)' }}
 //             >
-//               Producción de eventos sociales, corporativos y privados. Córdoba, Argentina.
+//               Producción de eventos sociales, corporativos y privados. Rosario, Santa Fe.  Argentina.
 //             </p>
 //           </div>
 
@@ -302,7 +302,7 @@ export default function Footer() {
 //             className="text-xs text-muted-foreground"
 //             style={{ fontFamily: 'var(--font-body)' }}
 //           >
-//             Córdoba, Argentina
+//             Rosario, Santa Fe.  Argentina
 //           </p>
 //         </div>
 //       </div>

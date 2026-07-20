@@ -211,7 +211,7 @@ export default function Contact() {
                 className="text-warm"
               />
 
-              <span>Córdoba, Argentina · Disponibilidad para viajar</span>
+              <span>Rosario, Santa Fe.  Argentina · Disponibilidad para viajar</span>
             </div>
           </motion.div>
 

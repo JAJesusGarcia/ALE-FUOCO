@@ -182,7 +182,7 @@ export default function Hero() {
               </p>
 
               <p className="mt-2 font-body text-xs text-white/72">
-                Córdoba, Argentina
+                Rosario, Santa Fe.  Argentina
               </p>
             </div>
           </div>
