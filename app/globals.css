@@ -1294,3 +1294,333 @@
     animation: none !important;
   }
 }
+
+/* =========================================================
+   TECHNICAL MEDIA HUD
+   ========================================================= */
+
+.gallery-technical-card {
+  transform: translateZ(0);
+}
+
+.gallery-card-spotlight {
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  z-index: 5;
+  width: 60%;
+  height: 110%;
+  transform: translateX(-50%) rotate(4deg);
+  transform-origin: top center;
+  clip-path: polygon(47% 0, 53% 0, 100% 100%, 0 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 235, 210, 0.24),
+    rgba(244, 161, 92, 0.07) 48%,
+    transparent 90%
+  );
+  filter: blur(20px);
+  opacity: 0;
+  mix-blend-mode: screen;
+  transition:
+    opacity 800ms ease,
+    transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-technical-card:hover .gallery-card-spotlight {
+  opacity: 0.42;
+  transform: translateX(-50%) rotate(-3deg);
+}
+
+.gallery-card-light-sweep {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -45%;
+  z-index: 8;
+  width: 30%;
+  transform: skewX(-18deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 214, 171, 0.09),
+    transparent
+  );
+  opacity: 0;
+}
+
+.gallery-technical-card:hover .gallery-card-light-sweep {
+  animation: gallery-light-sweep 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes gallery-light-sweep {
+  0% {
+    left: -45%;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 125%;
+    opacity: 0;
+  }
+}
+
+.technical-hud {
+  position: absolute;
+  inset: 0;
+  z-index: 15;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms ease;
+}
+
+.gallery-technical-card:hover .technical-hud {
+  opacity: 1;
+}
+
+.technical-hud-corner {
+  position: absolute;
+  width: 1.6rem;
+  height: 1.6rem;
+  opacity: 0.62;
+  transition:
+    width 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    height 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-technical-card:hover .technical-hud-corner {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.technical-hud-corner-top-left {
+  top: 1rem;
+  left: 1rem;
+  border-top: 1px solid rgba(244, 161, 92, 0.7);
+  border-left: 1px solid rgba(244, 161, 92, 0.7);
+}
+
+.technical-hud-corner-top-right {
+  top: 1rem;
+  right: 1rem;
+  border-top: 1px solid rgba(244, 161, 92, 0.7);
+  border-right: 1px solid rgba(244, 161, 92, 0.7);
+}
+
+.technical-hud-corner-bottom-left {
+  bottom: 1rem;
+  left: 1rem;
+  border-bottom: 1px solid rgba(244, 161, 92, 0.7);
+  border-left: 1px solid rgba(244, 161, 92, 0.7);
+}
+
+.technical-hud-corner-bottom-right {
+  right: 1rem;
+  bottom: 1rem;
+  border-right: 1px solid rgba(244, 161, 92, 0.7);
+  border-bottom: 1px solid rgba(244, 161, 92, 0.7);
+}
+
+.technical-hud-top {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.35rem;
+  left: 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.42rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.technical-hud-status {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.technical-hud-live-dot {
+  width: 0.36rem;
+  height: 0.36rem;
+  border-radius: 9999px;
+  background: #f4a15c;
+  box-shadow: 0 0 9px rgba(244, 161, 92, 0.9);
+  animation: technical-live-blink 2.2s ease-in-out infinite;
+}
+
+@keyframes technical-live-blink {
+  0%,
+  70%,
+  100% {
+    opacity: 0.25;
+  }
+
+  82% {
+    opacity: 1;
+  }
+}
+
+.technical-hud-timecode {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.technical-hud-timecode span {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.technical-hud-timecode strong {
+  font-size: 0.48rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  font-variant-numeric: tabular-nums;
+}
+
+.technical-hud-left,
+.technical-hud-right {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  gap: 0.32rem;
+  transform: translateY(-50%);
+  font-family: var(--font-inter), sans-serif;
+  text-transform: uppercase;
+}
+
+.technical-hud-left {
+  left: 1.35rem;
+}
+
+.technical-hud-right {
+  right: 1.35rem;
+  text-align: right;
+}
+
+.technical-hud-left span,
+.technical-hud-right span {
+  margin-top: 0.45rem;
+  font-size: 0.37rem;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.36);
+}
+
+.technical-hud-left strong,
+.technical-hud-right strong {
+  font-size: 0.44rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.technical-hud-center {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  transform: translate(-50%, -50%);
+  opacity: 0.65;
+}
+
+.technical-hud-focus-square {
+  width: 0.55rem;
+  height: 0.55rem;
+  border: 1px solid rgba(244, 161, 92, 0.8);
+  transform: rotate(45deg);
+}
+
+.technical-hud-focus-line {
+  width: 1.5rem;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(244, 161, 92, 0.65)
+  );
+}
+
+.technical-hud-focus-line-right {
+  transform: rotate(180deg);
+}
+
+.technical-hud-bottom {
+  position: absolute;
+  right: 1.35rem;
+  bottom: 1.3rem;
+  left: 1.35rem;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.11);
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.38rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.technical-hud-scan {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(244, 161, 92, 0.55),
+    transparent
+  );
+  opacity: 0;
+}
+
+.gallery-technical-card:hover .technical-hud-scan {
+  animation: technical-scan 3.8s linear infinite;
+}
+
+@keyframes technical-scan {
+  0% {
+    top: 10%;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.6;
+  }
+
+  90% {
+    opacity: 0.25;
+  }
+
+  100% {
+    top: 90%;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .technical-hud {
+    display: none;
+  }
+
+  .gallery-card-spotlight {
+    opacity: 0.15;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-card-light-sweep,
+  .technical-hud-live-dot,
+  .technical-hud-scan {
+    animation: none !important;
+  }
+}
