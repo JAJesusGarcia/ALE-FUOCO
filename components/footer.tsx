@@ -5,6 +5,11 @@ import {
   Phone,
 } from 'lucide-react'
 
+import {
+  FaInstagram,
+  FaFacebookF,
+} from 'react-icons/fa6'
+
 const navLinks = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Galería', href: '#galeria' },
@@ -96,69 +101,84 @@ export default function Footer() {
           </nav>
 
           <div>
-            <p className="mb-6 font-body text-[0.6rem] font-medium uppercase tracking-[0.25em] text-muted-foreground">
-              Contacto
-            </p>
+  <p className="mb-6 font-body text-[0.6rem] font-medium uppercase tracking-[0.25em] text-muted-foreground">
+    Contacto
+  </p>
 
-            <ul className="space-y-4">
-              <li>
-                <a
-                  href="tel:+543510000000"
-                  className="group flex items-center gap-3 font-body text-sm text-foreground/65 transition-colors duration-300 hover:text-foreground"
-                >
-                  <Phone
-                    size={15}
-                    strokeWidth={1.4}
-                    className="text-warm"
-                  />
+  <ul className="space-y-4">
+    <li>
+      <a
+        href="tel:+543416679247"
+        className="group flex items-center gap-3 font-body text-sm text-foreground/65 transition-colors duration-300 hover:text-foreground"
+      >
+        <Phone
+          size={15}
+          strokeWidth={1.4}
+          className="text-warm"
+        />
 
-                  <span>+54 341 667 9247</span>
-                </a>
-              </li>
+        <span>+54 341 667 9247</span>
+      </a>
+    </li>
 
-              <li>
-                <a
-                  href="mailto:alejandrofuoco@hotmail.com"
-                  className="group flex items-center gap-3 font-body text-sm text-foreground/65 transition-colors duration-300 hover:text-foreground"
-                >
-                  <Mail
-                    size={15}
-                    strokeWidth={1.4}
-                    className="text-warm"
-                  />
+    <li>
+      <a
+        href="mailto:alejandrofuoco@hotmail.com"
+        className="group flex items-center gap-3 font-body text-sm text-foreground/65 transition-colors duration-300 hover:text-foreground"
+      >
+        <Mail
+          size={15}
+          strokeWidth={1.4}
+          className="text-warm"
+        />
 
-                  <span>alejandrofuoco@hotmail.com</span>
-                </a>
-              </li>
+        <span>alejandrofuoco@hotmail.com</span>
+      </a>
+    </li>
 
-              <li>
-                <a
-                  href="https://instagram.com/alefuoco"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-3 font-body text-sm text-foreground/65 transition-colors duration-300 hover:text-foreground"
-                >
-                  {/* <Instagram
-                    size={15}
-                    strokeWidth={1.4}
-                    className="text-warm"
-                  /> */}
+    <li>
+      <a
+        href="https://instagram.com/ale_fuoco"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex items-center gap-3 font-body text-sm text-foreground/65 transition-colors duration-300 hover:text-foreground"
+      >
+        <FaInstagram
+          size={15}
+          className="text-warm transition-transform duration-300 group-hover:scale-110"
+        />
 
-                  <span>@ale_fuoco</span>
-                </a>
-              </li>
+        <span>@ale_fuoco</span>
+      </a>
+    </li>
 
-              <li className="flex items-center gap-3 font-body text-sm text-foreground/65">
-                <MapPin
-                  size={15}
-                  strokeWidth={1.4}
-                  className="text-warm"
-                />
+    <li>
+      <a
+        href="https://facebook.com/AleFuocoDj"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex items-center gap-3 font-body text-sm text-foreground/65 transition-colors duration-300 hover:text-foreground"
+      >
+        <FaFacebookF
+          size={14}
+          className="text-warm transition-transform duration-300 group-hover:scale-110"
+        />
 
-                <span>Rosario, Santa Fe.  Argentina</span>
-              </li>
-            </ul>
-          </div>
+        <span>Ale Fuoco Dj</span>
+      </a>
+    </li>
+
+    <li className="flex items-center gap-3 font-body text-sm text-foreground/65">
+      <MapPin
+        size={15}
+        strokeWidth={1.4}
+        className="text-warm"
+      />
+
+      <span>Rosario, Santa Fe, Argentina</span>
+    </li>
+  </ul>
+</div>
         </div>
 
         {/* Barra inferior */}

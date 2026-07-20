@@ -41,7 +41,7 @@ export default function FloatingWhatsApp() {
       whileTap={{
         scale: 0.94,
       }}
-      className="group fixed bottom-5 right-5 z-[80] flex items-center gap-3 sm:bottom-25 sm:right-15"
+      className="group fixed bottom-15 right-5 z-[80] flex items-center gap-3 sm:bottom-25 sm:right-15"
     >
       {/* Texto flotante */}
       <span className="pointer-events-none hidden translate-x-3 whitespace-nowrap border border-white/10 bg-background/90 px-4 py-3 font-body text-[0.56rem] font-medium uppercase tracking-[0.16em] text-foreground/70 opacity-0 shadow-2xl backdrop-blur-xl transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:block">
@@ -49,7 +49,7 @@ export default function FloatingWhatsApp() {
       </span>
 
       {/* Botón */}
-      <span className="relative flex h-14 w-14 items-center justify-center rounded-full border border-warm/40 bg-background/90 text-warm shadow-[0_0_30px_rgba(244,161,92,0.16)] backdrop-blur-xl transition-all duration-300 group-hover:border-warm group-hover:bg-warm group-hover:text-background sm:h-16 sm:w-16">
+      <span className="relative flex h-17 w-17 items-center justify-center rounded-full border border-warm/40 bg-background/90 text-warm shadow-[0_0_30px_rgba(244,161,92,0.16)] backdrop-blur-xl transition-all duration-300 group-hover:border-warm group-hover:bg-warm group-hover:text-background sm:h-16 sm:w-16">
         {/* Pulso exterior */}
         <span className="absolute inset-0 animate-ping rounded-full border border-warm/20 opacity-30" />
 
