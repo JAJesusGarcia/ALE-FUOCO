@@ -76,7 +76,7 @@ export default function About() {
             <div className="relative mx-auto max-w-[34rem] lg:mx-0">
               <div className="relative aspect-[4/5] overflow-hidden bg-muted">
                 <Image
-                  src="/images/ale-fuoco.png"
+                  src="/images/ale-fuoco.webp"
                   alt="Ale Fuoco trabajando en diseño de iluminación y sonido"
                   fill
                   quality={95}
