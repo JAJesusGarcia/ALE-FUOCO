@@ -465,3 +465,347 @@
     width: min(100% - 4rem, 90rem);
   }
 }
+
+/* =========================================================
+   AMBIENT STAGE EFFECTS
+   ========================================================= */
+
+.stage-effects {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+}
+
+/* HAZE */
+
+.stage-haze {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(110px);
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+}
+
+.stage-haze-one {
+  top: 8%;
+  left: -12rem;
+  width: 38rem;
+  height: 38rem;
+  background: rgba(255, 153, 70, 0.16);
+  animation: haze-one 18s ease-in-out infinite alternate;
+}
+
+.stage-haze-two {
+  right: -14rem;
+  bottom: 8%;
+  width: 42rem;
+  height: 42rem;
+  background: rgba(255, 190, 120, 0.1);
+  animation: haze-two 24s ease-in-out infinite alternate;
+}
+
+@keyframes haze-one {
+  from {
+    transform: translate3d(-4rem, -2rem, 0) scale(0.9);
+    opacity: 0.3;
+  }
+
+  to {
+    transform: translate3d(13rem, 5rem, 0) scale(1.15);
+    opacity: 0.7;
+  }
+}
+
+@keyframes haze-two {
+  from {
+    transform: translate3d(4rem, 3rem, 0) scale(0.95);
+    opacity: 0.2;
+  }
+
+  to {
+    transform: translate3d(-10rem, -7rem, 0) scale(1.1);
+    opacity: 0.55;
+  }
+}
+
+/* BEAMS */
+
+.stage-beam {
+  position: absolute;
+  top: -20vh;
+  width: 18rem;
+  height: 130vh;
+  transform-origin: top center;
+  filter: blur(20px);
+  mix-blend-mode: screen;
+  opacity: 0.11;
+}
+
+.stage-beam::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(48% 0, 52% 0, 100% 100%, 0 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 220, 175, 0.85),
+    rgba(255, 150, 65, 0.23) 45%,
+    transparent 90%
+  );
+}
+
+.stage-beam-one {
+  left: 8%;
+  animation: beam-one 15s ease-in-out infinite alternate;
+}
+
+.stage-beam-two {
+  right: 5%;
+  animation: beam-two 19s ease-in-out infinite alternate;
+}
+
+@keyframes beam-one {
+  from {
+    transform: translateX(-8rem) rotate(-24deg);
+    opacity: 0.05;
+  }
+
+  50% {
+    opacity: 0.16;
+  }
+
+  to {
+    transform: translateX(15rem) rotate(-9deg);
+    opacity: 0.08;
+  }
+}
+
+@keyframes beam-two {
+  from {
+    transform: translateX(8rem) rotate(24deg);
+    opacity: 0.04;
+  }
+
+  45% {
+    opacity: 0.14;
+  }
+
+  to {
+    transform: translateX(-16rem) rotate(9deg);
+    opacity: 0.07;
+  }
+}
+
+/* LED BARS */
+
+.stage-led-stage {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  opacity: 0.65;
+}
+
+.stage-led-left {
+  top: 44%;
+  left: 1.5rem;
+}
+
+.stage-led-right {
+  right: 1.5rem;
+  bottom: 30%;
+  align-items: flex-end;
+}
+
+.stage-led-title {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.48rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.stage-led-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.22rem;
+  height: 2rem;
+}
+
+.stage-led-pixel {
+  width: 0.22rem;
+  height: 100%;
+  transform-origin: bottom;
+  background: #f4a15c;
+  box-shadow: 0 0 8px rgba(244, 161, 92, 0.75);
+  animation: led-breathe 3.8s ease-in-out infinite;
+}
+
+.stage-led-pixel:nth-child(2n) {
+  height: 70%;
+}
+
+.stage-led-pixel:nth-child(3n) {
+  height: 45%;
+}
+
+.stage-led-pixel:nth-child(5n) {
+  height: 85%;
+}
+
+@keyframes led-breathe {
+  0%,
+  100% {
+    transform: scaleY(0.25);
+    opacity: 0.14;
+  }
+
+  45% {
+    transform: scaleY(0.75);
+    opacity: 0.55;
+  }
+
+  65% {
+    transform: scaleY(1);
+    opacity: 0.9;
+  }
+}
+
+/* WAVEFORM */
+
+.stage-audio-waveform {
+  position: absolute;
+  right: 7%;
+  bottom: 2rem;
+  width: min(30rem, 42vw);
+  opacity: 0.58;
+}
+
+.stage-waveform-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.45rem;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.45rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.stage-waveform-content {
+  display: flex;
+  align-items: center;
+  gap: 0.18rem;
+  height: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stage-waveform-line {
+  flex: 1;
+  min-width: 1px;
+  max-width: 2px;
+  background: #f4a15c;
+  box-shadow: 0 0 5px rgba(244, 161, 92, 0.45);
+  transform-origin: center;
+  animation: waveform-pulse 4s ease-in-out infinite;
+}
+
+@keyframes waveform-pulse {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+    opacity: 0.22;
+  }
+
+  45% {
+    transform: scaleY(0.8);
+    opacity: 0.55;
+  }
+
+  62% {
+    transform: scaleY(1);
+    opacity: 0.9;
+  }
+}
+
+/* SYSTEM STATUS */
+
+.stage-system-status {
+  position: absolute;
+  top: 7rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.46rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.stage-system-dot {
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 50%;
+  background: #f4a15c;
+  box-shadow: 0 0 10px rgba(244, 161, 92, 0.9);
+  animation: system-dot 3s ease-in-out infinite;
+}
+
+@keyframes system-dot {
+  0%,
+  80%,
+  100% {
+    opacity: 0.25;
+  }
+
+  90% {
+    opacity: 1;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .stage-beam {
+    width: 10rem;
+    opacity: 0.06;
+  }
+
+  .stage-led-right,
+  .stage-audio-waveform,
+  .stage-system-status {
+    display: none;
+  }
+
+  .stage-led-left {
+    top: auto;
+    bottom: 1.5rem;
+    left: 1rem;
+  }
+
+  .stage-haze-one {
+    width: 24rem;
+    height: 24rem;
+  }
+
+  .stage-haze-two {
+    width: 28rem;
+    height: 28rem;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .stage-haze,
+  .stage-beam,
+  .stage-led-pixel,
+  .stage-waveform-line,
+  .stage-system-dot {
+    animation: none !important;
+  }
+}
