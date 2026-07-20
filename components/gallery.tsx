@@ -58,7 +58,7 @@ const galleryItems: GalleryItem[] = [
     src: '/images/gallery-2.png',
     title: 'Atmósfera cálida',
     description:
-      'Temperatura, intensidad y dirección de luz pensadas para transformar el espacio.',
+      'Temperatura, intensidad y dirección de iluminacion pensadas para transformar el espacio.',
     category: 'Ambientación lumínica',
     number: '02',
     channel: '024',
@@ -175,7 +175,7 @@ export default function Gallery() {
             </div>
 
             <h2 className="max-w-[10ch] font-display text-[clamp(4rem,9vw,8rem)] font-light leading-[0.82] tracking-[-0.05em] text-foreground">
-              Luz, sonido
+              Iluminación, sonido
 
               <span className="block italic text-foreground/55">
                 y movimiento.

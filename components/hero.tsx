@@ -77,7 +77,7 @@ export default function Hero() {
             <span className="h-px w-10 bg-warm" />
 
             <p className="font-body text-[0.62rem] font-medium uppercase tracking-[0.3em] text-white/70 md:text-[0.68rem]">
-              Iluminación · sonido · operación técnica
+              Iluminación · sonido · operación técnica · dj
             </p>
           </motion.div>
 
@@ -109,7 +109,7 @@ export default function Hero() {
             className="mt-8 flex max-w-3xl flex-col gap-8 md:mt-10 md:flex-row md:items-end md:justify-between"
           >
             <p className="max-w-lg font-display text-xl font-light italic leading-relaxed text-white/70 md:text-2xl">
-              Luz, sonido y precisión técnica para transformar cada espacio en
+              Iluminacion, sonido y precisión técnica para transformar cada espacio en
               una experiencia.
             </p>
 

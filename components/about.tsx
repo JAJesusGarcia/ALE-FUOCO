@@ -32,7 +32,7 @@ const specialties = [
 
 const principles = [
   {
-    value: 'Luz',
+    value: 'Iluminación',
     label: 'Atmósfera y profundidad',
   },
   {
