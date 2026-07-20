@@ -112,7 +112,7 @@ export default function About() {
                   duration: 0.8,
                   delay: 0.5,
                 }}
-                className="cinematic-glass absolute -bottom-8 right-4 hidden max-w-[14rem] border-white/10 p-5 sm:block md:right-8"
+                className="cinematic-glass absolute -bottom-15 right-4 hidden max-w-[14rem] border-white/10 p-5 sm:block md:right-8"
               >
                 <p className="font-body text-[0.52rem] font-medium uppercase tracking-[0.2em] text-warm">
                   En cada proyecto
