@@ -2076,3 +2076,74 @@
     transition: none;
   }
 }
+
+/* =========================================================
+   CURSOR GLOW
+   ========================================================= */
+
+.cursor-glow-container {
+  position: fixed;
+  inset: 0;
+  z-index: 35;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.cursor-glow-container[data-visible='true'] {
+  opacity: 1;
+}
+
+.cursor-glow-main,
+.cursor-glow-core {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 9999px;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.cursor-glow-main {
+  width: 26rem;
+  height: 26rem;
+  margin-top: -13rem;
+  margin-left: -13rem;
+  background: radial-gradient(
+    circle,
+    rgba(244, 161, 92, 0.075) 0%,
+    rgba(244, 161, 92, 0.04) 23%,
+    rgba(244, 161, 92, 0.012) 48%,
+    transparent 72%
+  );
+  filter: blur(18px);
+  mix-blend-mode: screen;
+}
+
+.cursor-glow-core {
+  width: 5rem;
+  height: 5rem;
+  margin-top: -2.5rem;
+  margin-left: -2.5rem;
+  background: radial-gradient(
+    circle,
+    rgba(255, 232, 205, 0.12) 0%,
+    rgba(244, 161, 92, 0.055) 35%,
+    transparent 72%
+  );
+  filter: blur(8px);
+  mix-blend-mode: screen;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-glow-container {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-glow-container {
+    display: none;
+  }
+}

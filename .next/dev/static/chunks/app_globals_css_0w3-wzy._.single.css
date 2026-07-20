@@ -664,6 +664,10 @@
     pointer-events: none;
   }
 
+  .visible {
+    visibility: visible;
+  }
+
   .absolute {
     position: absolute;
   }
@@ -5346,6 +5350,61 @@
 
   .global-hud-progress-fill {
     transition: none;
+  }
+}
+
+.cursor-glow-container {
+  z-index: 35;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .5s;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+
+.cursor-glow-container[data-visible="true"] {
+  opacity: 1;
+}
+
+.cursor-glow-main, .cursor-glow-core {
+  pointer-events: none;
+  will-change: transform;
+  border-radius: 9999px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cursor-glow-main {
+  filter: blur(18px);
+  mix-blend-mode: screen;
+  background: radial-gradient(circle, #f4a15c13 0%, #f4a15c0a 23%, #f4a15c03 48%, #0000 72%);
+  width: 26rem;
+  height: 26rem;
+  margin-top: -13rem;
+  margin-left: -13rem;
+}
+
+.cursor-glow-core {
+  filter: blur(8px);
+  mix-blend-mode: screen;
+  background: radial-gradient(circle, #ffe8cd1f 0%, #f4a15c0e 35%, #0000 72%);
+  width: 5rem;
+  height: 5rem;
+  margin-top: -2.5rem;
+  margin-left: -2.5rem;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-glow-container {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-glow-container {
+    display: none;
   }
 }
 
