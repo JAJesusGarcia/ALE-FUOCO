@@ -41,7 +41,7 @@ export default function FloatingWhatsApp() {
       whileTap={{
         scale: 0.94,
       }}
-      className="group fixed bottom-5 right-5 z-[80] flex items-center gap-3 sm:bottom-15 sm:right-15"
+      className="group fixed bottom-5 right-5 z-[80] flex items-center gap-3 sm:bottom-25 sm:right-15"
     >
       {/* Texto flotante */}
       <span className="pointer-events-none hidden translate-x-3 whitespace-nowrap border border-white/10 bg-background/90 px-4 py-3 font-body text-[0.56rem] font-medium uppercase tracking-[0.16em] text-foreground/70 opacity-0 shadow-2xl backdrop-blur-xl transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:block">
