@@ -90,3 +90,6 @@
 {"timestamp":"00:29:29.380","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"/images/hero.png\\\" is using quality \\\"95\\\" which is not configured in images.qualities [75]. Please update your config to [75, 95].\\nRead more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities\\u001b[39m\""}
 {"timestamp":"00:29:29.380","source":"Browser","level":"WARN","message":"\u001b[33mImage with src \"/images/hero.png\" is using quality \"95\" which is not configured in images.qualities [75]. Please update your config to [75, 95].\nRead more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities\u001b[39m"}
 {"timestamp":"00:31:13.487","source":"Server","level":"LOG","message":"✓ Compiled in 447ms"}
+{"timestamp":"00:32:34.083","source":"Server","level":"LOG","message":"✓ Compiled in 454ms"}
+{"timestamp":"00:32:44.601","source":"Server","level":"WARN","message":"⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using \"http://localhost:3000\". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase"}
+{"timestamp":"00:32:44.662","source":"Server","level":"LOG","message":"✓ Compiled in 1330ms"}

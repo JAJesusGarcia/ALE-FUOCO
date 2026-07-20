@@ -1517,7 +1517,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$in$2d$view$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/utils/use-in-view.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-left.mjs [app-ssr] (ecmascript) <export default as ArrowLeft>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-right.mjs [app-ssr] (ecmascript) <export default as ArrowRight>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$square$2d$plus$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MessageSquarePlus$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/message-square-plus.mjs [app-ssr] (ecmascript) <export default as MessageSquarePlus>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$quote$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Quote$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/quote.mjs [app-ssr] (ecmascript) <export default as Quote>");
 'use client';
 ;
 ;
@@ -1527,220 +1530,577 @@ const testimonials = [
     {
         name: 'Martina y Luciano',
         event: 'Boda',
-        comment: 'Ale convirtió nuestra boda en algo que superó todas nuestras expectativas. Cada detalle fue cuidado con una atención que no imaginábamos posible. Fue como tener un amigo muy talentoso organizando el día más importante de nuestras vidas.'
+        service: 'Iluminación y sonido',
+        comment: 'Ale entendió perfectamente el clima que queríamos lograr. La iluminación acompañó cada momento de la noche y el sonido fue impecable. Todo se sintió cuidado, elegante y muy natural.'
     },
     {
         name: 'Carolina Rodríguez',
         event: 'Cumpleaños de 50',
-        comment: 'Quería algo íntimo y especial para mis 50. Ale entendió exactamente lo que buscaba sin que tuviera que explicarlo mucho. El resultado fue una noche mágica que todos mis invitados siguen recordando.'
+        service: 'Diseño de iluminación',
+        comment: 'El lugar cambió por completo. Ale logró darle profundidad, calidez y personalidad a cada espacio sin que se sintiera exagerado. La iluminación terminó siendo una parte central de la experiencia.'
     },
     {
         name: 'Grupo Beltrán S.A.',
-        event: 'Gala Corporativa',
-        comment: 'Trabajamos con Ale para nuestra cena anual de empresa y el resultado fue impecable. Profesionalismo, creatividad y una ejecución perfecta. Lo volvemos a convocar sin dudarlo.'
+        event: 'Gala corporativa',
+        service: 'Producción técnica',
+        comment: 'Trabajamos con Ale para nuestra cena anual y la ejecución técnica fue impecable. Sonido claro, iluminación precisa y una operación muy profesional durante todo el evento.'
     },
     {
         name: 'Sofía Méndez',
-        event: 'Baby Shower',
-        comment: 'Nunca pensé que una reunión íntima podía sentirse tan especial. Ale logró que cada rincón contara algo. Sus ideas son siempre originales y el trato es increíblemente cálido.'
+        event: 'Evento social',
+        service: 'Ambientación lumínica',
+        comment: 'Ale consiguió que un espacio bastante simple se sintiera completamente distinto. Cada luz tenía un sentido y todo se adaptó perfectamente al ritmo de la noche.'
     },
     {
         name: 'Federación Cultural del Norte',
-        event: 'Evento Cultural',
-        comment: 'Un placer trabajar con alguien tan comprometido con el resultado final. Ale aportó ideas que no habíamos considerado y que hicieron la diferencia. Muy recomendable.'
+        event: 'Evento cultural',
+        service: 'Sonido y operación',
+        comment: 'Fue un placer trabajar con alguien tan comprometido con el resultado. Ale resolvió cada necesidad técnica con criterio, tranquilidad y mucha atención durante toda la jornada.'
     }
 ];
 function Testimonials() {
-    const headerRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
-    const headerInView = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$in$2d$view$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useInView"])(headerRef, {
+    const sectionRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const carouselRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const inView = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$in$2d$view$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useInView"])(sectionRef, {
         once: true,
-        margin: '-60px'
+        margin: '-80px'
     });
+    const [activeIndex, setActiveIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
+    const scrollToCard = (index)=>{
+        const carousel = carouselRef.current;
+        if (!carousel) return;
+        const cards = Array.from(carousel.querySelectorAll('[data-testimonial-card]'));
+        const safeIndex = Math.min(Math.max(index, 0), cards.length - 1);
+        cards[safeIndex]?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'start'
+        });
+        setActiveIndex(safeIndex);
+    };
+    const previous = ()=>{
+        scrollToCard(activeIndex === 0 ? testimonials.length - 1 : activeIndex - 1);
+    };
+    const next = ()=>{
+        scrollToCard(activeIndex === testimonials.length - 1 ? 0 : activeIndex + 1);
+    };
+    const handleScroll = ()=>{
+        const carousel = carouselRef.current;
+        if (!carousel) return;
+        const cards = Array.from(carousel.querySelectorAll('[data-testimonial-card]'));
+        const carouselLeft = carousel.getBoundingClientRect().left;
+        let closestIndex = 0;
+        let closestDistance = Number.POSITIVE_INFINITY;
+        cards.forEach((card, index)=>{
+            const distance = Math.abs(card.getBoundingClientRect().left - carouselLeft);
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestIndex = index;
+            }
+        });
+        setActiveIndex(closestIndex);
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        ref: sectionRef,
         id: "comentarios",
-        className: "py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto",
+        className: "relative overflow-hidden bg-background section-spacing",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                ref: headerRef,
-                className: "mb-16 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-6",
-                initial: {
-                    opacity: 0,
-                    y: 30
-                },
-                animate: headerInView ? {
-                    opacity: 1,
-                    y: 0
-                } : {},
-                transition: {
-                    duration: 0.8
-                },
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "pointer-events-none absolute right-0 top-0 h-[34rem] w-[34rem] rounded-full bg-warm/5 blur-[150px]"
+            }, void 0, false, {
+                fileName: "[project]/components/testimonials.tsx",
+                lineNumber: 134,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "site-container relative",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                        initial: {
+                            opacity: 0,
+                            y: 35
+                        },
+                        animate: inView ? {
+                            opacity: 1,
+                            y: 0
+                        } : {},
+                        transition: {
+                            duration: 0.9,
+                            ease: [
+                                0.16,
+                                1,
+                                0.3,
+                                1
+                            ]
+                        },
+                        className: "grid gap-10 border-b border-white/10 pb-10 md:grid-cols-[1fr_auto] md:items-end md:pb-14",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-xs tracking-[0.25em] uppercase text-muted-foreground mb-4",
-                                style: {
-                                    fontFamily: 'var(--font-body)'
-                                },
-                                children: "Experiencias"
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "mb-6 flex items-center gap-4",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "h-px w-10 bg-warm"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/testimonials.tsx",
+                                                lineNumber: 149,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "section-eyebrow",
+                                                children: "Experiencias"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/testimonials.tsx",
+                                                lineNumber: 151,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/testimonials.tsx",
+                                        lineNumber: 148,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                        className: "max-w-[10ch] font-display text-[clamp(3.8rem,8vw,7.5rem)] font-light leading-[0.85] tracking-[-0.045em] text-foreground",
+                                        children: [
+                                            "Lo que queda",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "block italic text-foreground/55",
+                                                children: "después del show."
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/testimonials.tsx",
+                                                lineNumber: 158,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/testimonials.tsx",
+                                        lineNumber: 156,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/components/testimonials.tsx",
-                                lineNumber: 55,
+                                lineNumber: 147,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-5xl md:text-7xl font-light text-foreground leading-none",
-                                style: {
-                                    fontFamily: 'var(--font-display)'
-                                },
-                                children: "Lo que dicen"
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex flex-col items-start gap-5 md:items-end",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "max-w-sm font-body text-sm font-light leading-7 text-muted-foreground md:text-right",
+                                        children: "Opiniones sobre el diseño, la técnica y la experiencia de trabajar juntos."
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/testimonials.tsx",
+                                        lineNumber: 165,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        type: "button",
+                                        onClick: ()=>{
+                                            document.querySelector('#contacto')?.scrollIntoView({
+                                                behavior: 'smooth'
+                                            });
+                                        },
+                                        className: "group flex items-center gap-3 font-body text-[0.6rem] font-medium uppercase tracking-[0.18em] text-foreground/65 transition-colors duration-300 hover:text-warm",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$square$2d$plus$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MessageSquarePlus$3e$__["MessageSquarePlus"], {
+                                                size: 15,
+                                                strokeWidth: 1.5
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/testimonials.tsx",
+                                                lineNumber: 181,
+                                                columnNumber: 15
+                                            }, this),
+                                            "Contar una experiencia"
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/testimonials.tsx",
+                                        lineNumber: 170,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/components/testimonials.tsx",
-                                lineNumber: 61,
+                                lineNumber: 164,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/testimonials.tsx",
-                        lineNumber: 54,
+                        lineNumber: 138,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        className: "flex items-center gap-3 px-6 py-3 border border-foreground text-foreground text-xs tracking-[0.12em] uppercase transition-all duration-300 hover:bg-foreground hover:text-background self-start md:self-auto",
-                        style: {
-                            fontFamily: 'var(--font-body)'
-                        },
-                        onClick: ()=>{
-                            /* TODO: integrate with backend/moderation flow */ alert('Próximamente: formulario para compartir tu experiencia.');
-                        },
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mt-8 flex items-center justify-between",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$square$2d$plus$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MessageSquarePlus$3e$__["MessageSquarePlus"], {
-                                size: 15,
-                                strokeWidth: 1.5
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center gap-3",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "font-display text-3xl font-light text-foreground",
+                                        children: String(activeIndex + 1).padStart(2, '0')
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/testimonials.tsx",
+                                        lineNumber: 194,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "h-px w-8 bg-white/15"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/testimonials.tsx",
+                                        lineNumber: 198,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "font-body text-xs text-muted-foreground",
+                                        children: String(testimonials.length).padStart(2, '0')
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/testimonials.tsx",
+                                        lineNumber: 200,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/components/testimonials.tsx",
-                                lineNumber: 78,
+                                lineNumber: 193,
                                 columnNumber: 11
                             }, this),
-                            "Compartir experiencia"
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center gap-2",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        type: "button",
+                                        onClick: previous,
+                                        "aria-label": "Testimonio anterior",
+                                        className: "focus-ring group flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-foreground/60 transition-all duration-300 hover:border-warm hover:text-warm",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__["ArrowLeft"], {
+                                            size: 16,
+                                            strokeWidth: 1.5,
+                                            className: "transition-transform duration-300 group-hover:-translate-x-0.5"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/testimonials.tsx",
+                                            lineNumber: 212,
+                                            columnNumber: 15
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/testimonials.tsx",
+                                        lineNumber: 206,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        type: "button",
+                                        onClick: next,
+                                        "aria-label": "Siguiente testimonio",
+                                        className: "focus-ring group flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-foreground/60 transition-all duration-300 hover:border-warm hover:text-warm",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
+                                            size: 16,
+                                            strokeWidth: 1.5,
+                                            className: "transition-transform duration-300 group-hover:translate-x-0.5"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/testimonials.tsx",
+                                            lineNumber: 225,
+                                            columnNumber: 15
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/testimonials.tsx",
+                                        lineNumber: 219,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/testimonials.tsx",
+                                lineNumber: 205,
+                                columnNumber: 11
+                            }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/testimonials.tsx",
-                        lineNumber: 70,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/components/testimonials.tsx",
-                lineNumber: 47,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border",
-                children: testimonials.map((t, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(TestimonialCard, {
-                        testimonial: t,
-                        index: i
-                    }, t.name, false, {
-                        fileName: "[project]/components/testimonials.tsx",
-                        lineNumber: 86,
-                        columnNumber: 11
-                    }, this))
-            }, void 0, false, {
-                fileName: "[project]/components/testimonials.tsx",
-                lineNumber: 84,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "[project]/components/testimonials.tsx",
-        lineNumber: 45,
-        columnNumber: 5
-    }, this);
-}
-function TestimonialCard({ testimonial, index }) {
-    const ref = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
-    const inView = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$in$2d$view$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useInView"])(ref, {
-        once: true,
-        margin: '-60px'
-    });
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-        ref: ref,
-        className: "bg-background p-8 md:p-10 flex flex-col gap-6",
-        initial: {
-            opacity: 0,
-            y: 30
-        },
-        animate: inView ? {
-            opacity: 1,
-            y: 0
-        } : {},
-        transition: {
-            duration: 0.7,
-            delay: index * 0.08
-        },
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                className: "text-6xl font-light text-border leading-none select-none",
-                style: {
-                    fontFamily: 'var(--font-display)'
-                },
-                "aria-hidden": "true",
-                children: "“"
-            }, void 0, false, {
-                fileName: "[project]/components/testimonials.tsx",
-                lineNumber: 112,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "text-base md:text-lg text-foreground font-light leading-relaxed flex-1 -mt-4",
-                style: {
-                    fontFamily: 'var(--font-display)',
-                    fontStyle: 'italic'
-                },
-                children: testimonial.comment
-            }, void 0, false, {
-                fileName: "[project]/components/testimonials.tsx",
-                lineNumber: 120,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "border-t border-border pt-5",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-sm font-medium text-foreground",
-                        style: {
-                            fontFamily: 'var(--font-body)'
-                        },
-                        children: testimonial.name
-                    }, void 0, false, {
-                        fileName: "[project]/components/testimonials.tsx",
-                        lineNumber: 128,
+                        lineNumber: 192,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-xs text-muted-foreground tracking-[0.1em] uppercase mt-0.5",
-                        style: {
-                            fontFamily: 'var(--font-body)'
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                        initial: {
+                            opacity: 0,
+                            y: 35
                         },
-                        children: testimonial.event
+                        animate: inView ? {
+                            opacity: 1,
+                            y: 0
+                        } : {},
+                        transition: {
+                            duration: 0.9,
+                            delay: 0.15,
+                            ease: [
+                                0.16,
+                                1,
+                                0.3,
+                                1
+                            ]
+                        },
+                        ref: carouselRef,
+                        onScroll: handleScroll,
+                        className: "scrollbar-hidden mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 md:gap-6",
+                        children: testimonials.map((testimonial, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
+                                "data-testimonial-card": true,
+                                className: "group relative flex min-h-[31rem] w-[88%] shrink-0 snap-start flex-col justify-between overflow-hidden border border-white/10 bg-surface p-7 transition-colors duration-500 hover:border-warm/35 sm:w-[72%] md:min-h-[34rem] md:w-[54%] md:p-10 lg:w-[42%] xl:w-[36%]",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "absolute right-6 top-6 font-display text-[7rem] leading-none text-white/[0.025] transition-colors duration-500 group-hover:text-warm/[0.045] md:text-[10rem]",
+                                        children: String(index + 1).padStart(2, '0')
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/testimonials.tsx",
+                                        lineNumber: 253,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "relative",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$quote$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Quote$3e$__["Quote"], {
+                                                size: 30,
+                                                strokeWidth: 1,
+                                                className: "text-warm"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/testimonials.tsx",
+                                                lineNumber: 258,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "mt-10 font-display text-[1.75rem] font-light italic leading-[1.25] text-foreground/88 md:text-[2rem]",
+                                                children: testimonial.comment
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/testimonials.tsx",
+                                                lineNumber: 264,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/testimonials.tsx",
+                                        lineNumber: 257,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "relative mt-12 border-t border-white/10 pt-6",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex items-end justify-between gap-5",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                            className: "font-body text-sm font-medium text-foreground",
+                                                            children: testimonial.name
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/testimonials.tsx",
+                                                            lineNumber: 272,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                            className: "mt-1 font-body text-[0.58rem] uppercase tracking-[0.18em] text-muted-foreground",
+                                                            children: testimonial.event
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/testimonials.tsx",
+                                                            lineNumber: 276,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/components/testimonials.tsx",
+                                                    lineNumber: 271,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "max-w-32 text-right font-body text-[0.55rem] uppercase leading-5 tracking-[0.15em] text-warm",
+                                                    children: testimonial.service
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/testimonials.tsx",
+                                                    lineNumber: 281,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/components/testimonials.tsx",
+                                            lineNumber: 270,
+                                            columnNumber: 17
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/testimonials.tsx",
+                                        lineNumber: 269,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, `${testimonial.name}-${testimonial.event}`, true, {
+                                fileName: "[project]/components/testimonials.tsx",
+                                lineNumber: 248,
+                                columnNumber: 13
+                            }, this))
                     }, void 0, false, {
                         fileName: "[project]/components/testimonials.tsx",
-                        lineNumber: 134,
+                        lineNumber: 235,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mt-5 flex items-center gap-2",
+                        children: testimonials.map((testimonial, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                type: "button",
+                                onClick: ()=>scrollToCard(index),
+                                "aria-label": `Ir al testimonio ${index + 1}`,
+                                className: `h-px transition-all duration-500 ${activeIndex === index ? 'w-12 bg-warm' : 'w-5 bg-white/15 hover:bg-white/35'}`
+                            }, `${testimonial.name}-indicator`, false, {
+                                fileName: "[project]/components/testimonials.tsx",
+                                lineNumber: 293,
+                                columnNumber: 13
+                            }, this))
+                    }, void 0, false, {
+                        fileName: "[project]/components/testimonials.tsx",
+                        lineNumber: 291,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/testimonials.tsx",
-                lineNumber: 127,
+                lineNumber: 136,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/testimonials.tsx",
-        lineNumber: 104,
+        lineNumber: 129,
         columnNumber: 5
     }, this);
-}
+} // 'use client'
+ // import { useRef } from 'react'
+ // import { motion, useInView } from 'framer-motion'
+ // import { MessageSquarePlus } from 'lucide-react'
+ // const testimonials = [
+ //   {
+ //     name: 'Martina y Luciano',
+ //     event: 'Boda',
+ //     comment:
+ //       'Ale convirtió nuestra boda en algo que superó todas nuestras expectativas. Cada detalle fue cuidado con una atención que no imaginábamos posible. Fue como tener un amigo muy talentoso organizando el día más importante de nuestras vidas.',
+ //   },
+ //   {
+ //     name: 'Carolina Rodríguez',
+ //     event: 'Cumpleaños de 50',
+ //     comment:
+ //       'Quería algo íntimo y especial para mis 50. Ale entendió exactamente lo que buscaba sin que tuviera que explicarlo mucho. El resultado fue una noche mágica que todos mis invitados siguen recordando.',
+ //   },
+ //   {
+ //     name: 'Grupo Beltrán S.A.',
+ //     event: 'Gala Corporativa',
+ //     comment:
+ //       'Trabajamos con Ale para nuestra cena anual de empresa y el resultado fue impecable. Profesionalismo, creatividad y una ejecución perfecta. Lo volvemos a convocar sin dudarlo.',
+ //   },
+ //   {
+ //     name: 'Sofía Méndez',
+ //     event: 'Baby Shower',
+ //     comment:
+ //       'Nunca pensé que una reunión íntima podía sentirse tan especial. Ale logró que cada rincón contara algo. Sus ideas son siempre originales y el trato es increíblemente cálido.',
+ //   },
+ //   {
+ //     name: 'Federación Cultural del Norte',
+ //     event: 'Evento Cultural',
+ //     comment:
+ //       'Un placer trabajar con alguien tan comprometido con el resultado final. Ale aportó ideas que no habíamos considerado y que hicieron la diferencia. Muy recomendable.',
+ //   },
+ // ]
+ // export default function Testimonials() {
+ //   const headerRef = useRef(null)
+ //   const headerInView = useInView(headerRef, { once: true, margin: '-60px' })
+ //   return (
+ //     <section id="comentarios" className="py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto">
+ //       {/* Header */}
+ //       <motion.div
+ //         ref={headerRef}
+ //         className="mb-16 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-6"
+ //         initial={{ opacity: 0, y: 30 }}
+ //         animate={headerInView ? { opacity: 1, y: 0 } : {}}
+ //         transition={{ duration: 0.8 }}
+ //       >
+ //         <div>
+ //           <p
+ //             className="text-xs tracking-[0.25em] uppercase text-muted-foreground mb-4"
+ //             style={{ fontFamily: 'var(--font-body)' }}
+ //           >
+ //             Experiencias
+ //           </p>
+ //           <h2
+ //             className="text-5xl md:text-7xl font-light text-foreground leading-none"
+ //             style={{ fontFamily: 'var(--font-display)' }}
+ //           >
+ //             Lo que dicen
+ //           </h2>
+ //         </div>
+ //         {/* Share experience button — UI ready for future moderation */}
+ //         <button
+ //           className="flex items-center gap-3 px-6 py-3 border border-foreground text-foreground text-xs tracking-[0.12em] uppercase transition-all duration-300 hover:bg-foreground hover:text-background self-start md:self-auto"
+ //           style={{ fontFamily: 'var(--font-body)' }}
+ //           onClick={() => {
+ //             /* TODO: integrate with backend/moderation flow */
+ //             alert('Próximamente: formulario para compartir tu experiencia.')
+ //           }}
+ //         >
+ //           <MessageSquarePlus size={15} strokeWidth={1.5} />
+ //           Compartir experiencia
+ //         </button>
+ //       </motion.div>
+ //       {/* Testimonials grid */}
+ //       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
+ //         {testimonials.map((t, i) => (
+ //           <TestimonialCard key={t.name} testimonial={t} index={i} />
+ //         ))}
+ //       </div>
+ //     </section>
+ //   )
+ // }
+ // function TestimonialCard({
+ //   testimonial,
+ //   index,
+ // }: {
+ //   testimonial: (typeof testimonials)[0]
+ //   index: number
+ // }) {
+ //   const ref = useRef(null)
+ //   const inView = useInView(ref, { once: true, margin: '-60px' })
+ //   return (
+ //     <motion.div
+ //       ref={ref}
+ //       className="bg-background p-8 md:p-10 flex flex-col gap-6"
+ //       initial={{ opacity: 0, y: 30 }}
+ //       animate={inView ? { opacity: 1, y: 0 } : {}}
+ //       transition={{ duration: 0.7, delay: index * 0.08 }}
+ //     >
+ //       {/* Opening quote mark */}
+ //       <span
+ //         className="text-6xl font-light text-border leading-none select-none"
+ //         style={{ fontFamily: 'var(--font-display)' }}
+ //         aria-hidden="true"
+ //       >
+ //         &ldquo;
+ //       </span>
+ //       <p
+ //         className="text-base md:text-lg text-foreground font-light leading-relaxed flex-1 -mt-4"
+ //         style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic' }}
+ //       >
+ //         {testimonial.comment}
+ //       </p>
+ //       <div className="border-t border-border pt-5">
+ //         <p
+ //           className="text-sm font-medium text-foreground"
+ //           style={{ fontFamily: 'var(--font-body)' }}
+ //         >
+ //           {testimonial.name}
+ //         </p>
+ //         <p
+ //           className="text-xs text-muted-foreground tracking-[0.1em] uppercase mt-0.5"
+ //           style={{ fontFamily: 'var(--font-body)' }}
+ //         >
+ //           {testimonial.event}
+ //         </p>
+ //       </div>
+ //     </motion.div>
+ //   )
+ // }
 }),
 "[project]/components/contact.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";

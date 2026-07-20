@@ -203,6 +203,15 @@
 
 @layer components {
 
+  .scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
   .contact-field {
   width: 100%;
   border: 0;
