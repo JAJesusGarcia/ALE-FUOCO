@@ -8,8 +8,8 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/menu.mjs [app-client] (ecmascript) <export default as Menu>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.mjs [app-client] (ecmascript) <export default as X>");
 ;
@@ -47,27 +47,46 @@ function Navbar() {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "Navbar.useEffect": ()=>{
             const handleScroll = {
-                "Navbar.useEffect.handleScroll": ()=>setScrolled(window.scrollY > 40)
+                "Navbar.useEffect.handleScroll": ()=>{
+                    setScrolled(window.scrollY > 40);
+                }
             }["Navbar.useEffect.handleScroll"];
+            handleScroll();
             window.addEventListener('scroll', handleScroll, {
                 passive: true
             });
             return ({
-                "Navbar.useEffect": ()=>window.removeEventListener('scroll', handleScroll)
+                "Navbar.useEffect": ()=>{
+                    window.removeEventListener('scroll', handleScroll);
+                }
             })["Navbar.useEffect"];
         }
     }["Navbar.useEffect"], []);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Navbar.useEffect": ()=>{
+            document.body.style.overflow = menuOpen ? 'hidden' : '';
+            return ({
+                "Navbar.useEffect": ()=>{
+                    document.body.style.overflow = '';
+                }
+            })["Navbar.useEffect"];
+        }
+    }["Navbar.useEffect"], [
+        menuOpen
+    ]);
     const handleNav = (href)=>{
         setMenuOpen(false);
-        const el = document.querySelector(href);
-        if (el) el.scrollIntoView({
-            behavior: 'smooth'
-        });
+        const element = document.querySelector(href);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].header, {
-                className: `fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-background/95 backdrop-blur-md border-b border-border' : 'bg-transparent'}`,
                 initial: {
                     y: -80,
                     opacity: 0
@@ -77,86 +96,187 @@ function Navbar() {
                     opacity: 1
                 },
                 transition: {
-                    duration: 0.7,
-                    ease: 'easeOut'
+                    duration: 0.8,
+                    ease: [
+                        0.16,
+                        1,
+                        0.3,
+                        1
+                    ]
                 },
+                className: `fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ${scrolled ? 'border-white/10 bg-background/80 shadow-[0_1rem_4rem_rgba(0,0,0,0.18)] backdrop-blur-xl' : 'border-transparent bg-transparent'}`,
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
-                    className: "max-w-7xl mx-auto px-6 md:px-12 h-16 md:h-20 flex items-center justify-between",
+                    className: "site-container flex h-18 items-center justify-between md:h-22",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            type: "button",
                             onClick: ()=>handleNav('#inicio'),
-                            className: `font-sans text-xl md:text-2xl tracking-widest uppercase transition-colors duration-300 ${scrolled ? 'text-foreground' : 'text-white'}`,
-                            style: {
-                                fontFamily: 'var(--font-display)',
-                                letterSpacing: '0.18em'
-                            },
-                            children: "Ale Fuoco"
-                        }, void 0, false, {
+                            className: "group relative z-50 flex flex-col items-start text-left",
+                            "aria-label": "Ir al inicio",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: `font-display text-[1.7rem] leading-none tracking-[0.08em] transition-colors duration-300 md:text-[2rem] ${scrolled || menuOpen ? 'text-foreground' : 'text-white'}`,
+                                    children: "Ale Fuoco"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/navbar.tsx",
+                                    lineNumber: 78,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: `mt-1 font-body text-[0.55rem] font-medium uppercase tracking-[0.28em] transition-colors duration-300 ${scrolled || menuOpen ? 'text-warm' : 'text-white/55'}`,
+                                    children: "Producción de eventos"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/navbar.tsx",
+                                    lineNumber: 88,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/components/navbar.tsx",
-                            lineNumber: 45,
+                            lineNumber: 72,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                            className: "hidden md:flex items-center gap-8",
+                            className: "hidden items-center gap-7 lg:flex xl:gap-9",
                             children: navLinks.map((link)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        type: "button",
                                         onClick: ()=>handleNav(link.href),
-                                        className: `font-body text-xs tracking-[0.12em] uppercase transition-colors duration-300 hover:opacity-70 ${scrolled ? 'text-foreground' : 'text-white/90'}`,
-                                        style: {
-                                            fontFamily: 'var(--font-body)'
-                                        },
-                                        children: link.label
-                                    }, void 0, false, {
+                                        className: `group relative py-2 font-body text-[0.65rem] font-medium uppercase tracking-[0.18em] transition-colors duration-300 ${scrolled ? 'text-foreground/65 hover:text-foreground' : 'text-white/70 hover:text-white'}`,
+                                        children: [
+                                            link.label,
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-warm transition-transform duration-300 group-hover:scale-x-100"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/navbar.tsx",
+                                                lineNumber: 113,
+                                                columnNumber: 19
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/components/navbar.tsx",
-                                        lineNumber: 59,
+                                        lineNumber: 102,
                                         columnNumber: 17
                                     }, this)
                                 }, link.href, false, {
                                     fileName: "[project]/components/navbar.tsx",
-                                    lineNumber: 58,
+                                    lineNumber: 101,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/components/navbar.tsx",
-                            lineNumber: 56,
+                            lineNumber: 99,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            onClick: ()=>setMenuOpen(!menuOpen),
-                            className: `md:hidden p-2 transition-colors duration-300 ${scrolled ? 'text-foreground' : 'text-white'}`,
-                            "aria-label": menuOpen ? 'Cerrar menú' : 'Abrir menú',
-                            children: menuOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
-                                size: 22
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "hidden lg:block",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                type: "button",
+                                onClick: ()=>handleNav('#contacto'),
+                                className: `focus-ring border px-5 py-2.5 font-body text-[0.62rem] font-medium uppercase tracking-[0.18em] transition-all duration-300 ${scrolled ? 'border-foreground/20 text-foreground hover:border-warm hover:bg-warm hover:text-warm-foreground' : 'border-white/35 text-white hover:border-white hover:bg-white hover:text-background'}`,
+                                children: "Hablemos"
                             }, void 0, false, {
                                 fileName: "[project]/components/navbar.tsx",
-                                lineNumber: 78,
-                                columnNumber: 25
-                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
-                                size: 22
-                            }, void 0, false, {
-                                fileName: "[project]/components/navbar.tsx",
-                                lineNumber: 78,
-                                columnNumber: 43
+                                lineNumber: 120,
+                                columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/navbar.tsx",
-                            lineNumber: 73,
+                            lineNumber: 119,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            type: "button",
+                            onClick: ()=>setMenuOpen((current)=>!current),
+                            className: `focus-ring relative z-50 flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-300 lg:hidden ${scrolled || menuOpen ? 'border-white/10 bg-white/5 text-foreground' : 'border-white/25 bg-black/10 text-white backdrop-blur-md'}`,
+                            "aria-label": menuOpen ? 'Cerrar menú' : 'Abrir menú',
+                            "aria-expanded": menuOpen,
+                            "aria-controls": "mobile-navigation",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+                                mode: "wait",
+                                initial: false,
+                                children: menuOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].span, {
+                                    initial: {
+                                        rotate: -90,
+                                        opacity: 0
+                                    },
+                                    animate: {
+                                        rotate: 0,
+                                        opacity: 1
+                                    },
+                                    exit: {
+                                        rotate: 90,
+                                        opacity: 0
+                                    },
+                                    transition: {
+                                        duration: 0.2
+                                    },
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
+                                        size: 19,
+                                        strokeWidth: 1.5
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/navbar.tsx",
+                                        lineNumber: 154,
+                                        columnNumber: 19
+                                    }, this)
+                                }, "close", false, {
+                                    fileName: "[project]/components/navbar.tsx",
+                                    lineNumber: 147,
+                                    columnNumber: 17
+                                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].span, {
+                                    initial: {
+                                        rotate: 90,
+                                        opacity: 0
+                                    },
+                                    animate: {
+                                        rotate: 0,
+                                        opacity: 1
+                                    },
+                                    exit: {
+                                        rotate: -90,
+                                        opacity: 0
+                                    },
+                                    transition: {
+                                        duration: 0.2
+                                    },
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
+                                        size: 20,
+                                        strokeWidth: 1.5
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/navbar.tsx",
+                                        lineNumber: 164,
+                                        columnNumber: 19
+                                    }, this)
+                                }, "menu", false, {
+                                    fileName: "[project]/components/navbar.tsx",
+                                    lineNumber: 157,
+                                    columnNumber: 17
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/navbar.tsx",
+                                lineNumber: 145,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/components/navbar.tsx",
+                            lineNumber: 133,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/navbar.tsx",
-                    lineNumber: 43,
+                    lineNumber: 71,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/navbar.tsx",
-                lineNumber: 33,
+                lineNumber: 58,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
                 children: menuOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                    className: "fixed inset-0 z-40 bg-background flex flex-col items-center justify-center",
+                    id: "mobile-navigation",
+                    className: "fixed inset-0 z-40 overflow-hidden bg-background lg:hidden",
                     initial: {
                         opacity: 0
                     },
@@ -167,59 +287,240 @@ function Navbar() {
                         opacity: 0
                     },
                     transition: {
-                        duration: 0.3
+                        duration: 0.35
                     },
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                        className: "flex flex-col items-center gap-8",
-                        children: navLinks.map((link, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].li, {
-                                initial: {
-                                    opacity: 0,
-                                    y: 20
-                                },
-                                animate: {
-                                    opacity: 1,
-                                    y: 0
-                                },
-                                transition: {
-                                    delay: i * 0.08,
-                                    duration: 0.4
-                                },
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    onClick: ()=>handleNav(link.href),
-                                    className: "font-sans text-3xl tracking-widest uppercase text-foreground",
-                                    style: {
-                                        fontFamily: 'var(--font-display)'
-                                    },
-                                    children: link.label
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "absolute inset-0 bg-[radial-gradient(circle_at_80%_15%,rgba(181,126,70,0.14),transparent_32rem)]"
+                        }, void 0, false, {
+                            fileName: "[project]/components/navbar.tsx",
+                            lineNumber: 182,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "film-grain absolute inset-0 opacity-60"
+                        }, void 0, false, {
+                            fileName: "[project]/components/navbar.tsx",
+                            lineNumber: 184,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "site-container relative flex min-h-screen flex-col justify-center pt-24",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "section-eyebrow mb-10",
+                                    children: "Navegación"
                                 }, void 0, false, {
                                     fileName: "[project]/components/navbar.tsx",
-                                    lineNumber: 101,
-                                    columnNumber: 19
+                                    lineNumber: 187,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                    className: "flex flex-col",
+                                    children: navLinks.map((link, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].li, {
+                                            initial: {
+                                                opacity: 0,
+                                                y: 24
+                                            },
+                                            animate: {
+                                                opacity: 1,
+                                                y: 0
+                                            },
+                                            transition: {
+                                                delay: 0.08 + index * 0.07,
+                                                duration: 0.55,
+                                                ease: [
+                                                    0.16,
+                                                    1,
+                                                    0.3,
+                                                    1
+                                                ]
+                                            },
+                                            className: "border-b border-white/10",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                type: "button",
+                                                onClick: ()=>handleNav(link.href),
+                                                className: "group flex w-full items-center justify-between py-5 text-left",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "font-display text-[clamp(2.7rem,12vw,4.8rem)] leading-none tracking-[-0.03em] text-foreground transition-colors duration-300 group-hover:text-warm",
+                                                        children: link.label
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/navbar.tsx",
+                                                        lineNumber: 209,
+                                                        columnNumber: 23
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "font-body text-[0.6rem] tracking-[0.2em] text-muted-foreground",
+                                                        children: [
+                                                            "0",
+                                                            index + 1
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/components/navbar.tsx",
+                                                        lineNumber: 213,
+                                                        columnNumber: 23
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/navbar.tsx",
+                                                lineNumber: 204,
+                                                columnNumber: 21
+                                            }, this)
+                                        }, link.href, false, {
+                                            fileName: "[project]/components/navbar.tsx",
+                                            lineNumber: 193,
+                                            columnNumber: 19
+                                        }, this))
+                                }, void 0, false, {
+                                    fileName: "[project]/components/navbar.tsx",
+                                    lineNumber: 191,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].p, {
+                                    initial: {
+                                        opacity: 0
+                                    },
+                                    animate: {
+                                        opacity: 1
+                                    },
+                                    transition: {
+                                        delay: 0.55
+                                    },
+                                    className: "mt-10 max-w-xs font-body text-sm font-light leading-relaxed text-muted-foreground",
+                                    children: "Producción de experiencias sociales, corporativas y privadas."
+                                }, void 0, false, {
+                                    fileName: "[project]/components/navbar.tsx",
+                                    lineNumber: 221,
+                                    columnNumber: 15
                                 }, this)
-                            }, link.href, false, {
-                                fileName: "[project]/components/navbar.tsx",
-                                lineNumber: 95,
-                                columnNumber: 17
-                            }, this))
-                    }, void 0, false, {
-                        fileName: "[project]/components/navbar.tsx",
-                        lineNumber: 93,
-                        columnNumber: 13
-                    }, this)
-                }, void 0, false, {
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/navbar.tsx",
+                            lineNumber: 186,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
                     fileName: "[project]/components/navbar.tsx",
-                    lineNumber: 86,
+                    lineNumber: 174,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/navbar.tsx",
-                lineNumber: 84,
+                lineNumber: 172,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true);
-}
-_s(Navbar, "EaXJNDiM7KISlWFYokQmqh/1M0I=");
+} // 'use client'
+ // import { useEffect, useState } from 'react'
+ // import { motion, AnimatePresence } from 'framer-motion'
+ // import { Menu, X } from 'lucide-react'
+ // const navLinks = [
+ //   { label: 'Inicio', href: '#inicio' },
+ //   { label: 'Galería', href: '#galeria' },
+ //   { label: 'Sobre Ale', href: '#sobre' },
+ //   { label: 'Comentarios', href: '#comentarios' },
+ //   { label: 'Contacto', href: '#contacto' },
+ // ]
+ // export default function Navbar() {
+ //   const [scrolled, setScrolled] = useState(false)
+ //   const [menuOpen, setMenuOpen] = useState(false)
+ //   useEffect(() => {
+ //     const handleScroll = () => setScrolled(window.scrollY > 40)
+ //     window.addEventListener('scroll', handleScroll, { passive: true })
+ //     return () => window.removeEventListener('scroll', handleScroll)
+ //   }, [])
+ //   const handleNav = (href: string) => {
+ //     setMenuOpen(false)
+ //     const el = document.querySelector(href)
+ //     if (el) el.scrollIntoView({ behavior: 'smooth' })
+ //   }
+ //   return (
+ //     <>
+ //       <motion.header
+ //         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+ //           scrolled
+ //             ? 'bg-background/95 backdrop-blur-md border-b border-border'
+ //             : 'bg-transparent'
+ //         }`}
+ //         initial={{ y: -80, opacity: 0 }}
+ //         animate={{ y: 0, opacity: 1 }}
+ //         transition={{ duration: 0.7, ease: 'easeOut' }}
+ //       >
+ //         <nav className="max-w-7xl mx-auto px-6 md:px-12 h-16 md:h-20 flex items-center justify-between">
+ //           {/* Logo */}
+ //           <button
+ //             onClick={() => handleNav('#inicio')}
+ //             className={`font-sans text-xl md:text-2xl tracking-widest uppercase transition-colors duration-300 ${
+ //               scrolled ? 'text-foreground' : 'text-white'
+ //             }`}
+ //             style={{ fontFamily: 'var(--font-display)', letterSpacing: '0.18em' }}
+ //           >
+ //             Ale Fuoco
+ //           </button>
+ //           {/* Desktop nav links */}
+ //           <ul className="hidden md:flex items-center gap-8">
+ //             {navLinks.map((link) => (
+ //               <li key={link.href}>
+ //                 <button
+ //                   onClick={() => handleNav(link.href)}
+ //                   className={`font-body text-xs tracking-[0.12em] uppercase transition-colors duration-300 hover:opacity-70 ${
+ //                     scrolled ? 'text-foreground' : 'text-white/90'
+ //                   }`}
+ //                   style={{ fontFamily: 'var(--font-body)' }}
+ //                 >
+ //                   {link.label}
+ //                 </button>
+ //               </li>
+ //             ))}
+ //           </ul>
+ //           {/* Mobile menu button */}
+ //           <button
+ //             onClick={() => setMenuOpen(!menuOpen)}
+ //             className={`md:hidden p-2 transition-colors duration-300 ${scrolled ? 'text-foreground' : 'text-white'}`}
+ //             aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+ //           >
+ //             {menuOpen ? <X size={22} /> : <Menu size={22} />}
+ //           </button>
+ //         </nav>
+ //       </motion.header>
+ //       {/* Mobile menu */}
+ //       <AnimatePresence>
+ //         {menuOpen && (
+ //           <motion.div
+ //             className="fixed inset-0 z-40 bg-background flex flex-col items-center justify-center"
+ //             initial={{ opacity: 0 }}
+ //             animate={{ opacity: 1 }}
+ //             exit={{ opacity: 0 }}
+ //             transition={{ duration: 0.3 }}
+ //           >
+ //             <ul className="flex flex-col items-center gap-8">
+ //               {navLinks.map((link, i) => (
+ //                 <motion.li
+ //                   key={link.href}
+ //                   initial={{ opacity: 0, y: 20 }}
+ //                   animate={{ opacity: 1, y: 0 }}
+ //                   transition={{ delay: i * 0.08, duration: 0.4 }}
+ //                 >
+ //                   <button
+ //                     onClick={() => handleNav(link.href)}
+ //                     className="font-sans text-3xl tracking-widest uppercase text-foreground"
+ //                     style={{ fontFamily: 'var(--font-display)' }}
+ //                   >
+ //                     {link.label}
+ //                   </button>
+ //                 </motion.li>
+ //               ))}
+ //             </ul>
+ //           </motion.div>
+ //         )}
+ //       </AnimatePresence>
+ //     </>
+ //   )
+ // }
+_s(Navbar, "0FTCTa/wSwaXFgLT2GlKcn4CdyU=");
 _c = Navbar;
 var _c;
 __turbopack_context__.k.register(_c, "Navbar");
