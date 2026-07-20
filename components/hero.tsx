@@ -36,7 +36,7 @@ export default function Hero() {
         className="absolute inset-0 z-0"
       >
         <Image
-          src="/images/hero.png"
+          src="/images/hero.webp"
           alt="Diseño de iluminación y producción técnica de Ale Fuoco"
           fill
           priority

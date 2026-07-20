@@ -42,7 +42,7 @@ type GalleryItem =
 const galleryItems: GalleryItem[] = [
   {
     type: 'image',
-    src: '/images/gallery-1.png',
+    src: '/images/gallery-1.webp',
     title: 'Diseño para una noche única',
     description:
       'Iluminación ambiental y escénica diseñada para acompañar cada momento del evento.',
@@ -55,7 +55,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     type: 'image',
-    src: '/images/gallery-2.png',
+    src: '/images/gallery-2.webp',
     title: 'Atmósfera cálida',
     description:
       'Temperatura, intensidad y dirección de iluminacion pensadas para transformar el espacio.',
@@ -68,7 +68,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     type: 'image',
-    src: '/images/gallery-3.png',
+    src: '/images/gallery-3.webp',
     title: 'Producción corporativa',
     description:
       'Diseño técnico preciso para presentaciones, galas y experiencias de marca.',
@@ -81,7 +81,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     type: 'image',
-    src: '/images/gallery-4.png',
+    src: '/images/gallery-4.webp',
     title: 'Luz integrada al espacio',
     description:
       'Iluminación decorativa y funcional adaptada a la arquitectura y al entorno.',
@@ -94,7 +94,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     type: 'image',
-    src: '/images/gallery-5.png',
+    src: '/images/gallery-5.webp',
     title: 'Escena y movimiento',
     description:
       'Operación de luces sincronizada con el ritmo, la música y los momentos principales.',
@@ -107,7 +107,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     type: 'image',
-    src: '/images/gallery-6.png',
+    src: '/images/gallery-6.webp',
     title: 'Sonido que acompaña',
     description:
       'Cobertura clara y equilibrada para que cada palabra y cada canción lleguen correctamente.',

@@ -262,7 +262,7 @@ export default function About() {
 //           >
 //             <div className="relative aspect-[3/4] overflow-hidden max-w-md mx-auto lg:mx-0">
 //               <Image
-//                 src="/images/ale-fuoco.png"
+//                 src="/images/ale-fuoco.webp"
 //                 alt="Ale Fuoco, productor de eventos"
 //                 fill
 //                 className="object-cover object-top"
