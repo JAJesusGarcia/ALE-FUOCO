@@ -57,7 +57,6 @@ export default function Hero() {
         }}
         className="absolute inset-0 z-0"
       >
-        {/*
         <Image
           src="/images/hero.webp"
           alt="Diseño de iluminación y producción técnica de Ale Fuoco"
@@ -67,7 +66,6 @@ export default function Hero() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        */}
       </motion.div>
 
       {/* Overlays cinematográficos */}
