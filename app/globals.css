@@ -245,3 +245,148 @@ textarea:-webkit-autofill:focus {
     transition-duration: 0.01ms !important;
   }
 }
+
+.hero-searchlight {
+  clip-path: polygon(47% 100%, 53% 100%, 100% 0%, 0% 0%);
+  background: linear-gradient(
+    to top,
+    rgba(255, 218, 177, 0.55) 0%,
+    rgba(244, 161, 92, 0.28) 18%,
+    rgba(255, 232, 209, 0.13) 52%,
+    rgba(255, 255, 255, 0.035) 82%,
+    transparent 100%
+  );
+  filter: blur(9px);
+  will-change: transform;
+}
+
+.hero-searchlight::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  clip-path: inherit;
+  background: linear-gradient(
+    to top,
+    rgba(255, 245, 232, 0.38),
+    rgba(244, 161, 92, 0.08) 48%,
+    transparent 88%
+  );
+  filter: blur(22px);
+}
+
+.hero-searchlight-one {
+  animation: hero-searchlight-one 6.5s ease-in-out infinite alternate;
+}
+
+.hero-searchlight-two {
+  animation: hero-searchlight-two 5.8s ease-in-out infinite alternate;
+}
+
+.hero-searchlight-three {
+  animation: hero-searchlight-three 6.2s ease-in-out infinite alternate;
+}
+
+.hero-searchlight-four {
+  animation: hero-searchlight-four 6.8s ease-in-out infinite alternate;
+}
+
+/* .hero-laser-head {
+  animation: hero-laser-head 2.2s ease-in-out infinite alternate;
+}
+
+.hero-laser-line {
+  will-change: transform, opacity;
+  animation: hero-laser-pulse 2.4s ease-in-out infinite;
+} */
+
+@keyframes hero-searchlight-one {
+  from {
+    transform: rotate(-28deg);
+  }
+
+  to {
+    transform: rotate(-7deg);
+  }
+}
+
+@keyframes hero-searchlight-two {
+  from {
+    transform: rotate(-16deg);
+  }
+
+  to {
+    transform: rotate(11deg);
+  }
+}
+
+@keyframes hero-searchlight-three {
+  from {
+    transform: rotate(16deg);
+  }
+
+  to {
+    transform: rotate(-11deg);
+  }
+}
+
+@keyframes hero-searchlight-four {
+  from {
+    transform: rotate(29deg);
+  }
+
+  to {
+    transform: rotate(7deg);
+  }
+}
+
+/* @keyframes hero-laser-pulse {
+  0%,
+  100% {
+    opacity: 0.34;
+    filter: brightness(0.8);
+  }
+
+  45% {
+    opacity: 0.9;
+    filter: brightness(1.35);
+  }
+
+  70% {
+    opacity: 0.55;
+    filter: brightness(1);
+  }
+} */
+
+/* @keyframes hero-laser-head {
+  from {
+    opacity: 0.65;
+    transform: translateX(-50%) scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.25);
+  }
+} */
+
+@media (max-width: 767px) {
+  .hero-searchlight {
+    width: 42vw;
+    filter: blur(7px);
+    opacity: 0.48;
+  }
+
+  /* .hero-laser-line {
+    width: 75vw;
+    height: 1px;
+    opacity: 0.5;
+  } */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-searchlight,
+  .hero-laser-head,
+  .hero-laser-line {
+    animation: none;
+  }
+}

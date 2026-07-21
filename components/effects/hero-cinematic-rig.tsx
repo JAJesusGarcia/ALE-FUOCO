@@ -106,12 +106,11 @@ export default function HeroCinematicRig() {
   return (
     <div
       className="
-        pointer-events-none
-        absolute inset-0 z-[8]
-        hidden overflow-hidden
-        [contain:layout_paint]
-        md:block
-      "
+  pointer-events-none
+  absolute inset-0 z-[8]
+  overflow-hidden
+  [contain:layout_paint]
+"
       aria-hidden="true"
     >
       {/* Vignette general */}
@@ -149,18 +148,56 @@ export default function HeroCinematicRig() {
       />
 
       {/* Beams */}
-      <div
-        className="
-          hero-animate-beam-one
-          absolute -top-[18%] left-[8%]
-          h-[125%] w-[8rem]
-          origin-top
-          bg-[linear-gradient(180deg,rgba(255,233,210,0.16),rgba(244,161,92,0.045)_55%,transparent_92%)]
-          opacity-[0.09]
-          blur-[18px]
-          mix-blend-screen
-        "
-      />
+      {/* Beams tipo buscacielos */}
+      <div className="absolute inset-0 overflow-hidden">
+        <span
+          className="
+      hero-searchlight hero-searchlight-one
+      absolute bottom-[-32vh] left-[4%]
+      h-[145vh] w-[28vw]
+      max-w-[24rem]
+      origin-bottom
+      opacity-65
+      mix-blend-screen
+    "
+        />
+
+        <span
+          className="
+      hero-searchlight hero-searchlight-two
+      absolute bottom-[-32vh] left-[26%]
+      h-[145vh] w-[25vw]
+      max-w-[22rem]
+      origin-bottom
+      opacity-55
+      mix-blend-screen
+    "
+        />
+
+        <span
+          className="
+      hero-searchlight hero-searchlight-three
+      absolute right-[25%] bottom-[-32vh]
+      h-[145vh] w-[25vw]
+      max-w-[22rem]
+      origin-bottom
+      opacity-55
+      mix-blend-screen
+    "
+        />
+
+        <span
+          className="
+      hero-searchlight hero-searchlight-four
+      absolute right-[3%] bottom-[-32vh]
+      h-[145vh] w-[28vw]
+      max-w-[24rem]
+      origin-bottom
+      opacity-65
+      mix-blend-screen
+    "
+        />
+      </div>
 
       <div
         className="
@@ -202,33 +239,53 @@ export default function HeroCinematicRig() {
       />
 
       {/* Láseres */}
-      <div
+      {/* Láseres escénicos */}
+      {/* <div
         className="
-          absolute top-[15%] left-1/2
-          hidden h-[38rem] w-[70rem]
-          -translate-x-1/2
-          lg:block
-        "
+    absolute top-[18%] left-1/2
+    h-[70vh] w-[150vw]
+    max-w-[110rem]
+    -translate-x-1/2
+    overflow-visible
+  "
       >
-        {laserLines.map((line) => (
-          <span
-            key={line}
-            className="
-              hero-animate-laser
-              absolute top-0 left-1/2
-              block h-px w-[58%]
-              origin-left
-              bg-[linear-gradient(90deg,rgba(244,161,92,0.5),rgba(244,161,92,0.06)_54%,transparent)]
-              opacity-0
-              shadow-[0_0_8px_rgba(244,161,92,0.22)]
-            "
-            style={{
-              transform: `rotate(${line * 3.8 - 15}deg)`,
-              animationDelay: `${line * 180}ms`,
-            }}
-          />
-        ))}
-      </div>
+        <div
+          className="
+      hero-laser-head
+      absolute top-0 left-1/2
+      size-3
+      -translate-x-1/2
+      rounded-full
+      bg-orange-100
+      shadow-[0_0_12px_rgba(255,214,170,1),0_0_30px_rgba(244,161,92,0.9),0_0_70px_rgba(244,161,92,0.55)]
+    "
+        />
+
+        {laserLines.map((line) => {
+          const center = (laserLines.length - 1) / 2
+          const angle = (line - center) * 5.8
+
+          return (
+            <span
+              key={line}
+              className="
+          hero-laser-line
+          absolute top-0 left-1/2
+          block h-[2px] w-[64vw]
+          max-w-[62rem]
+          origin-left
+          bg-[linear-gradient(90deg,rgba(255,236,210,0.98)_0%,rgba(244,161,92,0.8)_18%,rgba(244,161,92,0.28)_62%,transparent_100%)]
+          opacity-70
+          shadow-[0_0_5px_rgba(255,235,210,0.95),0_0_14px_rgba(244,161,92,0.7)]
+        "
+              style={{
+                transform: `rotate(${angle}deg)`,
+                animationDelay: `${line * 90}ms`,
+              }}
+            />
+          )
+        })}
+      </div> */}
 
       {/* REC */}
       <div
