@@ -6,25 +6,18 @@ import {
   saveTestimonial,
 } from '@/lib/testimonials/store'
 
-import {
-  sendModerationEmail,
-} from '@/lib/testimonials/send-moderation-email'
+import { sendModerationEmail } from '@/lib/testimonials/send-moderation-email'
 
-import {
-  validateTestimonialInput,
-} from '@/lib/testimonials/validation'
+import { validateTestimonialInput } from '@/lib/testimonials/validation'
 
-import type {
-  Testimonial,
-} from '@/lib/testimonials/types'
+import type { Testimonial } from '@/lib/testimonials/types'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 
 export async function GET() {
   try {
-    const testimonials =
-      await getApprovedTestimonials()
+    const testimonials = await getApprovedTestimonials()
 
     return NextResponse.json(
       {
@@ -32,16 +25,12 @@ export async function GET() {
       },
       {
         headers: {
-          'Cache-Control':
-            'no-store, max-age=0',
+          'Cache-Control': 'no-store, max-age=0',
         },
       },
     )
   } catch (error) {
-    console.error(
-      'Error leyendo testimonios:',
-      error,
-    )
+    console.error('Error leyendo testimonios:', error)
 
     return NextResponse.json(
       {
@@ -57,9 +46,7 @@ export async function GET() {
   }
 }
 
-export async function POST(
-  request: Request,
-) {
+export async function POST(request: Request) {
   try {
     const body = await request.json()
 
@@ -67,10 +54,7 @@ export async function POST(
      * Honeypot:
      * este campo debe quedar vacío.
      */
-    if (
-      typeof body.website === 'string' &&
-      body.website.length > 0
-    ) {
+    if (typeof body.website === 'string' && body.website.length > 0) {
       return NextResponse.json({
         success: true,
       })
@@ -82,14 +66,10 @@ export async function POST(
     const startedAt = Number(body.startedAt)
     const elapsed = Date.now() - startedAt
 
-    if (
-      !Number.isFinite(startedAt) ||
-      elapsed < 2500
-    ) {
+    if (!Number.isFinite(startedAt) || elapsed < 2500) {
       return NextResponse.json(
         {
-          error:
-            'No fue posible procesar el envío.',
+          error: 'No fue posible procesar el envío.',
         },
         {
           status: 400,
@@ -97,8 +77,7 @@ export async function POST(
       )
     }
 
-    const validation =
-      validateTestimonialInput(body)
+    const validation = validateTestimonialInput(body)
 
     if (!validation.success) {
       return NextResponse.json(
@@ -128,32 +107,24 @@ export async function POST(
        * El comentario ya quedó guardado.
        * No lo eliminamos si falla el correo.
        */
-      console.error(
-        'Error enviando notificación:',
-        emailError,
-      )
+      console.error('Error enviando notificación:', emailError)
     }
 
     return NextResponse.json(
       {
         success: true,
-        message:
-          'Tu experiencia fue enviada y quedó pendiente de revisión.',
+        message: 'Tu experiencia fue enviada y quedó pendiente de revisión.',
       },
       {
         status: 201,
       },
     )
   } catch (error) {
-    console.error(
-      'Error enviando testimonio:',
-      error,
-    )
+    console.error('Error enviando testimonio:', error)
 
     return NextResponse.json(
       {
-        error:
-          'Ocurrió un error. Intentá nuevamente.',
+        error: 'Ocurrió un error. Intentá nuevamente.',
       },
       {
         status: 500,

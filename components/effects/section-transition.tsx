@@ -13,8 +13,7 @@ export default function SectionTransition({
   number = '02',
   direction = 'right',
 }: SectionTransitionProps) {
-  const originClass =
-    direction === 'left' ? 'origin-right' : 'origin-left'
+  const originClass = direction === 'left' ? 'origin-right' : 'origin-left'
 
   return (
     <div

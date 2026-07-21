@@ -176,7 +176,6 @@ export default function Gallery() {
 
             <h2 className="max-w-[10ch] font-display text-[clamp(4rem,9vw,8rem)] font-light leading-[0.82] tracking-[-0.05em] text-foreground">
               Iluminación, sonido
-
               <span className="block italic text-foreground/55">
                 y movimiento.
               </span>
@@ -198,11 +197,7 @@ export default function Gallery() {
                     key={discipline.label}
                     className="flex items-center gap-2 border border-white/10 px-3 py-2 font-body text-[0.55rem] font-medium uppercase tracking-[0.17em] text-foreground/60"
                   >
-                    <Icon
-                      size={13}
-                      strokeWidth={1.5}
-                      className="text-warm"
-                    />
+                    <Icon size={13} strokeWidth={1.5} className="text-warm" />
 
                     {discipline.label}
                   </span>
@@ -227,13 +222,7 @@ export default function Gallery() {
   )
 }
 
-function GalleryCard({
-  item,
-  index,
-}: {
-  item: GalleryItem
-  index: number
-}) {
+function GalleryCard({ item, index }: { item: GalleryItem; index: number }) {
   const cardRef = useRef<HTMLElement | null>(null)
 
   const inView = useInView(cardRef, {
@@ -263,7 +252,7 @@ function GalleryCard({
         delay: Math.min(index * 0.08, 0.32),
         ease: [0.16, 1, 0.3, 1],
       }}
-     className={`
+      className={`
       group relative isolate
       overflow-hidden bg-surface
       [transform:translateZ(0)]
@@ -359,11 +348,7 @@ function GalleryCard({
 
         {item.type === 'video' && (
           <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/20 text-white backdrop-blur-md">
-            <Play
-              size={14}
-              strokeWidth={1.5}
-              fill="currentColor"
-            />
+            <Play size={14} strokeWidth={1.5} fill="currentColor" />
           </span>
         )}
       </div>
@@ -397,10 +382,7 @@ function GalleryCard({
           </div>
 
           <span className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/15 text-white/60 transition-all duration-500 group-hover:rotate-[-8deg] group-hover:border-warm group-hover:bg-warm group-hover:text-warm-foreground sm:flex">
-            <ArrowDownRight
-              size={16}
-              strokeWidth={1.5}
-            />
+            <ArrowDownRight size={16} strokeWidth={1.5} />
           </span>
         </div>
       </div>

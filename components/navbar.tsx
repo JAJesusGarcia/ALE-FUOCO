@@ -1,19 +1,8 @@
 'use client'
 
-import {
-  useCallback,
-  useEffect,
-  useState,
-} from 'react'
-import {
-  AnimatePresence,
-  motion,
-  useReducedMotion,
-} from 'framer-motion'
-import {
-  Menu,
-  X,
-} from 'lucide-react'
+import { useCallback, useEffect, useState } from 'react'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { label: 'Inicio', href: '#inicio' },
@@ -94,24 +83,16 @@ export default function Navbar() {
   useEffect(() => {
     const mediaQuery = window.matchMedia('(min-width: 1024px)')
 
-    const handleDesktopChange = (
-      event: MediaQueryListEvent,
-    ) => {
+    const handleDesktopChange = (event: MediaQueryListEvent) => {
       if (event.matches) {
         setMenuOpen(false)
       }
     }
 
-    mediaQuery.addEventListener(
-      'change',
-      handleDesktopChange,
-    )
+    mediaQuery.addEventListener('change', handleDesktopChange)
 
     return () => {
-      mediaQuery.removeEventListener(
-        'change',
-        handleDesktopChange,
-      )
+      mediaQuery.removeEventListener('change', handleDesktopChange)
     }
   }, [])
 
@@ -119,8 +100,7 @@ export default function Navbar() {
     setMenuOpen(false)
 
     window.requestAnimationFrame(() => {
-      const element =
-        document.querySelector<HTMLElement>(href)
+      const element = document.querySelector<HTMLElement>(href)
 
       if (!element) {
         return
@@ -217,11 +197,7 @@ export default function Navbar() {
                 tracking-[0.08em]
                 transition-colors duration-300
                 md:text-[2rem]
-                ${
-                  headerHasBackground
-                    ? 'text-foreground'
-                    : 'text-white'
-                }
+                ${headerHasBackground ? 'text-foreground' : 'text-white'}
               `}
             >
               Ale Fuoco
@@ -235,11 +211,7 @@ export default function Navbar() {
                 font-medium uppercase
                 tracking-[0.28em]
                 transition-colors duration-300
-                ${
-                  headerHasBackground
-                    ? 'text-warm'
-                    : 'text-white/55'
-                }
+                ${headerHasBackground ? 'text-warm' : 'text-white/55'}
               `}
             >
               Producción de eventos
@@ -369,10 +341,7 @@ export default function Navbar() {
               }
             `}
           >
-            <AnimatePresence
-              mode="wait"
-              initial={false}
-            >
+            <AnimatePresence mode="wait" initial={false}>
               {menuOpen ? (
                 <motion.span
                   key="close"
@@ -397,16 +366,10 @@ export default function Navbar() {
                         }
                   }
                   transition={{
-                    duration: shouldReduceMotion
-                      ? 0
-                      : 0.2,
+                    duration: shouldReduceMotion ? 0 : 0.2,
                   }}
                 >
-                  <X
-                    size={19}
-                    strokeWidth={1.5}
-                    aria-hidden="true"
-                  />
+                  <X size={19} strokeWidth={1.5} aria-hidden="true" />
                 </motion.span>
               ) : (
                 <motion.span
@@ -432,16 +395,10 @@ export default function Navbar() {
                         }
                   }
                   transition={{
-                    duration: shouldReduceMotion
-                      ? 0
-                      : 0.2,
+                    duration: shouldReduceMotion ? 0 : 0.2,
                   }}
                 >
-                  <Menu
-                    size={20}
-                    strokeWidth={1.5}
-                    aria-hidden="true"
-                  />
+                  <Menu size={20} strokeWidth={1.5} aria-hidden="true" />
                 </motion.span>
               )}
             </AnimatePresence>
@@ -532,12 +489,8 @@ export default function Navbar() {
                       y: 0,
                     }}
                     transition={{
-                      delay: shouldReduceMotion
-                        ? 0
-                        : 0.08 + index * 0.07,
-                      duration: shouldReduceMotion
-                        ? 0
-                        : 0.55,
+                      delay: shouldReduceMotion ? 0 : 0.08 + index * 0.07,
+                      duration: shouldReduceMotion ? 0 : 0.55,
                       ease: motionEase,
                     }}
                     className="border-b border-white/10"

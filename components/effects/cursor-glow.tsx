@@ -1,11 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-} from 'framer-motion'
+import { motion, useMotionValue, useSpring } from 'framer-motion'
 
 export default function CursorGlow() {
   const containerRef = useRef<HTMLDivElement | null>(null)
@@ -26,9 +22,7 @@ export default function CursorGlow() {
   })
 
   useEffect(() => {
-    const pointerQuery = window.matchMedia(
-      '(hover: hover) and (pointer: fine)',
-    )
+    const pointerQuery = window.matchMedia('(hover: hover) and (pointer: fine)')
 
     const reducedMotionQuery = window.matchMedia(
       '(prefers-reduced-motion: reduce)',
@@ -63,23 +57,16 @@ export default function CursorGlow() {
     }
 
     const handleMediaChange = () => {
-      if (
-        !pointerQuery.matches ||
-        reducedMotionQuery.matches
-      ) {
+      if (!pointerQuery.matches || reducedMotionQuery.matches) {
         setVisibility(false)
         pointerX.set(-300)
         pointerY.set(-300)
       }
     }
 
-    window.addEventListener(
-      'pointermove',
-      handlePointerMove,
-      {
-        passive: true,
-      },
-    )
+    window.addEventListener('pointermove', handlePointerMove, {
+      passive: true,
+    })
 
     document.documentElement.addEventListener(
       'pointerleave',
@@ -88,43 +75,25 @@ export default function CursorGlow() {
 
     window.addEventListener('blur', handleWindowBlur)
 
-    pointerQuery.addEventListener(
-      'change',
-      handleMediaChange,
-    )
+    pointerQuery.addEventListener('change', handleMediaChange)
 
-    reducedMotionQuery.addEventListener(
-      'change',
-      handleMediaChange,
-    )
+    reducedMotionQuery.addEventListener('change', handleMediaChange)
 
     handleMediaChange()
 
     return () => {
-      window.removeEventListener(
-        'pointermove',
-        handlePointerMove,
-      )
+      window.removeEventListener('pointermove', handlePointerMove)
 
       document.documentElement.removeEventListener(
         'pointerleave',
         handlePointerLeave,
       )
 
-      window.removeEventListener(
-        'blur',
-        handleWindowBlur,
-      )
+      window.removeEventListener('blur', handleWindowBlur)
 
-      pointerQuery.removeEventListener(
-        'change',
-        handleMediaChange,
-      )
+      pointerQuery.removeEventListener('change', handleMediaChange)
 
-      reducedMotionQuery.removeEventListener(
-        'change',
-        handleMediaChange,
-      )
+      reducedMotionQuery.removeEventListener('change', handleMediaChange)
     }
   }, [pointerX, pointerY])
 

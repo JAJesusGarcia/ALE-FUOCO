@@ -16,18 +16,9 @@ import {
   useReducedMotion,
 } from 'framer-motion'
 
-import {
-  ArrowLeft,
-  ArrowRight,
-  Check,
-  Loader2,
-  Send,
-  Star,
-} from 'lucide-react'
+import { ArrowLeft, ArrowRight, Check, Loader2, Send, Star } from 'lucide-react'
 
-import type {
-  PublicTestimonial,
-} from '@/lib/testimonials/types'
+import type { PublicTestimonial } from '@/lib/testimonials/types'
 
 const initialTestimonials: PublicTestimonial[] = [
   {
@@ -135,27 +126,24 @@ export default function Testimonials() {
     margin: '-80px',
   })
 
-  const [dynamicTestimonials, setDynamicTestimonials] =
-    useState<PublicTestimonial[]>([])
+  const [dynamicTestimonials, setDynamicTestimonials] = useState<
+    PublicTestimonial[]
+  >([])
 
   const [activeIndex, setActiveIndex] = useState(0)
   const [form, setForm] = useState<FormState>(emptyForm)
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] =
-    useState<SubmitStatus | null>(null)
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus | null>(null)
 
   const testimonials = useMemo(() => {
     const existingIds = new Set(
-      initialTestimonials.map(
-        (testimonial) => testimonial.id,
-      ),
+      initialTestimonials.map((testimonial) => testimonial.id),
     )
 
     return [
       ...initialTestimonials,
       ...dynamicTestimonials.filter(
-        (testimonial) =>
-          !existingIds.has(testimonial.id),
+        (testimonial) => !existingIds.has(testimonial.id),
       ),
     ]
   }, [dynamicTestimonials])
@@ -165,13 +153,10 @@ export default function Testimonials() {
 
     const loadTestimonials = async () => {
       try {
-        const response = await fetch(
-          '/api/testimonials',
-          {
-            cache: 'no-store',
-            signal: controller.signal,
-          },
-        )
+        const response = await fetch('/api/testimonials', {
+          cache: 'no-store',
+          signal: controller.signal,
+        })
 
         if (!response.ok) {
           return
@@ -181,21 +166,13 @@ export default function Testimonials() {
           testimonials?: PublicTestimonial[]
         }
 
-        setDynamicTestimonials(
-          data.testimonials ?? [],
-        )
+        setDynamicTestimonials(data.testimonials ?? [])
       } catch (error) {
-        if (
-          error instanceof Error &&
-          error.name === 'AbortError'
-        ) {
+        if (error instanceof Error && error.name === 'AbortError') {
           return
         }
 
-        console.error(
-          'No se pudieron cargar los testimonios:',
-          error,
-        )
+        console.error('No se pudieron cargar los testimonios:', error)
       }
     }
 
@@ -207,38 +184,27 @@ export default function Testimonials() {
   }, [])
 
   useEffect(() => {
-    if (
-      testimonials.length > 0 &&
-      activeIndex >= testimonials.length
-    ) {
+    if (testimonials.length > 0 && activeIndex >= testimonials.length) {
       setActiveIndex(0)
     }
   }, [activeIndex, testimonials.length])
 
-  const activeTestimonial =
-    testimonials[activeIndex]
+  const activeTestimonial = testimonials[activeIndex]
 
   const previous = useCallback(() => {
     setActiveIndex((current) =>
-      current === 0
-        ? testimonials.length - 1
-        : current - 1,
+      current === 0 ? testimonials.length - 1 : current - 1,
     )
   }, [testimonials.length])
 
   const next = useCallback(() => {
     setActiveIndex((current) =>
-      current === testimonials.length - 1
-        ? 0
-        : current + 1,
+      current === testimonials.length - 1 ? 0 : current + 1,
     )
   }, [testimonials.length])
 
   const updateField = useCallback(
-    <Key extends keyof FormState>(
-      key: Key,
-      value: FormState[Key],
-    ) => {
+    <Key extends keyof FormState>(key: Key, value: FormState[Key]) => {
       setForm((current) => ({
         ...current,
         [key]: value,
@@ -247,9 +213,7 @@ export default function Testimonials() {
     [],
   )
 
-  const submitTestimonial = async (
-    event: FormEvent<HTMLFormElement>,
-  ) => {
+  const submitTestimonial = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
     if (isSubmitting) {
@@ -260,20 +224,16 @@ export default function Testimonials() {
     setSubmitStatus(null)
 
     try {
-      const response = await fetch(
-        '/api/testimonials',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type':
-              'application/json',
-          },
-          body: JSON.stringify({
-            ...form,
-            startedAt: startedAtRef.current,
-          }),
+      const response = await fetch('/api/testimonials', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-      )
+        body: JSON.stringify({
+          ...form,
+          startedAt: startedAtRef.current,
+        }),
+      })
 
       const data = (await response.json()) as {
         message?: string
@@ -281,17 +241,12 @@ export default function Testimonials() {
       }
 
       if (!response.ok) {
-        throw new Error(
-          data.error ??
-            'No fue posible enviar el comentario.',
-        )
+        throw new Error(data.error ?? 'No fue posible enviar el comentario.')
       }
 
       setSubmitStatus({
         type: 'success',
-        message:
-          data.message ??
-          'Tu experiencia fue enviada.',
+        message: data.message ?? 'Tu experiencia fue enviada.',
       })
 
       setForm(emptyForm)
@@ -382,10 +337,7 @@ export default function Testimonials() {
         >
           <div>
             <div className="mb-6 flex items-center gap-4">
-              <span
-                aria-hidden="true"
-                className="h-px w-10 bg-warm"
-              />
+              <span aria-hidden="true" className="h-px w-10 bg-warm" />
 
               <p
                 className="
@@ -412,7 +364,6 @@ export default function Testimonials() {
               "
             >
               Lo que queda
-
               <span className="block italic text-foreground/55">
                 después del show.
               </span>
@@ -538,7 +489,6 @@ export default function Testimonials() {
                     shadow-[0_0_12px_rgba(244,161,92,0.65)]
                   "
                 />
-
                 Opinión de clientes
               </div>
 
@@ -550,26 +500,15 @@ export default function Testimonials() {
                   text-muted-foreground
                 "
               >
-                {String(activeIndex + 1).padStart(
-                  2,
-                  '0',
-                )}
+                {String(activeIndex + 1).padStart(2, '0')}
 
-                <span className="mx-3 text-white/15">
-                  /
-                </span>
+                <span className="mx-3 text-white/15">/</span>
 
-                {String(testimonials.length).padStart(
-                  2,
-                  '0',
-                )}
+                {String(testimonials.length).padStart(2, '0')}
               </div>
             </div>
 
-            <AnimatePresence
-              mode="wait"
-              initial={false}
-            >
+            <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={activeTestimonial.id}
                 initial={
@@ -593,9 +532,7 @@ export default function Testimonials() {
                       }
                 }
                 transition={{
-                  duration: shouldReduceMotion
-                    ? 0
-                    : 0.55,
+                  duration: shouldReduceMotion ? 0 : 0.55,
                   ease: motionEase,
                 }}
                 className="
@@ -646,10 +583,7 @@ export default function Testimonials() {
                 md:justify-between
               "
             >
-              <AnimatePresence
-                mode="wait"
-                initial={false}
-              >
+              <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={`${activeTestimonial.id}-author`}
                   initial={
@@ -673,9 +607,7 @@ export default function Testimonials() {
                         }
                   }
                   transition={{
-                    duration: shouldReduceMotion
-                      ? 0
-                      : 0.35,
+                    duration: shouldReduceMotion ? 0 : 0.35,
                   }}
                 >
                   <p className="font-body text-sm font-medium text-foreground">
@@ -693,14 +625,9 @@ export default function Testimonials() {
                       text-muted-foreground
                     "
                   >
-                    <span>
-                      {activeTestimonial.event}
-                    </span>
+                    <span>{activeTestimonial.event}</span>
 
-                    <span
-                      aria-hidden="true"
-                      className="h-px w-5 bg-white/15"
-                    />
+                    <span aria-hidden="true" className="h-px w-5 bg-white/15" />
 
                     <span className="text-warm">
                       {activeTestimonial.service}
@@ -742,14 +669,10 @@ export default function Testimonials() {
                       md:group-hover:-translate-x-1
                     "
                   />
-
                   Anterior
                 </button>
 
-                <span
-                  aria-hidden="true"
-                  className="h-5 w-px bg-white/10"
-                />
+                <span aria-hidden="true" className="h-5 w-px bg-white/10" />
 
                 <button
                   type="button"
@@ -775,7 +698,6 @@ export default function Testimonials() {
                   "
                 >
                   Siguiente
-
                   <ArrowRight
                     size={15}
                     strokeWidth={1.4}
@@ -796,53 +718,36 @@ export default function Testimonials() {
           className="mt-5 flex items-center justify-center gap-2"
           aria-label="Seleccionar testimonio"
         >
-          {testimonials.map(
-            (testimonial, index) => {
-              const isActive =
-                activeIndex === index
+          {testimonials.map((testimonial, index) => {
+            const isActive = activeIndex === index
 
-              return (
-                <button
-                  key={`${testimonial.id}-indicator`}
-                  type="button"
-                  onClick={() =>
-                    setActiveIndex(index)
-                  }
-                  aria-label={`Ir al testimonio ${
-                    index + 1
-                  }`}
-                  aria-current={
-                    isActive ? 'true' : undefined
-                  }
-                  className={`
+            return (
+              <button
+                key={`${testimonial.id}-indicator`}
+                type="button"
+                onClick={() => setActiveIndex(index)}
+                aria-label={`Ir al testimonio ${index + 1}`}
+                aria-current={isActive ? 'true' : undefined}
+                className={`
                     h-5
                     focus-visible:outline-none
                     focus-visible:ring-2
                     focus-visible:ring-warm
                     focus-visible:ring-offset-2
                     focus-visible:ring-offset-background
-                    ${
-                      isActive
-                        ? 'w-12'
-                        : 'w-5'
-                    }
+                    ${isActive ? 'w-12' : 'w-5'}
                   `}
-                >
-                  <span
-                    className={`
+              >
+                <span
+                  className={`
                       block h-px w-full
                       transition-colors duration-300
-                      ${
-                        isActive
-                          ? 'bg-warm'
-                          : 'bg-white/15 hover:bg-white/35'
-                      }
+                      ${isActive ? 'bg-warm' : 'bg-white/15 hover:bg-white/35'}
                     `}
-                  />
-                </button>
-              )
-            },
-          )}
+                />
+              </button>
+            )
+          })}
         </div>
 
         {/* Formulario */}
@@ -894,10 +799,7 @@ export default function Testimonials() {
               "
             >
               ¿Trabajaste
-
-              <span className="block italic text-foreground/50">
-                con Ale?
-              </span>
+              <span className="block italic text-foreground/50">con Ale?</span>
             </h3>
 
             <p
@@ -914,10 +816,7 @@ export default function Testimonials() {
             </p>
           </div>
 
-          <form
-            onSubmit={submitTestimonial}
-            className="relative grid gap-8"
-          >
+          <form onSubmit={submitTestimonial} className="relative grid gap-8">
             {/* Campo antispam */}
             <div
               aria-hidden="true"
@@ -928,9 +827,7 @@ export default function Testimonials() {
                 overflow-hidden
               "
             >
-              <label htmlFor="testimonial-website">
-                Website
-              </label>
+              <label htmlFor="testimonial-website">Website</label>
 
               <input
                 id="testimonial-website"
@@ -939,12 +836,7 @@ export default function Testimonials() {
                 tabIndex={-1}
                 autoComplete="off"
                 value={form.website}
-                onChange={(event) =>
-                  updateField(
-                    'website',
-                    event.target.value,
-                  )
-                }
+                onChange={(event) => updateField('website', event.target.value)}
               />
             </div>
 
@@ -970,12 +862,7 @@ export default function Testimonials() {
                   maxLength={80}
                   autoComplete="name"
                   value={form.name}
-                  onChange={(event) =>
-                    updateField(
-                      'name',
-                      event.target.value,
-                    )
-                  }
+                  onChange={(event) => updateField('name', event.target.value)}
                   placeholder="Tu nombre"
                   className={inputClassName}
                 />
@@ -1001,12 +888,7 @@ export default function Testimonials() {
                   minLength={2}
                   maxLength={80}
                   value={form.event}
-                  onChange={(event) =>
-                    updateField(
-                      'event',
-                      event.target.value,
-                    )
-                  }
+                  onChange={(event) => updateField('event', event.target.value)}
                   placeholder="Boda, gala, cumpleaños..."
                   className={inputClassName}
                 />
@@ -1031,12 +913,7 @@ export default function Testimonials() {
                 type="text"
                 maxLength={100}
                 value={form.service}
-                onChange={(event) =>
-                  updateField(
-                    'service',
-                    event.target.value,
-                  )
-                }
+                onChange={(event) => updateField('service', event.target.value)}
                 placeholder="Iluminación, sonido, producción técnica..."
                 className={inputClassName}
               />
@@ -1064,28 +941,18 @@ export default function Testimonials() {
                   length: 5,
                 }).map((_, index) => {
                   const value = index + 1
-                  const active =
-                    value <= form.rating
+                  const active = value <= form.rating
 
                   return (
                     <button
                       key={value}
                       type="button"
                       role="radio"
-                      aria-checked={
-                        form.rating === value
-                      }
+                      aria-checked={form.rating === value}
                       aria-label={`${value} ${
-                        value === 1
-                          ? 'estrella'
-                          : 'estrellas'
+                        value === 1 ? 'estrella' : 'estrellas'
                       }`}
-                      onClick={() =>
-                        updateField(
-                          'rating',
-                          value,
-                        )
-                      }
+                      onClick={() => updateField('rating', value)}
                       className="
                         rounded-sm p-1
                         focus-visible:outline-none
@@ -1100,9 +967,7 @@ export default function Testimonials() {
                         strokeWidth={1.2}
                         aria-hidden="true"
                         className={
-                          active
-                            ? 'fill-warm text-warm'
-                            : 'text-white/20'
+                          active ? 'fill-warm text-warm' : 'text-white/20'
                         }
                       />
                     </button>
@@ -1144,12 +1009,7 @@ export default function Testimonials() {
                 maxLength={700}
                 rows={6}
                 value={form.comment}
-                onChange={(event) =>
-                  updateField(
-                    'comment',
-                    event.target.value,
-                  )
-                }
+                onChange={(event) => updateField('comment', event.target.value)}
                 placeholder="Contanos cómo fue trabajar con Ale..."
                 className="
                   w-full resize-none
@@ -1230,13 +1090,11 @@ export default function Testimonials() {
                       aria-hidden="true"
                       className="animate-spin"
                     />
-
                     Enviando
                   </>
                 ) : (
                   <>
                     Enviar experiencia
-
                     <Send
                       size={14}
                       strokeWidth={1.5}
@@ -1251,13 +1109,8 @@ export default function Testimonials() {
               </button>
             </div>
 
-            <div
-              aria-live="polite"
-              aria-atomic="true"
-            >
-              <AnimatePresence
-                initial={false}
-              >
+            <div aria-live="polite" aria-atomic="true">
+              <AnimatePresence initial={false}>
                 {submitStatus && (
                   <motion.div
                     initial={
@@ -1281,23 +1134,16 @@ export default function Testimonials() {
                           }
                     }
                     transition={{
-                      duration: shouldReduceMotion
-                        ? 0
-                        : 0.3,
+                      duration: shouldReduceMotion ? 0 : 0.3,
                     }}
-                    role={
-                      submitStatus.type === 'error'
-                        ? 'alert'
-                        : 'status'
-                    }
+                    role={submitStatus.type === 'error' ? 'alert' : 'status'}
                     className={`
                       flex items-start gap-3
                       border p-4
                       font-body text-sm
                       leading-6
                       ${
-                        submitStatus.type ===
-                        'success'
+                        submitStatus.type === 'success'
                           ? `
                             border-warm/30
                             bg-warm/5
@@ -1311,8 +1157,7 @@ export default function Testimonials() {
                       }
                     `}
                   >
-                    {submitStatus.type ===
-                      'success' && (
+                    {submitStatus.type === 'success' && (
                       <Check
                         size={17}
                         aria-hidden="true"
@@ -1323,9 +1168,7 @@ export default function Testimonials() {
                       />
                     )}
 
-                    <span>
-                      {submitStatus.message}
-                    </span>
+                    <span>{submitStatus.message}</span>
                   </motion.div>
                 )}
               </AnimatePresence>

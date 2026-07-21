@@ -3,11 +3,7 @@
 import { useRef } from 'react'
 import Image from 'next/image'
 import { motion, useInView } from 'framer-motion'
-import {
-  Lightbulb,
-  SlidersHorizontal,
-  Volume2,
-} from 'lucide-react'
+import { Lightbulb, SlidersHorizontal, Volume2 } from 'lucide-react'
 
 const specialties = [
   {
@@ -289,10 +285,7 @@ export default function About() {
             }}
           >
             <div className="mb-7 flex items-center gap-4">
-              <span
-                aria-hidden="true"
-                className="h-px w-10 bg-warm"
-              />
+              <span aria-hidden="true" className="h-px w-10 bg-warm" />
 
               <p
                 className="
@@ -319,7 +312,6 @@ export default function About() {
               "
             >
               Diseñar cómo
-
               <span className="block italic text-foreground/55">
                 se siente un espacio.
               </span>
@@ -363,9 +355,9 @@ export default function About() {
                   md:text-lg
                 "
               >
-                El objetivo no es simplemente instalar equipos. Es lograr que
-                la iluminación, el sonido y la operación técnica trabajen como
-                una sola experiencia.
+                El objetivo no es simplemente instalar equipos. Es lograr que la
+                iluminación, el sonido y la operación técnica trabajen como una
+                sola experiencia.
               </p>
             </div>
 
@@ -419,11 +411,7 @@ export default function About() {
                         md:group-hover:text-warm-foreground
                       "
                     >
-                      <Icon
-                        size={16}
-                        strokeWidth={1.5}
-                        aria-hidden="true"
-                      />
+                      <Icon size={16} strokeWidth={1.5} aria-hidden="true" />
                     </span>
 
                     <div>

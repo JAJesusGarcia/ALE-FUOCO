@@ -6,21 +6,21 @@ Desarrollado con **Next.js**, **React**, **TypeScript** y **Tailwind CSS**, prio
 
 ## Tecnologías
 
-* Next.js 16
-* React
-* TypeScript
-* Tailwind CSS
-* Lucide Icons
+- Next.js 16
+- React
+- TypeScript
+- Tailwind CSS
+- Lucide Icons
 
 ## Características
 
-* Hero principal con imagen destacada
-* Sección "Sobre Ale"
-* Galería de eventos
-* Testimonios
-* Formulario e información de contacto
-* Navbar y Footer
-* Diseño responsive para móviles, tablets y escritorio
+- Hero principal con imagen destacada
+- Sección "Sobre Ale"
+- Galería de eventos
+- Testimonios
+- Formulario e información de contacto
+- Navbar y Footer
+- Diseño responsive para móviles, tablets y escritorio
 
 ## Instalación
 

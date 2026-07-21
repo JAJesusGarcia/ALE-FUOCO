@@ -95,9 +95,7 @@ export default function TechnicalMediaHud({
         >
           <span className="text-white/25">TC</span>
 
-          <strong className="font-normal">
-            {timecode}
-          </strong>
+          <strong className="font-normal">{timecode}</strong>
         </div>
       </div>
 
@@ -127,17 +125,9 @@ export default function TechnicalMediaHud({
           group-hover:opacity-100
         "
       >
-        <TechnicalLabel
-          label="CH"
-          value={channel}
-          align="right"
-        />
+        <TechnicalLabel label="CH" value={channel} align="right" />
 
-        <TechnicalLabel
-          label="OUTPUT"
-          value="100%"
-          align="right"
-        />
+        <TechnicalLabel label="OUTPUT" value="100%" align="right" />
       </div>
 
       {/* Marcador central */}
@@ -189,9 +179,7 @@ export default function TechnicalMediaHud({
           group-hover:opacity-100
         "
       >
-        <span className="max-w-[60%] truncate">
-          {category}
-        </span>
+        <span className="max-w-[60%] truncate">{category}</span>
 
         <span>AF · {number}</span>
       </div>
@@ -236,11 +224,7 @@ interface TechnicalLabelProps {
   align?: 'left' | 'right'
 }
 
-function TechnicalLabel({
-  label,
-  value,
-  align = 'left',
-}: TechnicalLabelProps) {
+function TechnicalLabel({ label, value, align = 'left' }: TechnicalLabelProps) {
   return (
     <div
       className={`

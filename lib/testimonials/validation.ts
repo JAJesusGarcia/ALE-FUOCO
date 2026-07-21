@@ -12,9 +12,7 @@ function normalizeText(value: unknown) {
     .trim()
 }
 
-export function validateTestimonialInput(
-  body: unknown,
-):
+export function validateTestimonialInput(body: unknown):
   | {
       success: true
       data: TestimonialInput
@@ -23,10 +21,7 @@ export function validateTestimonialInput(
       success: false
       error: string
     } {
-  if (
-    !body ||
-    typeof body !== 'object'
-  ) {
+  if (!body || typeof body !== 'object') {
     return {
       success: false,
       error: 'Datos inválidos.',
@@ -44,47 +39,35 @@ export function validateTestimonialInput(
   if (name.length < 2 || name.length > 80) {
     return {
       success: false,
-      error:
-        'El nombre debe tener entre 2 y 80 caracteres.',
+      error: 'El nombre debe tener entre 2 y 80 caracteres.',
     }
   }
 
   if (event.length < 2 || event.length > 80) {
     return {
       success: false,
-      error:
-        'Indicá el tipo de evento.',
+      error: 'Indicá el tipo de evento.',
     }
   }
 
   if (service.length > 100) {
     return {
       success: false,
-      error:
-        'El servicio no puede superar los 100 caracteres.',
+      error: 'El servicio no puede superar los 100 caracteres.',
     }
   }
 
-  if (
-    comment.length < 20 ||
-    comment.length > 700
-  ) {
+  if (comment.length < 20 || comment.length > 700) {
     return {
       success: false,
-      error:
-        'El comentario debe tener entre 20 y 700 caracteres.',
+      error: 'El comentario debe tener entre 20 y 700 caracteres.',
     }
   }
 
-  if (
-    !Number.isInteger(rating) ||
-    rating < 1 ||
-    rating > 5
-  ) {
+  if (!Number.isInteger(rating) || rating < 1 || rating > 5) {
     return {
       success: false,
-      error:
-        'La calificación debe estar entre 1 y 5.',
+      error: 'La calificación debe estar entre 1 y 5.',
     }
   }
 
@@ -93,8 +76,7 @@ export function validateTestimonialInput(
     data: {
       name,
       event,
-      service:
-        service || 'Producción técnica',
+      service: service || 'Producción técnica',
       comment,
       rating,
     },

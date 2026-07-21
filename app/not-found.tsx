@@ -1,9 +1,5 @@
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  ArrowUpRight,
-  Home,
-} from 'lucide-react'
+import { ArrowLeft, ArrowUpRight, Home } from 'lucide-react'
 
 export default function NotFound() {
   return (
@@ -85,10 +81,7 @@ export default function NotFound() {
         {/* Encabezado técnico */}
         <div className="flex items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <span
-              aria-hidden="true"
-              className="h-px w-10 bg-warm"
-            />
+            <span aria-hidden="true" className="h-px w-10 bg-warm" />
 
             <p
               className="
@@ -154,10 +147,7 @@ export default function NotFound() {
               "
             >
               Fuera de
-
-              <span className="block italic text-foreground/45">
-                programa.
-              </span>
+              <span className="block italic text-foreground/45">programa.</span>
             </h1>
           </div>
 
@@ -206,12 +196,7 @@ export default function NotFound() {
                 "
               >
                 <span className="flex items-center gap-3">
-                  <Home
-                    size={15}
-                    strokeWidth={1.5}
-                    aria-hidden="true"
-                  />
-
+                  <Home size={15} strokeWidth={1.5} aria-hidden="true" />
                   Volver al inicio
                 </span>
 
@@ -252,7 +237,6 @@ export default function NotFound() {
                 "
               >
                 Contacto
-
                 <ArrowUpRight
                   size={15}
                   strokeWidth={1.5}
@@ -304,7 +288,6 @@ export default function NotFound() {
                 md:group-hover:-translate-x-1
               "
             />
-
             Regresar a Ale Fuoco
           </Link>
 

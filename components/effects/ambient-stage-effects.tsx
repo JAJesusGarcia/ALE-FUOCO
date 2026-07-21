@@ -112,9 +112,7 @@ export default function AmbientStageEffects() {
                   highlighted
                     ? 'bg-[rgba(244,161,92,0.16)]'
                     : 'bg-white/[0.07]',
-                  glowing
-                    ? 'shadow-[0_0_6px_rgba(244,161,92,0.12)]'
-                    : '',
+                  glowing ? 'shadow-[0_0_6px_rgba(244,161,92,0.12)]' : '',
                 ].join(' ')}
                 style={{
                   animationDelay: `${item * 110}ms`,
@@ -173,10 +171,7 @@ export default function AmbientStageEffects() {
           {rightSignalBars.map((bar) => {
             const width =
               20 +
-              Math.abs(
-                Math.sin(bar * 0.65) * 45 +
-                  Math.sin(bar * 0.22) * 20,
-              )
+              Math.abs(Math.sin(bar * 0.65) * 45 + Math.sin(bar * 0.22) * 20)
 
             return (
               <span

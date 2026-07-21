@@ -141,11 +141,7 @@ export default function Contact() {
       message,
     )}`
 
-    window.open(
-      whatsappUrl,
-      '_blank',
-      'noopener,noreferrer',
-    )
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
   }
 
   const informationInitial = shouldReduceMotion
@@ -234,10 +230,7 @@ export default function Contact() {
             }}
           >
             <div className="mb-8 flex items-center gap-4">
-              <span
-                aria-hidden="true"
-                className="h-px w-10 bg-warm"
-              />
+              <span aria-hidden="true" className="h-px w-10 bg-warm" />
 
               <p
                 className="
@@ -264,7 +257,6 @@ export default function Contact() {
               "
             >
               Tu evento
-
               <span className="block italic text-foreground/55">
                 empieza acá.
               </span>
@@ -315,11 +307,7 @@ export default function Contact() {
                     <a
                       href={item.href}
                       target={item.external ? '_blank' : undefined}
-                      rel={
-                        item.external
-                          ? 'noopener noreferrer'
-                          : undefined
-                      }
+                      rel={item.external ? 'noopener noreferrer' : undefined}
                       aria-label={`${item.label}: ${item.value}`}
                       className="
                         group flex min-h-20
@@ -351,11 +339,7 @@ export default function Contact() {
                           md:group-hover:text-warm-foreground
                         "
                       >
-                        <Icon
-                          size={16}
-                          strokeWidth={1.5}
-                          aria-hidden="true"
-                        />
+                        <Icon size={16} strokeWidth={1.5} aria-hidden="true" />
                       </span>
 
                       <span className="min-w-0">
@@ -404,9 +388,7 @@ export default function Contact() {
                 aria-hidden="true"
               />
 
-              <span>
-                Rosario, Santa Fe · Disponibilidad para viajar
-              </span>
+              <span>Rosario, Santa Fe · Disponibilidad para viajar</span>
             </div>
           </motion.div>
 
@@ -489,15 +471,9 @@ export default function Contact() {
                 </span>
               </div>
 
-              <form
-                onSubmit={handleSubmit}
-                className="grid gap-7"
-              >
+              <form onSubmit={handleSubmit} className="grid gap-7">
                 <div className="grid gap-7 md:grid-cols-2">
-                  <Field
-                    label="Nombre"
-                    htmlFor="name"
-                  >
+                  <Field label="Nombre" htmlFor="name">
                     <input
                       id="name"
                       name="name"
@@ -511,10 +487,7 @@ export default function Contact() {
                     />
                   </Field>
 
-                  <Field
-                    label="Email"
-                    htmlFor="email"
-                  >
+                  <Field label="Email" htmlFor="email">
                     <input
                       id="email"
                       name="email"
@@ -531,10 +504,7 @@ export default function Contact() {
                 </div>
 
                 <div className="grid gap-7 md:grid-cols-2">
-                  <Field
-                    label="Teléfono"
-                    htmlFor="phone"
-                  >
+                  <Field label="Teléfono" htmlFor="phone">
                     <input
                       id="phone"
                       name="phone"
@@ -548,10 +518,7 @@ export default function Contact() {
                     />
                   </Field>
 
-                  <Field
-                    label="Servicio"
-                    htmlFor="service"
-                  >
+                  <Field label="Servicio" htmlFor="service">
                     <select
                       id="service"
                       name="service"
@@ -579,10 +546,7 @@ export default function Contact() {
                   </Field>
                 </div>
 
-                <Field
-                  label="Proyecto"
-                  htmlFor="message"
-                >
+                <Field label="Proyecto" htmlFor="message">
                   <textarea
                     id="message"
                     name="message"
@@ -643,7 +607,6 @@ export default function Contact() {
                     "
                   >
                     Enviar consulta
-
                     <ArrowUpRight
                       size={16}
                       strokeWidth={1.5}
@@ -671,11 +634,7 @@ interface FieldProps {
   children: ReactNode
 }
 
-function Field({
-  label,
-  htmlFor,
-  children,
-}: FieldProps) {
+function Field({ label, htmlFor, children }: FieldProps) {
   return (
     <div className="group flex flex-col gap-2">
       <label

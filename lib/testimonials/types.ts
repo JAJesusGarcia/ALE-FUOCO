@@ -1,7 +1,4 @@
-export type TestimonialStatus =
-  | 'pending'
-  | 'approved'
-  | 'rejected'
+export type TestimonialStatus = 'pending' | 'approved' | 'rejected'
 
 export interface Testimonial {
   id: string

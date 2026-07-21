@@ -1,8 +1,6 @@
 import { Resend } from 'resend'
 
-import {
-  createModerationSignature,
-} from './moderation-token'
+import { createModerationSignature } from './moderation-token'
 
 import type { Testimonial } from './types'
 
@@ -15,77 +13,33 @@ function escapeHtml(value: string) {
     .replaceAll("'", '&#039;')
 }
 
-export async function sendModerationEmail(
-  testimonial: Testimonial,
-) {
+export async function sendModerationEmail(testimonial: Testimonial) {
   const apiKey = process.env.RESEND_API_KEY
-  const adminEmail =
-    process.env.TESTIMONIAL_ADMIN_EMAIL
-  const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL
-  const fromEmail =
-    process.env.RESEND_FROM_EMAIL
+  const adminEmail = process.env.TESTIMONIAL_ADMIN_EMAIL
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  const fromEmail = process.env.RESEND_FROM_EMAIL
 
-  if (
-    !apiKey ||
-    !adminEmail ||
-    !siteUrl ||
-    !fromEmail
-  ) {
-    throw new Error(
-      'Faltan variables de entorno para Resend.',
-    )
+  if (!apiKey || !adminEmail || !siteUrl || !fromEmail) {
+    throw new Error('Faltan variables de entorno para Resend.')
   }
 
   const resend = new Resend(apiKey)
 
-  const approveSignature =
-    createModerationSignature(
-      testimonial.id,
-      'approve',
-    )
+  const approveSignature = createModerationSignature(testimonial.id, 'approve')
 
-  const rejectSignature =
-    createModerationSignature(
-      testimonial.id,
-      'reject',
-    )
+  const rejectSignature = createModerationSignature(testimonial.id, 'reject')
 
-  const approveUrl = new URL(
-    '/api/testimonials/moderate',
-    siteUrl,
-  )
+  const approveUrl = new URL('/api/testimonials/moderate', siteUrl)
 
-  approveUrl.searchParams.set(
-    'id',
-    testimonial.id,
-  )
-  approveUrl.searchParams.set(
-    'action',
-    'approve',
-  )
-  approveUrl.searchParams.set(
-    'signature',
-    approveSignature,
-  )
+  approveUrl.searchParams.set('id', testimonial.id)
+  approveUrl.searchParams.set('action', 'approve')
+  approveUrl.searchParams.set('signature', approveSignature)
 
-  const rejectUrl = new URL(
-    '/api/testimonials/moderate',
-    siteUrl,
-  )
+  const rejectUrl = new URL('/api/testimonials/moderate', siteUrl)
 
-  rejectUrl.searchParams.set(
-    'id',
-    testimonial.id,
-  )
-  rejectUrl.searchParams.set(
-    'action',
-    'reject',
-  )
-  rejectUrl.searchParams.set(
-    'signature',
-    rejectSignature,
-  )
+  rejectUrl.searchParams.set('id', testimonial.id)
+  rejectUrl.searchParams.set('action', 'reject')
+  rejectUrl.searchParams.set('signature', rejectSignature)
 
   const { error } = await resend.emails.send({
     from: fromEmail,

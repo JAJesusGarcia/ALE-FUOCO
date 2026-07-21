@@ -12,8 +12,7 @@
 }
 
 .group:hover .gallery-animate-light-sweep {
-  animation: gallery-light-sweep 1.35s
-    cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: gallery-light-sweep 1.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .technical-hud-animate-live {
@@ -32,8 +31,7 @@
 }
 
 .group:hover .technical-hud-animate-scan {
-  animation: technical-hud-scan 2.8s
-    cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: technical-hud-scan 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 @keyframes gallery-light-sweep {

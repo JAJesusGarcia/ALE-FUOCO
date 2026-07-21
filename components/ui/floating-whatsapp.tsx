@@ -56,11 +56,7 @@ export default function FloatingWhatsApp() {
         {/* Glow */}
         <span className="absolute inset-2 rounded-full bg-warm/10 blur-md transition-opacity duration-300 group-hover:opacity-0" />
 
-        <MessageCircle
-          size={25}
-          strokeWidth={1.6}
-          className="relative z-10"
-        />
+        <MessageCircle size={25} strokeWidth={1.6} className="relative z-10" />
 
         {/* Indicador online */}
         <span className="absolute right-0 top-0 h-3.5 w-3.5 rounded-full border-2 border-background bg-[#25D366] shadow-[0_0_10px_rgba(37,211,102,0.6)]" />

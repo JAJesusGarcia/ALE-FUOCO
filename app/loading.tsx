@@ -266,9 +266,7 @@ export default function Loading() {
           />
         </div>
 
-        <span className="sr-only">
-          Cargando el sitio de Ale Fuoco
-        </span>
+        <span className="sr-only">Cargando el sitio de Ale Fuoco</span>
       </div>
 
       {/* Información técnica */}
@@ -289,9 +287,7 @@ export default function Loading() {
       >
         <span>Lighting design</span>
 
-        <span className="hidden sm:block">
-          Sound · Technical production
-        </span>
+        <span className="hidden sm:block">Sound · Technical production</span>
 
         <span>Loading</span>
       </div>

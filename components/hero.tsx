@@ -2,14 +2,8 @@
 
 import { useCallback } from 'react'
 import Image from 'next/image'
-import {
-  motion,
-  useReducedMotion,
-} from 'framer-motion'
-import {
-  ArrowDown,
-  ArrowUpRight,
-} from 'lucide-react'
+import { motion, useReducedMotion } from 'framer-motion'
+import { ArrowDown, ArrowUpRight } from 'lucide-react'
 
 import HeroCinematicRig from '@/components/effects/hero-cinematic-rig'
 
@@ -77,10 +71,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Overlays cinematográficos */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 z-[1] bg-black/35"
-      />
+      <div aria-hidden="true" className="absolute inset-0 z-[1] bg-black/35" />
 
       <div
         aria-hidden="true"
@@ -177,24 +168,21 @@ export default function Hero() {
               ease: motionEase,
             }}
             className="
-              mb-7 flex
-              items-center gap-4
-            "
+    mb-7 hidden
+    items-center gap-4
+    md:flex
+  "
           >
-            <span
-              aria-hidden="true"
-              className="h-px w-10 shrink-0 bg-warm"
-            />
+            <span aria-hidden="true" className="h-px w-10 shrink-0 bg-warm" />
 
             <p
               className="
-                font-body
-                text-[0.62rem]
-                font-medium uppercase
-                tracking-[0.3em]
-                text-white/70
-                md:text-[0.68rem]
-              "
+      font-body
+      text-[0.68rem]
+      font-medium uppercase
+      tracking-[0.3em]
+      text-white/70
+    "
             >
               Iluminación · sonido · operación técnica · DJ
             </p>
@@ -314,7 +302,6 @@ export default function Hero() {
                 "
               >
                 Ver trabajos
-
                 <ArrowUpRight
                   size={16}
                   strokeWidth={1.5}
@@ -356,7 +343,6 @@ export default function Hero() {
                 "
               >
                 Contactar
-
                 <ArrowUpRight
                   size={16}
                   strokeWidth={1.5}
@@ -470,7 +456,6 @@ export default function Hero() {
             "
           >
             Descubrir
-
             <span
               className="
                 flex size-9
@@ -482,11 +467,7 @@ export default function Hero() {
                 md:group-hover:text-warm
               "
             >
-              <ArrowDown
-                size={14}
-                strokeWidth={1.5}
-                aria-hidden="true"
-              />
+              <ArrowDown size={14} strokeWidth={1.5} aria-hidden="true" />
             </span>
           </button>
         </motion.div>
@@ -530,11 +511,7 @@ export default function Hero() {
           md:hidden
         "
       >
-        <ArrowDown
-          size={16}
-          strokeWidth={1.5}
-          aria-hidden="true"
-        />
+        <ArrowDown size={16} strokeWidth={1.5} aria-hidden="true" />
       </motion.button>
     </section>
   )

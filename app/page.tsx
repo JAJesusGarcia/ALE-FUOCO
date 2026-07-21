@@ -10,33 +10,19 @@ export default function HomePage() {
     <main className="relative overflow-x-clip">
       <Hero />
 
-      <SectionTransition
-        label="Selected works"
-        number="01"
-      />
+      <SectionTransition label="Selected works" number="01" />
 
       <Gallery />
 
-      <SectionTransition
-        label="Profile"
-        number="02"
-        direction="left"
-      />
+      <SectionTransition label="Profile" number="02" direction="left" />
 
       <About />
 
-      <SectionTransition
-        label="Testimonials"
-        number="03"
-      />
+      <SectionTransition label="Testimonials" number="03" />
 
       <Testimonials />
 
-      <SectionTransition
-        label="Contact channel"
-        number="04"
-        direction="left"
-      />
+      <SectionTransition label="Contact channel" number="04" direction="left" />
 
       <Contact />
     </main>

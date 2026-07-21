@@ -58,17 +58,14 @@ export default function HeroCinematicRig() {
       }
 
       const elapsedMilliseconds = timestamp - initialTimestamp
-      const nextFrame = Math.floor(
-        elapsedMilliseconds / (1000 / FPS),
-      )
+      const nextFrame = Math.floor(elapsedMilliseconds / (1000 / FPS))
 
       if (nextFrame !== previousFrame) {
         previousFrame = nextFrame
         setFrames(nextFrame)
       }
 
-      animationFrameId =
-        window.requestAnimationFrame(updateTimecode)
+      animationFrameId = window.requestAnimationFrame(updateTimecode)
     }
 
     const startTimecode = () => {
@@ -79,8 +76,7 @@ export default function HeroCinematicRig() {
         !reducedMotionQuery.matches &&
         document.visibilityState === 'visible'
       ) {
-        animationFrameId =
-          window.requestAnimationFrame(updateTimecode)
+        animationFrameId = window.requestAnimationFrame(updateTimecode)
       }
     }
 
@@ -94,10 +90,7 @@ export default function HeroCinematicRig() {
 
     desktopQuery.addEventListener('change', startTimecode)
     reducedMotionQuery.addEventListener('change', startTimecode)
-    document.addEventListener(
-      'visibilitychange',
-      handleVisibilityChange,
-    )
+    document.addEventListener('visibilitychange', handleVisibilityChange)
 
     startTimecode()
 
@@ -105,14 +98,8 @@ export default function HeroCinematicRig() {
       stopTimecode()
 
       desktopQuery.removeEventListener('change', startTimecode)
-      reducedMotionQuery.removeEventListener(
-        'change',
-        startTimecode,
-      )
-      document.removeEventListener(
-        'visibilitychange',
-        handleVisibilityChange,
-      )
+      reducedMotionQuery.removeEventListener('change', startTimecode)
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
     }
   }, [])
 

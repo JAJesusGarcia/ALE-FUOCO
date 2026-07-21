@@ -1,12 +1,8 @@
 import { NextResponse } from 'next/server'
 
-import {
-  updateTestimonialStatus,
-} from '@/lib/testimonials/store'
+import { updateTestimonialStatus } from '@/lib/testimonials/store'
 
-import {
-  verifyModerationSignature,
-} from '@/lib/testimonials/moderation-token'
+import { verifyModerationSignature } from '@/lib/testimonials/moderation-token'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -51,12 +47,10 @@ function moderationResponse(
             height:12px;
             margin:0 auto 24px;
             border-radius:50%;
-            background:${successful
-              ? '#f4a15c'
-              : '#8f3d34'};
-            box-shadow:0 0 18px ${successful
-              ? 'rgba(244,161,92,.65)'
-              : 'rgba(143,61,52,.65)'};
+            background:${successful ? '#f4a15c' : '#8f3d34'};
+            box-shadow:0 0 18px ${
+              successful ? 'rgba(244,161,92,.65)' : 'rgba(143,61,52,.65)'
+            };
           "></div>
 
           <p style="
@@ -107,31 +101,21 @@ function moderationResponse(
     {
       status: successful ? 200 : 400,
       headers: {
-        'Content-Type':
-          'text/html; charset=utf-8',
+        'Content-Type': 'text/html; charset=utf-8',
         'Cache-Control': 'no-store',
       },
     },
   )
 }
 
-export async function GET(
-  request: Request,
-) {
+export async function GET(request: Request) {
   const url = new URL(request.url)
 
   const id = url.searchParams.get('id')
-  const action =
-    url.searchParams.get('action') as Action | null
-  const signature =
-    url.searchParams.get('signature')
+  const action = url.searchParams.get('action') as Action | null
+  const signature = url.searchParams.get('signature')
 
-  if (
-    !id ||
-    !signature ||
-    (action !== 'approve' &&
-      action !== 'reject')
-  ) {
+  if (!id || !signature || (action !== 'approve' && action !== 'reject')) {
     return moderationResponse(
       'Enlace inválido',
       'El enlace de moderación está incompleto.',
@@ -139,12 +123,7 @@ export async function GET(
     )
   }
 
-  const isValid =
-    verifyModerationSignature(
-      id,
-      action,
-      signature,
-    )
+  const isValid = verifyModerationSignature(id, action, signature)
 
   if (!isValid) {
     return moderationResponse(
@@ -154,13 +133,10 @@ export async function GET(
     )
   }
 
-  const testimonial =
-    await updateTestimonialStatus(
-      id,
-      action === 'approve'
-        ? 'approved'
-        : 'rejected',
-    )
+  const testimonial = await updateTestimonialStatus(
+    id,
+    action === 'approve' ? 'approved' : 'rejected',
+  )
 
   if (!testimonial) {
     return moderationResponse(

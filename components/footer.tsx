@@ -1,14 +1,6 @@
-import {
-  ArrowUp,
-  Mail,
-  MapPin,
-  Phone,
-} from 'lucide-react'
+import { ArrowUp, Mail, MapPin, Phone } from 'lucide-react'
 
-import {
-  FaFacebookF,
-  FaInstagram,
-} from 'react-icons/fa6'
+import { FaFacebookF, FaInstagram } from 'react-icons/fa6'
 
 const navLinks = [
   { label: 'Inicio', href: '#inicio' },
@@ -117,7 +109,6 @@ export default function Footer() {
               "
             >
               Hagamos algo
-
               <span className="block italic text-foreground/60">
                 inolvidable.
               </span>
@@ -150,7 +141,6 @@ export default function Footer() {
               "
             >
               Empezar un proyecto
-
               <span
                 aria-hidden="true"
                 className="
@@ -310,9 +300,7 @@ export default function Footer() {
                         className="shrink-0 text-warm"
                       />
 
-                      <span className="break-all">
-                        {item.label}
-                      </span>
+                      <span className="break-all">{item.label}</span>
                     </a>
                   </li>
                 )
@@ -419,7 +407,6 @@ export default function Footer() {
             "
           >
             Volver arriba
-
             <span
               className="
                 flex size-8
@@ -432,11 +419,7 @@ export default function Footer() {
                 md:group-hover:text-warm
               "
             >
-              <ArrowUp
-                size={13}
-                strokeWidth={1.5}
-                aria-hidden="true"
-              />
+              <ArrowUp size={13} strokeWidth={1.5} aria-hidden="true" />
             </span>
           </a>
         </div>

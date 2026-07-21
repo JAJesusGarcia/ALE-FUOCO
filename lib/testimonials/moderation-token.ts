@@ -6,9 +6,7 @@ function getSecret() {
   const secret = process.env.TESTIMONIAL_MODERATION_SECRET
 
   if (!secret) {
-    throw new Error(
-      'Falta TESTIMONIAL_MODERATION_SECRET',
-    )
+    throw new Error('Falta TESTIMONIAL_MODERATION_SECRET')
   }
 
   return secret
@@ -29,10 +27,7 @@ export function verifyModerationSignature(
   action: ModerationAction,
   receivedSignature: string,
 ) {
-  const expectedSignature = createModerationSignature(
-    testimonialId,
-    action,
-  )
+  const expectedSignature = createModerationSignature(testimonialId, action)
 
   const expectedBuffer = Buffer.from(expectedSignature)
   const receivedBuffer = Buffer.from(receivedSignature)
@@ -41,8 +36,5 @@ export function verifyModerationSignature(
     return false
   }
 
-  return crypto.timingSafeEqual(
-    expectedBuffer,
-    receivedBuffer,
-  )
+  return crypto.timingSafeEqual(expectedBuffer, receivedBuffer)
 }

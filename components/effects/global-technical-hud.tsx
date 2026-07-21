@@ -57,17 +57,14 @@ export default function GlobalTechnicalHud() {
       }
 
       const elapsedMilliseconds = timestamp - initialTimestamp
-      const nextFrame = Math.floor(
-        elapsedMilliseconds / (1000 / FPS),
-      )
+      const nextFrame = Math.floor(elapsedMilliseconds / (1000 / FPS))
 
       if (nextFrame !== previousFrame) {
         previousFrame = nextFrame
         setFrames(nextFrame)
       }
 
-      timecodeAnimationFrame =
-        window.requestAnimationFrame(updateTimecode)
+      timecodeAnimationFrame = window.requestAnimationFrame(updateTimecode)
     }
 
     const startTimecode = () => {
@@ -78,8 +75,7 @@ export default function GlobalTechnicalHud() {
         !reducedMotionQuery.matches &&
         document.visibilityState === 'visible'
       ) {
-        timecodeAnimationFrame =
-          window.requestAnimationFrame(updateTimecode)
+        timecodeAnimationFrame = window.requestAnimationFrame(updateTimecode)
       }
     }
 
@@ -91,25 +87,17 @@ export default function GlobalTechnicalHud() {
         return
       }
 
-      const documentHeight =
-        document.documentElement.scrollHeight
+      const documentHeight = document.documentElement.scrollHeight
       const viewportHeight = window.innerHeight
-      const scrollableHeight =
-        documentHeight - viewportHeight
+      const scrollableHeight = documentHeight - viewportHeight
 
       const nextProgress =
         scrollableHeight > 0
-          ? Math.min(
-              Math.max(window.scrollY / scrollableHeight, 0),
-              1,
-            )
+          ? Math.min(Math.max(window.scrollY / scrollableHeight, 0), 1)
           : 0
 
       setScrollProgress((currentProgress) => {
-        if (
-          Math.abs(currentProgress - nextProgress) <
-          0.001
-        ) {
+        if (Math.abs(currentProgress - nextProgress) < 0.001) {
           return currentProgress
         }
 
@@ -120,10 +108,9 @@ export default function GlobalTechnicalHud() {
     const requestScrollUpdate = () => {
       if (scrollAnimationFrame !== null) return
 
-      scrollAnimationFrame =
-        window.requestAnimationFrame(
-          calculateScrollProgress,
-        )
+      scrollAnimationFrame = window.requestAnimationFrame(
+        calculateScrollProgress,
+      )
     }
 
     const handleVisibilityChange = () => {
@@ -141,15 +128,9 @@ export default function GlobalTechnicalHud() {
     }
 
     desktopQuery.addEventListener('change', handleMediaChange)
-    reducedMotionQuery.addEventListener(
-      'change',
-      handleMediaChange,
-    )
+    reducedMotionQuery.addEventListener('change', handleMediaChange)
 
-    document.addEventListener(
-      'visibilitychange',
-      handleVisibilityChange,
-    )
+    document.addEventListener('visibilitychange', handleVisibilityChange)
 
     window.addEventListener('scroll', requestScrollUpdate, {
       passive: true,
@@ -169,36 +150,19 @@ export default function GlobalTechnicalHud() {
         window.cancelAnimationFrame(scrollAnimationFrame)
       }
 
-      desktopQuery.removeEventListener(
-        'change',
-        handleMediaChange,
-      )
+      desktopQuery.removeEventListener('change', handleMediaChange)
 
-      reducedMotionQuery.removeEventListener(
-        'change',
-        handleMediaChange,
-      )
+      reducedMotionQuery.removeEventListener('change', handleMediaChange)
 
-      document.removeEventListener(
-        'visibilitychange',
-        handleVisibilityChange,
-      )
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
 
-      window.removeEventListener(
-        'scroll',
-        requestScrollUpdate,
-      )
+      window.removeEventListener('scroll', requestScrollUpdate)
 
-      window.removeEventListener(
-        'resize',
-        requestScrollUpdate,
-      )
+      window.removeEventListener('resize', requestScrollUpdate)
     }
   }, [])
 
-  const progressPercentage = Math.round(
-    scrollProgress * 100,
-  )
+  const progressPercentage = Math.round(scrollProgress * 100)
     .toString()
     .padStart(3, '0')
 
@@ -253,9 +217,7 @@ export default function GlobalTechnicalHud() {
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="text-white/15">
-            TC
-          </span>
+          <span className="text-white/15">TC</span>
 
           <strong
             className="

@@ -1,13 +1,7 @@
-import type {
-  Metadata,
-  Viewport,
-} from 'next'
+import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 
-import {
-  Cormorant_Garamond,
-  Inter,
-} from 'next/font/google'
+import { Cormorant_Garamond, Inter } from 'next/font/google'
 
 import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
@@ -17,37 +11,22 @@ import './globals.css'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  weight: [
-    '300',
-    '400',
-    '500',
-    '600',
-    '700',
-  ],
-  style: [
-    'normal',
-    'italic',
-  ],
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
   variable: '--font-cormorant',
   display: 'swap',
 })
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: [
-    '300',
-    '400',
-    '500',
-    '600',
-  ],
+  weight: ['300', '400', '500', '600'],
   variable: '--font-inter',
   display: 'swap',
 })
 
 export const metadata: Metadata = {
   title: {
-    default:
-      'Ale Fuoco | Iluminación, Sonido y Producción Técnica',
+    default: 'Ale Fuoco | Iluminación, Sonido y Producción Técnica',
     template: '%s | Ale Fuoco',
   },
   description:
@@ -80,9 +59,7 @@ interface RootLayoutProps {
   children: ReactNode
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<RootLayoutProps>) {
+export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html
       lang="es"
@@ -104,9 +81,7 @@ export default function RootLayout({
         <div className="relative min-h-screen">
           <Navbar />
 
-          <div className="relative z-10">
-            {children}
-          </div>
+          <div className="relative z-10">{children}</div>
 
           <Footer />
 
