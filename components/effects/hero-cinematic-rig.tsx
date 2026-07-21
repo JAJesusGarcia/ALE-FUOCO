@@ -240,10 +240,10 @@ export default function HeroCinematicRig() {
         </div>
 
         {/* Esquinas móviles */}
-        <HudCorner className={`top-[9.5rem] left-6 border-t border-l`} />
+        {/* <HudCorner className={`top-[9.5rem] left-6 border-t border-l`} />
         <HudCorner className={`top-[9.5rem] right-6 border-t border-r`} />
         <HudCorner className={`bottom-[5.5rem] left-6 border-b border-l`} />
-        <HudCorner className={`right-6 bottom-[5.5rem] border-r border-b`} />
+        <HudCorner className={`right-6 bottom-[5.5rem] border-r border-b`} /> */}
       </div>
 
       {/* ========================================================= */}
@@ -422,7 +422,7 @@ export default function HeroCinematicRig() {
         {/* Medidor de audio */}
         <div
           className={`absolute right-[clamp(1.5rem,4vw,4.5rem)]
-            bottom-[clamp(5.5rem,9vw,8rem)]
+            bottom-[clamp(12.5rem,9vw,8rem)]
             hidden w-[10rem]
             lg:block`}
         >
@@ -455,7 +455,7 @@ export default function HeroCinematicRig() {
         </div>
 
         {/* Esquinas */}
-        <HudCorner
+        {/* <HudCorner
           className={`top-[5rem] left-[1.5rem] border-t border-l lg:left-[3rem]`}
         />
         <HudCorner
@@ -466,12 +466,12 @@ export default function HeroCinematicRig() {
         />
         <HudCorner
           className={`right-[1.5rem] bottom-[4.5rem] border-r border-b lg:right-[3rem]`}
-        />
+        /> */}
 
         {/* Línea inferior */}
         <div
           className={`absolute right-[clamp(1.5rem,4vw,4.5rem)]
-            bottom-[2.2rem]
+            bottom-[1rem]
             left-[clamp(1.5rem,4vw,4.5rem)]
             hidden
             items-center justify-between
