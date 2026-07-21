@@ -321,7 +321,7 @@ export default function HeroCinematicRig() {
         </div>
 
         {/* Láseres de escritorio */}
-        <div
+        {/* <div
           className={`absolute top-[16%] left-1/2
             hidden h-[38rem] w-[78rem]
             -translate-x-1/2
@@ -358,7 +358,7 @@ export default function HeroCinematicRig() {
               />
             )
           })}
-        </div>
+        </div> */}
 
         {/* REC */}
         <div
