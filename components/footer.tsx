@@ -6,8 +6,8 @@ import {
 } from 'lucide-react'
 
 import {
-  FaInstagram,
   FaFacebookF,
+  FaInstagram,
 } from 'react-icons/fa6'
 
 const navLinks = [
@@ -18,21 +18,106 @@ const navLinks = [
   { label: 'Contacto', href: '#contacto' },
 ]
 
-export default function Footer() {
-  return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-background">
-      <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-warm/5 blur-[130px]" />
+const contactLinks = [
+  {
+    label: '+54 341 667 9247',
+    href: 'tel:+543416679247',
+    icon: Phone,
+    external: false,
+  },
+  {
+    label: 'alejandrofuoco@hotmail.com',
+    href: 'mailto:alejandrofuoco@hotmail.com',
+    icon: Mail,
+    external: false,
+  },
+]
 
-      <div className="site-container relative py-16 md:py-24">
+const socialLinks = [
+  {
+    label: '@ale_fuoco',
+    href: 'https://www.instagram.com/ale_fuoco/',
+    icon: FaInstagram,
+  },
+  {
+    label: 'Ale Fuoco Dj',
+    href: 'https://www.facebook.com/AleFuocoDj',
+    icon: FaFacebookF,
+  },
+]
+
+export default function Footer() {
+  const currentYear = new Date().getFullYear()
+
+  return (
+    <footer
+      className="
+        relative overflow-hidden
+        border-t border-white/10
+        bg-background
+      "
+    >
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none
+          absolute right-0 top-0
+          hidden size-96
+          rounded-full
+          bg-warm/5
+          blur-[130px]
+          md:block
+        "
+      />
+
+      <div
+        className="
+          relative mx-auto
+          w-full max-w-[90rem]
+          px-6 py-16
+          md:px-10 md:py-24
+          lg:px-14
+          xl:px-16
+        "
+      >
         {/* Cabecera */}
-        <div className="grid gap-12 border-b border-white/10 pb-14 md:grid-cols-[1.4fr_0.6fr] md:items-end md:pb-20">
+        <div
+          className="
+            grid gap-12
+            border-b border-white/10
+            pb-14
+            md:grid-cols-[1.4fr_0.6fr]
+            md:items-end
+            md:pb-20
+          "
+        >
           <div>
-            <p className="section-eyebrow mb-6">
+            <p
+              className="
+                mb-6
+                font-body
+                text-[0.58rem]
+                font-medium uppercase
+                tracking-[0.28em]
+                text-warm
+              "
+            >
               Ale Fuoco Eventos
             </p>
 
-            <h2 className="max-w-4xl font-display text-[clamp(3.5rem,8vw,8rem)] font-light leading-[0.82] tracking-[-0.045em] text-foreground">
+            <h2
+              className="
+                max-w-4xl
+                font-display
+                text-[clamp(3.5rem,8vw,8rem)]
+                font-light
+                leading-[0.82]
+                tracking-[-0.045em]
+                text-foreground
+              "
+            >
               Hagamos algo
+
               <span className="block italic text-foreground/60">
                 inolvidable.
               </span>
@@ -42,11 +127,38 @@ export default function Footer() {
           <div className="md:justify-self-end">
             <a
               href="#contacto"
-              className="focus-ring group inline-flex min-w-56 items-center justify-between gap-8 border border-white/15 px-6 py-4 font-body text-[0.62rem] font-medium uppercase tracking-[0.2em] text-foreground transition-all duration-300 hover:border-warm hover:bg-warm hover:text-warm-foreground"
+              className="
+                group inline-flex min-w-56
+                items-center justify-between
+                gap-8
+                border border-white/15
+                px-6 py-4
+                font-body
+                text-[0.62rem]
+                font-medium uppercase
+                tracking-[0.2em]
+                text-foreground
+                transition-colors duration-300
+                hover:border-warm
+                hover:bg-warm
+                hover:text-warm-foreground
+                focus-visible:outline-none
+                focus-visible:ring-2
+                focus-visible:ring-warm
+                focus-visible:ring-offset-2
+                focus-visible:ring-offset-background
+              "
             >
               Empezar un proyecto
 
-              <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">
+              <span
+                aria-hidden="true"
+                className="
+                  text-lg
+                  transition-transform duration-300
+                  md:group-hover:translate-x-1
+                "
+              >
                 ↗
               </span>
             </a>
@@ -54,23 +166,61 @@ export default function Footer() {
         </div>
 
         {/* Información */}
-        <div className="grid gap-12 py-14 md:grid-cols-2 lg:grid-cols-[1.25fr_0.65fr_1fr] lg:gap-20">
+        <div
+          className="
+            grid gap-12 py-14
+            md:grid-cols-2
+            lg:grid-cols-[1.25fr_0.65fr_1fr]
+            lg:gap-20
+          "
+        >
           <div>
             <a
               href="#inicio"
-              className="inline-flex flex-col"
+              className="
+                inline-flex flex-col
+                focus-visible:outline-none
+                focus-visible:ring-2
+                focus-visible:ring-warm
+                focus-visible:ring-offset-4
+                focus-visible:ring-offset-background
+              "
               aria-label="Volver al inicio"
             >
-              <span className="font-display text-4xl font-light tracking-[-0.03em] text-foreground">
+              <span
+                className="
+                  font-display
+                  text-4xl font-light
+                  tracking-[-0.03em]
+                  text-foreground
+                "
+              >
                 Ale Fuoco
               </span>
 
-              <span className="mt-2 font-body text-[0.58rem] font-medium uppercase tracking-[0.28em] text-warm">
+              <span
+                className="
+                  mt-2
+                  font-body
+                  text-[0.58rem]
+                  font-medium uppercase
+                  tracking-[0.28em]
+                  text-warm
+                "
+              >
                 Producción de eventos
               </span>
             </a>
 
-            <p className="mt-7 max-w-sm font-body text-sm font-light leading-7 text-muted-foreground">
+            <p
+              className="
+                mt-7 max-w-sm
+                font-body
+                text-sm font-light
+                leading-7
+                text-muted-foreground
+              "
+            >
               Producción de eventos sociales, corporativos y privados,
               desarrollados con sensibilidad, dedicación y atención en cada
               detalle.
@@ -78,7 +228,16 @@ export default function Footer() {
           </div>
 
           <nav aria-label="Navegación del pie de página">
-            <p className="mb-6 font-body text-[0.6rem] font-medium uppercase tracking-[0.25em] text-muted-foreground">
+            <p
+              className="
+                mb-6
+                font-body
+                text-[0.6rem]
+                font-medium uppercase
+                tracking-[0.25em]
+                text-muted-foreground
+              "
+            >
               Explorar
             </p>
 
@@ -87,10 +246,22 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="group inline-flex items-center gap-3 font-body text-sm text-foreground/65 transition-colors duration-300 hover:text-foreground"
+                    className="
+                      group inline-flex
+                      items-center gap-3
+                      font-body text-sm
+                      text-foreground/65
+                      transition-colors duration-300
+                      hover:text-foreground
+                      focus-visible:outline-none
+                      focus-visible:text-foreground
+                    "
                   >
-                    <span className="text-[0.55rem] text-muted-foreground">
-                      0{index + 1}
+                    <span
+                      aria-hidden="true"
+                      className="text-[0.55rem] text-muted-foreground"
+                    >
+                      {String(index + 1).padStart(2, '0')}
                     </span>
 
                     <span>{link.label}</span>
@@ -101,91 +272,128 @@ export default function Footer() {
           </nav>
 
           <div>
-  <p className="mb-6 font-body text-[0.6rem] font-medium uppercase tracking-[0.25em] text-muted-foreground">
-    Contacto
-  </p>
+            <p
+              className="
+                mb-6
+                font-body
+                text-[0.6rem]
+                font-medium uppercase
+                tracking-[0.25em]
+                text-muted-foreground
+              "
+            >
+              Contacto
+            </p>
 
-  <ul className="space-y-4">
-    <li>
-      <a
-        href="tel:+543416679247"
-        className="group flex items-center gap-3 font-body text-sm text-foreground/65 transition-colors duration-300 hover:text-foreground"
-      >
-        <Phone
-          size={15}
-          strokeWidth={1.4}
-          className="text-warm"
-        />
+            <ul className="space-y-4">
+              {contactLinks.map((item) => {
+                const Icon = item.icon
 
-        <span>+54 341 667 9247</span>
-      </a>
-    </li>
+                return (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      className="
+                        group flex items-center gap-3
+                        font-body text-sm
+                        text-foreground/65
+                        transition-colors duration-300
+                        hover:text-foreground
+                        focus-visible:outline-none
+                        focus-visible:text-foreground
+                      "
+                    >
+                      <Icon
+                        size={15}
+                        strokeWidth={1.4}
+                        aria-hidden="true"
+                        className="shrink-0 text-warm"
+                      />
 
-    <li>
-      <a
-        href="mailto:alejandrofuoco@hotmail.com"
-        className="group flex items-center gap-3 font-body text-sm text-foreground/65 transition-colors duration-300 hover:text-foreground"
-      >
-        <Mail
-          size={15}
-          strokeWidth={1.4}
-          className="text-warm"
-        />
+                      <span className="break-all">
+                        {item.label}
+                      </span>
+                    </a>
+                  </li>
+                )
+              })}
 
-        <span>alejandrofuoco@hotmail.com</span>
-      </a>
-    </li>
+              {socialLinks.map((item) => {
+                const Icon = item.icon
 
-    <li>
-      <a
-        href="https://instagram.com/ale_fuoco"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group flex items-center gap-3 font-body text-sm text-foreground/65 transition-colors duration-300 hover:text-foreground"
-      >
-        <FaInstagram
-          size={15}
-          className="text-warm transition-transform duration-300 group-hover:scale-110"
-        />
+                return (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+                        group flex items-center gap-3
+                        font-body text-sm
+                        text-foreground/65
+                        transition-colors duration-300
+                        hover:text-foreground
+                        focus-visible:outline-none
+                        focus-visible:text-foreground
+                      "
+                    >
+                      <Icon
+                        size={15}
+                        aria-hidden="true"
+                        className="
+                          shrink-0 text-warm
+                          transition-transform duration-300
+                          md:group-hover:scale-110
+                        "
+                      />
 
-        <span>@ale_fuoco</span>
-      </a>
-    </li>
+                      <span>{item.label}</span>
+                    </a>
+                  </li>
+                )
+              })}
 
-    <li>
-      <a
-        href="https://facebook.com/AleFuocoDj"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group flex items-center gap-3 font-body text-sm text-foreground/65 transition-colors duration-300 hover:text-foreground"
-      >
-        <FaFacebookF
-          size={14}
-          className="text-warm transition-transform duration-300 group-hover:scale-110"
-        />
+              <li
+                className="
+                  flex items-center gap-3
+                  font-body text-sm
+                  text-foreground/65
+                "
+              >
+                <MapPin
+                  size={15}
+                  strokeWidth={1.4}
+                  aria-hidden="true"
+                  className="shrink-0 text-warm"
+                />
 
-        <span>Ale Fuoco Dj</span>
-      </a>
-    </li>
-
-    <li className="flex items-center gap-3 font-body text-sm text-foreground/65">
-      <MapPin
-        size={15}
-        strokeWidth={1.4}
-        className="text-warm"
-      />
-
-      <span>Rosario, Santa Fe, Argentina</span>
-    </li>
-  </ul>
-</div>
+                <span>Rosario, Santa Fe, Argentina</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Barra inferior */}
-        <div className="flex flex-col gap-5 border-t border-white/10 pt-7 md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6">
+        <div
+          className="
+            flex flex-col gap-5
+            border-t border-white/10
+            pt-7
+            md:flex-row
+            md:items-center
+            md:justify-between
+          "
+        >
+          <div
+            className="
+              flex flex-col gap-2
+              sm:flex-row
+              sm:items-center
+              sm:gap-6
+            "
+          >
             <p className="font-body text-[0.65rem] text-muted-foreground">
-              © {new Date().getFullYear()} Ale Fuoco.
+              © {currentYear} Ale Fuoco.
             </p>
 
             <p className="font-body text-[0.65rem] text-muted-foreground">
@@ -195,13 +403,40 @@ export default function Footer() {
 
           <a
             href="#inicio"
-            className="group inline-flex w-fit items-center gap-3 font-body text-[0.6rem] font-medium uppercase tracking-[0.2em] text-muted-foreground transition-colors duration-300 hover:text-foreground"
             aria-label="Volver arriba"
+            className="
+              group inline-flex w-fit
+              items-center gap-3
+              font-body
+              text-[0.6rem]
+              font-medium uppercase
+              tracking-[0.2em]
+              text-muted-foreground
+              transition-colors duration-300
+              hover:text-foreground
+              focus-visible:outline-none
+              focus-visible:text-foreground
+            "
           >
             Volver arriba
 
-            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-warm group-hover:text-warm">
-              <ArrowUp size={13} strokeWidth={1.5} />
+            <span
+              className="
+                flex size-8
+                items-center justify-center
+                rounded-full
+                border border-white/10
+                transition-all duration-300
+                md:group-hover:-translate-y-1
+                md:group-hover:border-warm
+                md:group-hover:text-warm
+              "
+            >
+              <ArrowUp
+                size={13}
+                strokeWidth={1.5}
+                aria-hidden="true"
+              />
             </span>
           </a>
         </div>
@@ -209,123 +444,3 @@ export default function Footer() {
     </footer>
   )
 }
-
-
-// import { ExternalLink, Mail, Phone } from 'lucide-react'
-
-// const navLinks = [
-//   { label: 'Inicio', href: '#inicio' },
-//   { label: 'Galería', href: '#galeria' },
-//   { label: 'Sobre Ale', href: '#sobre' },
-//   { label: 'Comentarios', href: '#comentarios' },
-//   { label: 'Contacto', href: '#contacto' },
-// ]
-
-// export default function Footer() {
-//   return (
-//     <footer className="bg-background border-t border-border py-16 px-6 md:px-12">
-//       <div className="max-w-7xl mx-auto">
-//         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-//           {/* Brand */}
-//           <div>
-//             <p
-//               className="text-2xl tracking-widest uppercase text-foreground mb-3"
-//               style={{ fontFamily: 'var(--font-display)', letterSpacing: '0.18em' }}
-//             >
-//               Ale Fuoco
-//             </p>
-//             <p
-//               className="text-sm text-muted-foreground leading-relaxed max-w-xs"
-//               style={{ fontFamily: 'var(--font-body)' }}
-//             >
-//               Producción de eventos sociales, corporativos y privados. Rosario, Santa Fe.  Argentina.
-//             </p>
-//           </div>
-
-//           {/* Nav */}
-//           <nav aria-label="Navegación del pie de página">
-//             <p
-//               className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4"
-//               style={{ fontFamily: 'var(--font-body)' }}
-//             >
-//               Navegación
-//             </p>
-//             <ul className="space-y-2">
-//               {navLinks.map((link) => (
-//                 <li key={link.href}>
-//                   <a
-//                     href={link.href}
-//                     className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200"
-//                     style={{ fontFamily: 'var(--font-body)' }}
-//                   >
-//                     {link.label}
-//                   </a>
-//                 </li>
-//               ))}
-//             </ul>
-//           </nav>
-
-//           {/* Contact */}
-//           <div>
-//             <p
-//               className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4"
-//               style={{ fontFamily: 'var(--font-body)' }}
-//             >
-//               Contacto
-//             </p>
-//             <ul className="space-y-3">
-//               <li>
-//                 <a
-//                   href="tel:+543510000000"
-//                   className="flex items-center gap-2 text-sm text-foreground/70 hover:text-foreground transition-colors duration-200"
-//                   style={{ fontFamily: 'var(--font-body)' }}
-//                 >
-//                   <Phone size={14} strokeWidth={1.5} />
-//                   +54 341 667 9247
-//                 </a>
-//               </li>
-//               <li>
-//                 <a
-//                   href="mailto:alejandrofuoco@hotmail.com"
-//                   className="flex items-center gap-2 text-sm text-foreground/70 hover:text-foreground transition-colors duration-200"
-//                   style={{ fontFamily: 'var(--font-body)' }}
-//                 >
-//                   <Mail size={14} strokeWidth={1.5} />
-//                   alejandrofuoco@hotmail.com
-//                 </a>
-//               </li>
-//               <li>
-//                 <a
-//                   href="https://instagram.com/alefuoco"
-//                   target="_blank"
-//                   rel="noopener noreferrer"
-//                   className="flex items-center gap-2 text-sm text-foreground/70 hover:text-foreground transition-colors duration-200"
-//                   style={{ fontFamily: 'var(--font-body)' }}
-//                 >
-//                   <ExternalLink size={14} strokeWidth={1.5} />
-//                   @ale_fuoco
-//                 </a>
-//               </li>
-//             </ul>
-//           </div>
-//         </div>
-
-//         {/* Bottom bar */}
-//         <div className="border-t border-border pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
-//           <p
-//             className="text-xs text-muted-foreground"
-//             style={{ fontFamily: 'var(--font-body)' }}
-//           >
-//             © {new Date().getFullYear()} Ale Fuoco. Todos los derechos reservados.
-//           </p>
-//           <p
-//             className="text-xs text-muted-foreground"
-//             style={{ fontFamily: 'var(--font-body)' }}
-//           >
-//             Rosario, Santa Fe.  Argentina
-//           </p>
-//         </div>
-//       </div>
-//     </footer>
-//   )
-// }
