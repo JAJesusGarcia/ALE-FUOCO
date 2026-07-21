@@ -1,16 +1,13 @@
-
 import About from '@/components/about'
 import Contact from '@/components/contact'
-import SectionReveal from '@/components/effects/section-reveal'
 import SectionTransition from '@/components/effects/section-transition'
 import Gallery from '@/components/gallery'
 import Hero from '@/components/hero'
 import Testimonials from '@/components/testimonials'
 
-
 export default function HomePage() {
   return (
-    <main className="overflow-hidden">
+    <main className="relative overflow-x-clip">
       <Hero />
 
       <SectionTransition
@@ -18,9 +15,7 @@ export default function HomePage() {
         number="01"
       />
 
-      <SectionReveal className="cinematic-section">
-        <Gallery />
-      </SectionReveal>
+      <Gallery />
 
       <SectionTransition
         label="Profile"
@@ -28,24 +23,14 @@ export default function HomePage() {
         direction="left"
       />
 
-      <SectionReveal
-        className="cinematic-section"
-        distance={45}
-      >
-        <About />
-      </SectionReveal>
+      <About />
 
       <SectionTransition
         label="Testimonials"
         number="03"
       />
 
-      <SectionReveal
-        className="cinematic-section"
-        distance={40}
-      >
-        <Testimonials />
-      </SectionReveal>
+      <Testimonials />
 
       <SectionTransition
         label="Contact channel"
@@ -53,12 +38,7 @@ export default function HomePage() {
         direction="left"
       />
 
-      <SectionReveal
-        className="cinematic-section"
-        distance={35}
-      >
-        <Contact />
-      </SectionReveal>
+      <Contact />
     </main>
   )
 }

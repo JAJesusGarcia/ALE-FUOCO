@@ -1,24 +1,45 @@
-import type { Metadata, Viewport } from 'next'
-import { Cormorant_Garamond, Inter } from 'next/font/google'
+import type {
+  Metadata,
+  Viewport,
+} from 'next'
+import type { ReactNode } from 'react'
 
-// import AmbientStageEffects from '@/components/effects/ambient-stage-effects'
-// import GlobalTechnicalHud from '@/components/effects/global-technical-hud'
-import FloatingWhatsApp from '@/components/ui/floating-whatsapp'
-import './globals.css'
-import Navbar from '@/components/navbar'
+import {
+  Cormorant_Garamond,
+  Inter,
+} from 'next/font/google'
+
 import Footer from '@/components/footer'
+import Navbar from '@/components/navbar'
+import FloatingWhatsApp from '@/components/ui/floating-whatsapp'
+
+import './globals.css'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  style: ['normal', 'italic'],
+  weight: [
+    '300',
+    '400',
+    '500',
+    '600',
+    '700',
+  ],
+  style: [
+    'normal',
+    'italic',
+  ],
   variable: '--font-cormorant',
   display: 'swap',
 })
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
+  weight: [
+    '300',
+    '400',
+    '500',
+    '600',
+  ],
   variable: '--font-inter',
   display: 'swap',
 })
@@ -31,40 +52,63 @@ export const metadata: Metadata = {
   },
   description:
     'Diseño de iluminación, sonido profesional y producción técnica para eventos sociales, corporativos y experiencias en vivo.',
+  applicationName: 'Ale Fuoco',
+  authors: [
+    {
+      name: 'Ale Fuoco',
+    },
+  ],
+  creator: 'Ale Fuoco',
+  publisher: 'Ale Fuoco',
+  category: 'Producción de eventos',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'dark',
-  themeColor: '#151310',
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
+  colorScheme: 'dark',
+  themeColor: '#151310',
+}
+
+interface RootLayoutProps {
+  children: ReactNode
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+}: Readonly<RootLayoutProps>) {
   return (
     <html
       lang="es"
-      className={`${cormorant.variable} ${inter.variable}`}
-      suppressHydrationWarning
+      className={`
+        ${cormorant.variable}
+        ${inter.variable}
+      `}
     >
-      <body className="min-h-screen bg-background font-body text-foreground antialiased">
+      <body
+        className="
+          min-h-screen
+          overflow-x-clip
+          bg-background
+          font-body
+          text-foreground
+          antialiased
+        "
+      >
         <div className="relative min-h-screen">
           <Navbar />
 
-          <main className="relative z-10">
+          <div className="relative z-10">
             {children}
-          </main>
+          </div>
 
           <Footer />
-
-          {/* <AmbientStageEffects /> */}
-
-          {/* <GlobalTechnicalHud /> */}
 
           <FloatingWhatsApp />
         </div>
