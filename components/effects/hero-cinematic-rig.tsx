@@ -209,7 +209,7 @@ export default function HeroCinematicRig() {
 
         {/* REC móvil */}
         <div
-          className={`absolute top-[10.5rem] left-6
+          className={`absolute top-[5.5rem] left-6
             flex items-center gap-2
             font-body
             text-[0.45rem]
@@ -230,7 +230,7 @@ export default function HeroCinematicRig() {
 
         {/* Timecode móvil decorativo */}
         <div
-          className={`absolute top-[10.5rem] right-6
+          className={`absolute top-[5.5rem] right-6
             font-mono
             text-[0.48rem]
             tracking-[0.14em]
