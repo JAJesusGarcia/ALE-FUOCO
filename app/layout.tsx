@@ -6,6 +6,7 @@ import { Cormorant_Garamond, Inter } from 'next/font/google'
 import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
 import FloatingWhatsApp from '@/components/ui/floating-whatsapp'
+import OpeningSequence from '@/components/effects/opening-sequence'
 
 import './globals.css'
 
@@ -78,6 +79,7 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
           antialiased
         "
       >
+        <OpeningSequence />
         <div className="relative min-h-screen">
           <Navbar />
 
