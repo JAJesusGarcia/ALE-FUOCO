@@ -169,7 +169,7 @@ export default function HeroCinematicRig() {
         </div>
 
         {/* Láseres móviles sutiles */}
-        <div
+        {/* <div
           className={`absolute top-[21%] left-1/2
             h-[24rem] w-[145%]
             -translate-x-1/2`}
@@ -205,7 +205,7 @@ export default function HeroCinematicRig() {
               />
             )
           })}
-        </div>
+        </div> */}
 
         {/* REC móvil */}
         <div
