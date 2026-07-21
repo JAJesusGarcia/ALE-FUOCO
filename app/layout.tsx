@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import { Cormorant_Garamond, Inter } from 'next/font/google'
 
-import AmbientStageEffects from '@/components/effects/ambient-stage-effects'
-import GlobalTechnicalHud from '@/components/effects/global-technical-hud'
+// import AmbientStageEffects from '@/components/effects/ambient-stage-effects'
+// import GlobalTechnicalHud from '@/components/effects/global-technical-hud'
 import FloatingWhatsApp from '@/components/ui/floating-whatsapp'
 import './globals.css'
 import Navbar from '@/components/navbar'
@@ -62,9 +62,9 @@ export default function RootLayout({
 
           <Footer />
 
-          <AmbientStageEffects />
+          {/* <AmbientStageEffects /> */}
 
-          <GlobalTechnicalHud />
+          {/* <GlobalTechnicalHud /> */}
 
           <FloatingWhatsApp />
         </div>
