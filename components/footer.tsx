@@ -211,9 +211,9 @@ export default function Footer() {
                 text-muted-foreground
               "
             >
-              Producción de eventos sociales, corporativos y privados,
-              desarrollados con sensibilidad, dedicación y atención en cada
-              detalle.
+              Producción técnica integral para eventos sociales, corporativos y
+              privados. DJ, sonido profesional, iluminación, pantallas LED y
+              operación técnica.
             </p>
           </div>
 

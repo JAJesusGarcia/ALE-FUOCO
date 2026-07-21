@@ -380,8 +380,8 @@ export default function Testimonials() {
               md:text-right
             "
           >
-            Historias reales sobre el diseño, la técnica y la experiencia de
-            construir cada evento juntos.
+            Experiencias de quienes confiaron en nosotros para hacer realidad
+            sus eventos con sonido, iluminación, DJ y producción técnica.
           </p>
         </motion.div>
 
@@ -798,8 +798,10 @@ export default function Testimonials() {
                 text-foreground
               "
             >
-              ¿Trabajaste
-              <span className="block italic text-foreground/50">con Ale?</span>
+              ¿Viviste la
+              <span className="block italic text-foreground/50">
+                experiencia?
+              </span>
             </h3>
 
             <p
@@ -811,8 +813,8 @@ export default function Testimonials() {
                 text-muted-foreground
               "
             >
-              Contanos cómo fue la experiencia. El comentario será revisado
-              antes de publicarse.
+              Tu opinión ayuda a que otras personas conozcan cómo trabajamos.
+              Todos los comentarios son revisados antes de publicarse.
             </p>
           </div>
 
@@ -914,7 +916,7 @@ export default function Testimonials() {
                 maxLength={100}
                 value={form.service}
                 onChange={(event) => updateField('service', event.target.value)}
-                placeholder="Iluminación, sonido, producción técnica..."
+                placeholder="DJ, sonido, iluminación, pantallas LED..."
                 className={inputClassName}
               />
             </label>
@@ -1010,7 +1012,7 @@ export default function Testimonials() {
                 rows={6}
                 value={form.comment}
                 onChange={(event) => updateField('comment', event.target.value)}
-                placeholder="Contanos cómo fue trabajar con Ale..."
+                placeholder="¿Qué fue lo que más valoraste del servicio? Contanos cómo fue tu experiencia..."
                 className="
                   w-full resize-none
                   border border-white/10
@@ -1094,7 +1096,7 @@ export default function Testimonials() {
                   </>
                 ) : (
                   <>
-                    Enviar experiencia
+                    Compartir experiencia
                     <Send
                       size={14}
                       strokeWidth={1.5}

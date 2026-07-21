@@ -256,9 +256,9 @@ export default function Contact() {
                 text-foreground
               "
             >
-              Tu evento
+              Hablemos de
               <span className="block italic text-foreground/55">
-                empieza acá.
+                tu próximo evento.
               </span>
             </h2>
 
@@ -272,9 +272,9 @@ export default function Contact() {
                 md:text-lg
               "
             >
-              Contanos qué querés lograr. Diseñamos una propuesta técnica y
-              visual que combine iluminación, sonido y operación para crear una
-              experiencia sólida de principio a fin.
+              Contanos tu idea y diseñaremos una propuesta técnica a medida con
+              DJ, sonido profesional, iluminación, pantallas LED y producción
+              integral para que cada detalle salga como fue pensado.
             </p>
 
             <div className="mt-10 border-l border-warm/60 pl-5">
@@ -286,8 +286,8 @@ export default function Contact() {
                   text-foreground/75
                 "
               >
-                “La técnica no debería distraer. Debería hacer que todo se
-                sienta mejor.”
+                "Los mejores eventos son aquellos donde la técnica simplemente
+                hace que todo funcione."
               </p>
             </div>
 
@@ -554,7 +554,7 @@ export default function Contact() {
                     rows={5}
                     value={form.message}
                     onChange={handleChange}
-                    placeholder="Tipo de evento, fecha estimada, lugar, cantidad de personas y qué experiencia te gustaría crear..."
+                    placeholder="Contanos el tipo de evento, la fecha, la ubicación, la cantidad de invitados y los servicios que necesitás. Nosotros nos encargamos del resto."
                     className={`${fieldClassName} resize-none`}
                   />
                 </Field>
@@ -569,7 +569,7 @@ export default function Contact() {
                     sm:justify-between
                   "
                 >
-                  <p
+                  {/* <p
                     className="
                       max-w-xs
                       font-body
@@ -578,9 +578,9 @@ export default function Contact() {
                       text-muted-foreground
                     "
                   >
-                    Al enviar, se abrirá WhatsApp con tu mensaje listo para
-                    compartir.
-                  </p>
+                    Al enviar el formulario se abrirá WhatsApp con toda la
+                    información lista para que podamos asesorarte.
+                  </p> */}
 
                   <button
                     type="submit"

@@ -8,36 +8,36 @@ import { Lightbulb, SlidersHorizontal, Volume2 } from 'lucide-react'
 const specialties = [
   {
     icon: Lightbulb,
-    title: 'Diseño de iluminación',
+    title: 'Producción técnica',
     description:
-      'Diseño lumínico pensado según el espacio, la estética y el ritmo de cada evento.',
+      'Planificación integral de todos los recursos técnicos necesarios para cada evento.',
   },
   {
     icon: Volume2,
     title: 'Sonido profesional',
     description:
-      'Sistemas configurados para conseguir cobertura, claridad y equilibrio.',
+      'Equipamiento configurado para lograr cobertura uniforme y máxima claridad.',
   },
   {
     icon: SlidersHorizontal,
-    title: 'Operación en vivo',
+    title: 'Iluminación profesional',
     description:
-      'Control técnico durante todo el evento para acompañar cada momento.',
+      'Diseño lumínico pensado para potenciar cada espacio y cada momento del evento.',
   },
 ]
 
 const principles = [
   {
-    value: 'Iluminación',
-    label: 'Atmósfera y profundidad',
+    value: 'Producción',
+    label: 'Planificación integral',
   },
   {
     value: 'Sonido',
-    label: 'Claridad y presencia',
+    label: 'Cobertura profesional',
   },
   {
-    value: 'Live',
-    label: 'Operación en tiempo real',
+    value: 'Iluminación',
+    label: 'Diseño y operación',
   },
 ]
 
@@ -165,7 +165,7 @@ export default function About() {
                       text-warm
                     "
                   >
-                    Diseño · Técnica · Operación
+                    DJ · Sonido · Iluminación · Producción Técnica
                   </p>
 
                   <p
@@ -178,7 +178,7 @@ export default function About() {
                       md:text-3xl
                     "
                   >
-                    La técnica también puede tener sensibilidad.
+                    La técnica hace posible cada gran evento.
                   </p>
                 </div>
               </div>
@@ -258,7 +258,8 @@ export default function About() {
                     text-foreground/65
                   "
                 >
-                  Diseño previo, montaje, programación y operación técnica.
+                  Planificación, montaje, operación y acompañamiento técnico de
+                  principio a fin.
                 </p>
               </motion.div>
             </div>
@@ -311,9 +312,9 @@ export default function About() {
                 text-foreground
               "
             >
-              Diseñar cómo
+              Mucho más que
               <span className="block italic text-foreground/55">
-                se siente un espacio.
+                instalar equipos.
               </span>
             </h2>
 
@@ -327,8 +328,9 @@ export default function About() {
                   md:text-lg
                 "
               >
-                Ale Fuoco desarrolla propuestas de iluminación y sonido para
-                eventos sociales, corporativos y producciones especiales.
+                Ale Fuoco desarrolla la producción técnica integral de eventos
+                sociales, corporativos y privados, integrando sonido
+                profesional, iluminación, pantallas LED, DJ y operación técnica.
               </p>
 
               <p
@@ -340,10 +342,10 @@ export default function About() {
                   md:text-lg
                 "
               >
-                Su trabajo comienza mucho antes de encender una consola. Cada
-                proyecto parte del análisis del espacio, la cantidad de
-                personas, la propuesta estética y los diferentes momentos que
-                debe atravesar el evento.
+                Cada proyecto comienza analizando el espacio, el tipo de evento,
+                la cantidad de invitados y la experiencia que se busca generar.
+                A partir de eso se diseña una propuesta técnica adaptada a cada
+                necesidad.
               </p>
 
               <p
@@ -355,9 +357,9 @@ export default function About() {
                   md:text-lg
                 "
               >
-                El objetivo no es simplemente instalar equipos. Es lograr que la
-                iluminación, el sonido y la operación técnica trabajen como una
-                sola experiencia.
+                El objetivo no es solamente aportar equipamiento. Es lograr que
+                el sonido, la iluminación, el contenido visual y la operación
+                técnica funcionen como un solo sistema durante todo el evento.
               </p>
             </div>
 

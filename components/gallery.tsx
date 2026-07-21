@@ -43,10 +43,10 @@ const galleryItems: GalleryItem[] = [
   {
     type: 'image',
     src: '/images/gallery-1.webp',
-    title: 'Diseño para una noche única',
+    title: 'Escenarios con identidad propia',
     description:
-      'Iluminación ambiental y escénica diseñada para acompañar cada momento del evento.',
-    category: 'Diseño de iluminación',
+      'Diseño lumínico pensado para acompañar la música, la arquitectura y cada momento del evento.',
+    category: 'Iluminación profesional',
     number: '01',
     channel: '001',
     universe: '01',
@@ -56,10 +56,10 @@ const galleryItems: GalleryItem[] = [
   {
     type: 'image',
     src: '/images/gallery-2.webp',
-    title: 'Atmósfera cálida',
+    title: 'Cobertura clara y equilibrada',
     description:
-      'Temperatura, intensidad y dirección de iluminacion pensadas para transformar el espacio.',
-    category: 'Ambientación lumínica',
+      'Sistemas de sonido configurados para que cada palabra y cada canción se escuchen con claridad.',
+    category: 'Sonido profesional',
     number: '02',
     channel: '024',
     universe: '01',
@@ -69,9 +69,9 @@ const galleryItems: GalleryItem[] = [
   {
     type: 'image',
     src: '/images/gallery-3.webp',
-    title: 'Producción corporativa',
+    title: 'Coordinación técnica integral',
     description:
-      'Diseño técnico preciso para presentaciones, galas y experiencias de marca.',
+      'Planificación, montaje y coordinación de todos los sistemas técnicos durante el evento.',
     category: 'Producción técnica',
     number: '03',
     channel: '112',
@@ -82,10 +82,10 @@ const galleryItems: GalleryItem[] = [
   {
     type: 'image',
     src: '/images/gallery-4.webp',
-    title: 'Luz integrada al espacio',
+    title: 'Impacto visual en gran formato',
     description:
-      'Iluminación decorativa y funcional adaptada a la arquitectura y al entorno.',
-    category: 'Iluminación',
+      'Pantallas LED para shows, eventos corporativos y producciones que necesitan una comunicación visual de alto impacto.',
+    category: 'Pantallas LED y proyección',
     number: '04',
     channel: '206',
     universe: '02',
@@ -95,9 +95,9 @@ const galleryItems: GalleryItem[] = [
   {
     type: 'image',
     src: '/images/gallery-5.webp',
-    title: 'Escena y movimiento',
+    title: 'Control en tiempo real',
     description:
-      'Operación de luces sincronizada con el ritmo, la música y los momentos principales.',
+      'Operación técnica de iluminación, sonido y sistemas durante todo el desarrollo del evento.',
     category: 'Operación en vivo',
     number: '05',
     channel: '320',
@@ -108,10 +108,10 @@ const galleryItems: GalleryItem[] = [
   {
     type: 'image',
     src: '/images/gallery-6.webp',
-    title: 'Sonido que acompaña',
+    title: 'La música marca el momento',
     description:
-      'Cobertura clara y equilibrada para que cada palabra y cada canción lleguen correctamente.',
-    category: 'Sonido',
+      'Selección musical, mezcla en vivo y acompañamiento de cada momento para mantener la energía del evento.',
+    category: 'DJ Profesional',
     number: '06',
     channel: '408',
     universe: '04',
@@ -175,17 +175,18 @@ export default function Gallery() {
             </div>
 
             <h2 className="max-w-[10ch] font-display text-[clamp(4rem,9vw,8rem)] font-light leading-[0.82] tracking-[-0.05em] text-foreground">
-              Iluminación, sonido
+              Producción técnica
               <span className="block italic text-foreground/55">
-                y movimiento.
+                para eventos.
               </span>
             </h2>
           </div>
 
           <div className="lg:justify-self-end">
             <p className="max-w-lg font-body text-sm font-light leading-7 text-muted-foreground md:text-base">
-              Una selección de espacios transformados mediante diseño de
-              iluminación, sonido profesional y operación técnica en vivo.
+              Una selección de eventos donde combinamos DJ, sonido profesional,
+              iluminación, pantallas LED y producción técnica para crear
+              experiencias únicas.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3">

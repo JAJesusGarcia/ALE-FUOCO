@@ -185,7 +185,8 @@ export default function Hero() {
                 text-white/70
               "
             >
-              Iluminación · sonido · operación técnica · DJ
+              DJ · Sonido Profesional · Iluminación · Pantallas LED · Producción
+              Técnica
             </p>
           </motion.div>
 
@@ -261,17 +262,15 @@ export default function Hero() {
               ease: motionEase,
             }}
             className="
-              mt-5 flex
-              w-full max-w-3xl
-              flex-col gap-6
-              sm:mt-7
-              sm:gap-7
-              md:mt-10
-              md:flex-row
-              md:items-end
-              md:justify-between
-              md:gap-8
-            "
+  mt-5 flex
+  w-full
+  max-w-3xl
+  flex-col
+  gap-4
+  sm:mt-7
+  sm:gap-5
+  md:mt-10
+"
           >
             <p
               className="
@@ -287,8 +286,23 @@ export default function Hero() {
                 md:leading-relaxed
               "
             >
-              Iluminación, sonido y precisión técnica para transformar cada
-              espacio en una experiencia.
+              Producción técnica integral para eventos sociales, corporativos y
+              privados.
+            </p>
+            <p
+              className="
+  max-w-xl
+  font-body
+  text-sm
+  leading-7
+  text-white/65
+  sm:text-base
+  md:text-lg
+  md:leading-8
+"
+            >
+              DJ, sonido profesional, iluminación, pantallas LED y producción
+              técnica para eventos sociales, corporativos y privados.
             </p>
 
             <div
@@ -424,7 +438,7 @@ export default function Hero() {
               </p>
 
               <p className="mt-2 font-body text-xs text-white/70">
-                Diseño de iluminación y sonido
+                Producción técnica integral
               </p>
             </div>
 
@@ -442,7 +456,7 @@ export default function Hero() {
               </p>
 
               <p className="mt-2 font-body text-xs text-white/70">
-                Eventos y experiencias en vivo
+                Operación técnica en vivo
               </p>
             </div>
 
