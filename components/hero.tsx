@@ -30,7 +30,7 @@ export default function Hero() {
       id="inicio"
       className="
         relative
-        h-[100svh]
+        h-[105svh]
         min-h-[44rem]
         w-full
         overflow-hidden
