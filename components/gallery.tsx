@@ -146,14 +146,14 @@ export default function Gallery() {
   return (
     <section
       id="galeria"
-      className="relative overflow-hidden bg-background section-spacing"
+      className="relative overflow-hidden bg-background py-[clamp(5rem,10vw,10rem)]"
     >
       {/* Glow ambiental */}
       <div className="pointer-events-none absolute left-0 top-1/4 h-[35rem] w-[35rem] -translate-x-1/2 rounded-full bg-warm/5 blur-[150px]" />
 
       <div className="pointer-events-none absolute right-0 top-2/3 h-[30rem] w-[30rem] translate-x-1/2 rounded-full bg-warm/4 blur-[160px]" />
 
-      <div className="site-container relative">
+      <div className="relative mx-auto w-[min(100%-2rem,90rem)] md:w-[min(100%-4rem,90rem)]">
         {/* Header */}
         <motion.div
           ref={headerRef}
@@ -169,7 +169,7 @@ export default function Gallery() {
             <div className="mb-6 flex items-center gap-4">
               <span className="h-px w-10 bg-warm" />
 
-              <p className="section-eyebrow">
+              <p className="font-body text-[0.7rem] font-medium leading-none tracking-[0.2em] text-warm uppercase">
                 Trabajos seleccionados
               </p>
             </div>
@@ -263,7 +263,12 @@ function GalleryCard({
         delay: Math.min(index * 0.08, 0.32),
         ease: [0.16, 1, 0.3, 1],
       }}
-      className={`gallery-technical-card group relative isolate overflow-hidden bg-surface ${item.layout}`}
+     className={`
+      group relative isolate
+      overflow-hidden bg-surface
+      [transform:translateZ(0)]
+      ${item.layout}
+    `}
     >
       {/* Media */}
       <div className="absolute inset-0 overflow-hidden">
@@ -300,7 +305,20 @@ function GalleryCard({
       </div>
 
       {/* Spotlight superior */}
-      <div className="gallery-card-spotlight" />
+      <div
+        className="
+          pointer-events-none
+          absolute -top-[30%] left-1/2 z-[2]
+          h-[65%] w-[75%]
+          -translate-x-1/2
+          bg-[radial-gradient(ellipse_at_center,rgba(255,225,195,0.16)_0%,rgba(244,161,92,0.05)_38%,transparent_72%)]
+          opacity-25
+          blur-[38px]
+          transition-all duration-1000
+          group-hover:scale-110
+          group-hover:opacity-50
+        "
+      />
 
       {/* Overlays */}
       <div className="absolute inset-0 bg-black/15 transition-colors duration-700 group-hover:bg-black/30" />
@@ -310,7 +328,19 @@ function GalleryCard({
       <div className="absolute inset-0 opacity-0 ring-1 ring-inset ring-warm/45 transition-opacity duration-500 group-hover:opacity-100" />
 
       {/* Barrido cálido */}
-      <div className="gallery-card-light-sweep" />
+      <div
+        className="
+          gallery-animate-light-sweep
+          pointer-events-none
+          absolute inset-y-0 -left-[45%] z-[3]
+          w-[35%]
+          skew-x-[-18deg]
+          bg-[linear-gradient(90deg,transparent,rgba(255,224,192,0.09),transparent)]
+          opacity-0
+          mix-blend-screen
+          group-hover:opacity-100
+        "
+      />
 
       {/* HUD técnico */}
       <TechnicalMediaHud
@@ -350,7 +380,18 @@ function GalleryCard({
               {item.title}
             </h3>
 
-            <p className="mt-3 max-w-md translate-y-3 font-body text-xs font-light leading-6 text-white/0 transition-all duration-500 group-hover:translate-y-0 group-hover:text-white/65 md:text-sm">
+            <p
+              className="
+                mt-3 max-w-md
+                font-body text-xs font-light leading-6
+                text-white/65
+                transition-all duration-500
+                md:translate-y-3
+                md:text-sm md:text-white/0
+                md:group-hover:translate-y-0
+                md:group-hover:text-white/65
+              "
+            >
               {item.description}
             </p>
           </div>

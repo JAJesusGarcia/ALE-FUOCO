@@ -1,0 +1,96 @@
+/*
+ * Cinematic Texture
+ *
+ * La estructura y la apariencia viven en Tailwind.
+ * Este archivo conserva únicamente animaciones complejas.
+ */
+
+.cinematic-animate-grain {
+  will-change: transform;
+  animation: cinematic-grain-shift 0.32s steps(2, end) infinite;
+}
+
+.cinematic-animate-flare-one {
+  will-change: transform, opacity;
+  animation: cinematic-flare-one 18s ease-in-out infinite alternate;
+}
+
+.cinematic-animate-flare-two {
+  will-change: transform, opacity;
+  animation: cinematic-flare-two 22s ease-in-out infinite alternate;
+}
+
+@keyframes cinematic-grain-shift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  20% {
+    transform: translate3d(-2%, 1%, 0);
+  }
+
+  40% {
+    transform: translate3d(1%, -2%, 0);
+  }
+
+  60% {
+    transform: translate3d(2%, 2%, 0);
+  }
+
+  80% {
+    transform: translate3d(-1%, -1%, 0);
+  }
+
+  100% {
+    transform: translate3d(1%, 1%, 0);
+  }
+}
+
+@keyframes cinematic-flare-one {
+  from {
+    opacity: 0.28;
+    transform: translate3d(-1.5rem, -1rem, 0) scale(0.96);
+  }
+
+  to {
+    opacity: 0.52;
+    transform: translate3d(1.5rem, 1rem, 0) scale(1.04);
+  }
+}
+
+@keyframes cinematic-flare-two {
+  from {
+    opacity: 0.22;
+    transform: translate3d(1.5rem, 1rem, 0) scale(1.04);
+  }
+
+  to {
+    opacity: 0.46;
+    transform: translate3d(-1.25rem, -1rem, 0) scale(0.97);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-animate-grain,
+  .cinematic-animate-flare-one,
+  .cinematic-animate-flare-two {
+    animation: none !important;
+    will-change: auto;
+  }
+
+  .cinematic-animate-grain {
+    display: none;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cinematic-animate-grain {
+    display: none;
+  }
+
+  .cinematic-animate-flare-one,
+  .cinematic-animate-flare-two {
+    animation: none;
+    will-change: auto;
+  }
+}

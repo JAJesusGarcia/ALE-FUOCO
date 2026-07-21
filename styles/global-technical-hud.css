@@ -1,0 +1,57 @@
+/*
+ * Global Technical HUD
+ *
+ * Toda la estructura y el responsive viven en Tailwind.
+ * Este archivo conserva únicamente animaciones.
+ */
+
+.global-hud-animate-led {
+  will-change: opacity, transform;
+  animation: global-hud-led-pulse 3.2s ease-in-out infinite;
+}
+
+.global-hud-animate-record {
+  will-change: opacity;
+  animation: global-hud-record-blink 1.35s steps(1, end) infinite;
+}
+
+@keyframes global-hud-led-pulse {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+}
+
+@keyframes global-hud-record-blink {
+  0%,
+  48% {
+    opacity: 1;
+  }
+
+  49%,
+  100% {
+    opacity: 0.18;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .global-hud-animate-led,
+  .global-hud-animate-record {
+    animation: none !important;
+    will-change: auto;
+  }
+
+  .global-hud-animate-led {
+    opacity: 0.55;
+  }
+
+  .global-hud-animate-record {
+    opacity: 0.45;
+  }
+}

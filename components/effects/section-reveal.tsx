@@ -1,7 +1,7 @@
 'use client'
 
 import type { ReactNode } from 'react'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 
 interface SectionRevealProps {
   children: ReactNode
@@ -20,20 +20,28 @@ export default function SectionReveal({
   distance = 55,
   once = true,
 }: SectionRevealProps) {
+  const shouldReduceMotion = useReducedMotion()
+
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-        y: distance,
-        scale: 0.985,
-        filter: 'blur(14px)',
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        filter: 'blur(0px)',
-      }}
+      initial={
+        shouldReduceMotion
+          ? false
+          : {
+              opacity: 0,
+              y: distance,
+              scale: 0.99,
+            }
+      }
+      whileInView={
+        shouldReduceMotion
+          ? undefined
+          : {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }
+      }
       viewport={{
         once,
         amount: 0.15,
