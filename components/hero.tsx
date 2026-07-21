@@ -36,7 +36,6 @@ export default function Hero() {
         overflow-hidden
         bg-background
         md:min-h-[48rem]
-        md:[&.film-grain]:block
       "
     >
       {/* Imagen de fondo */}
@@ -57,7 +56,8 @@ export default function Hero() {
         }}
         className="absolute inset-0 z-0"
       >
-        {/* <Image
+        {/*
+        <Image
           src="/images/hero.webp"
           alt="Diseño de iluminación y producción técnica de Ale Fuoco"
           fill
@@ -65,12 +65,14 @@ export default function Hero() {
           quality={95}
           sizes="100vw"
           className="object-cover object-center"
-        /> */}
+        />
+        */}
       </motion.div>
 
-      {/* Overlays cinematográficos */}
+      {/* Oscurecimiento general */}
       <div aria-hidden="true" className="absolute inset-0 z-[1] bg-black/35" />
 
+      {/* Gradiente horizontal */}
       <div
         aria-hidden="true"
         className="
@@ -79,6 +81,7 @@ export default function Hero() {
         "
       />
 
+      {/* Gradiente vertical */}
       <div
         aria-hidden="true"
         className="
@@ -87,6 +90,7 @@ export default function Hero() {
         "
       />
 
+      {/* Transición inferior */}
       <div
         aria-hidden="true"
         className="
@@ -99,7 +103,7 @@ export default function Hero() {
         "
       />
 
-      {/* Resplandor cálido, desactivado en móvil */}
+      {/* Resplandor cálido de escritorio */}
       <div
         aria-hidden="true"
         className="
@@ -113,8 +117,7 @@ export default function Hero() {
         "
       />
 
-      {/* Sistema técnico y efectos del Hero */}
-
+      {/* Sistema técnico y efectos cinematográficos */}
       <HeroCinematicRig />
 
       {/* Contenido principal */}
@@ -146,6 +149,7 @@ export default function Hero() {
             md:text-left
           "
         >
+          {/* Descripción superior, solo tablet y escritorio */}
           <motion.div
             initial={
               shouldReduceMotion
@@ -165,26 +169,27 @@ export default function Hero() {
               ease: motionEase,
             }}
             className="
-    mb-7 hidden
-    items-center gap-4
-    md:flex
-  "
+              mb-7 hidden
+              items-center gap-4
+              md:flex
+            "
           >
             <span aria-hidden="true" className="h-px w-10 shrink-0 bg-warm" />
 
             <p
               className="
-      font-body
-      text-[0.68rem]
-      font-medium uppercase
-      tracking-[0.3em]
-      text-white/70
-    "
+                font-body
+                text-[0.68rem]
+                font-medium uppercase
+                tracking-[0.3em]
+                text-white/70
+              "
             >
               Iluminación · sonido · operación técnica · DJ
             </p>
           </motion.div>
 
+          {/* Logo */}
           <motion.div
             initial={
               shouldReduceMotion
@@ -203,7 +208,14 @@ export default function Hero() {
               delay: shouldReduceMotion ? 0 : 0.38,
               ease: motionEase,
             }}
-            className="w-full max-w-[32rem]"
+            className="
+              w-full
+              max-w-[18rem]
+              min-[390px]:max-w-[19rem]
+              sm:max-w-[21rem]
+              md:max-w-[28rem]
+              lg:max-w-[34rem]
+            "
           >
             <Image
               src="/images/logo-ale1.webp"
@@ -212,24 +224,24 @@ export default function Hero() {
               height={500}
               priority
               sizes="
-                (max-width: 767px) 22rem,
+                (max-width: 389px) 18rem,
+                (max-width: 639px) 19rem,
+                (max-width: 767px) 21rem,
                 (max-width: 1023px) 28rem,
                 34rem
               "
               className="
                 h-auto
                 w-full
-                max-w-[22rem]
                 select-none
                 brightness-105
                 contrast-105
                 drop-shadow-[0_0_18px_rgba(255,255,255,0.05)]
-                md:max-w-[28rem]
-                lg:max-w-[34rem]
               "
             />
           </motion.div>
 
+          {/* Texto principal y botones */}
           <motion.div
             initial={
               shouldReduceMotion
@@ -249,35 +261,50 @@ export default function Hero() {
               ease: motionEase,
             }}
             className="
-              mt-8 flex
+              mt-5 flex
               w-full max-w-3xl
-              flex-col gap-8
+              flex-col gap-6
+              sm:mt-7
+              sm:gap-7
               md:mt-10
               md:flex-row
               md:items-end
               md:justify-between
+              md:gap-8
             "
           >
             <p
               className="
-                max-w-lg
+                max-w-[22rem]
                 font-display
-                text-xl font-light italic
-                leading-relaxed
+                text-[1.12rem]
+                font-light italic
+                leading-[1.75]
                 text-white/70
+                sm:max-w-lg
+                sm:text-xl
                 md:text-2xl
+                md:leading-relaxed
               "
             >
               Iluminación, sonido y precisión técnica para transformar cada
               espacio en una experiencia.
             </p>
 
-            <div className="flex flex-col gap-2 sm:flex-row">
+            <div
+              className="
+                flex w-full
+                flex-col gap-2
+                sm:w-auto
+                sm:flex-row
+              "
+            >
               <button
                 type="button"
                 onClick={() => scrollToSection('#galeria')}
                 className="
-                  group flex min-w-44
+                  group flex
+                  min-w-44
                   items-center justify-between
                   gap-5
                   bg-white
@@ -298,7 +325,8 @@ export default function Hero() {
                   active:scale-[0.99]
                 "
               >
-                Ver trabajos
+                <span>Ver trabajos</span>
+
                 <ArrowUpRight
                   size={16}
                   strokeWidth={1.5}
@@ -315,7 +343,8 @@ export default function Hero() {
                 type="button"
                 onClick={() => scrollToSection('#contacto')}
                 className="
-                  group flex min-w-44
+                  group flex
+                  min-w-44
                   items-center justify-between
                   gap-5
                   border border-white/30
@@ -339,7 +368,8 @@ export default function Hero() {
                   md:backdrop-blur-sm
                 "
               >
-                Contactar
+                <span>Contactar</span>
+
                 <ArrowUpRight
                   size={16}
                   strokeWidth={1.5}
@@ -355,7 +385,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Información inferior */}
+        {/* Información inferior de escritorio */}
         <motion.div
           initial={
             shouldReduceMotion
@@ -393,7 +423,7 @@ export default function Hero() {
                 Especialidad
               </p>
 
-              <p className="mt-2 font-body text-xs text-white/72">
+              <p className="mt-2 font-body text-xs text-white/70">
                 Diseño de iluminación y sonido
               </p>
             </div>
@@ -411,7 +441,7 @@ export default function Hero() {
                 Operación
               </p>
 
-              <p className="mt-2 font-body text-xs text-white/72">
+              <p className="mt-2 font-body text-xs text-white/70">
                 Eventos y experiencias en vivo
               </p>
             </div>
@@ -429,7 +459,7 @@ export default function Hero() {
                 Ubicación
               </p>
 
-              <p className="mt-2 font-body text-xs text-white/72">
+              <p className="mt-2 font-body text-xs text-white/70">
                 Rosario, Santa Fe, Argentina
               </p>
             </div>
@@ -452,7 +482,8 @@ export default function Hero() {
               focus-visible:text-white
             "
           >
-            Descubrir
+            <span>Descubrir</span>
+
             <span
               className="
                 flex size-9
@@ -470,7 +501,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Indicador móvil */}
+      {/* Indicador inferior móvil */}
       <motion.button
         type="button"
         onClick={() => scrollToSection('#galeria')}
