@@ -63,7 +63,7 @@ export default function Hero() {
 
       {/* Contenido principal */}
       <div className="site-container relative z-10 flex h-full min-h-[44rem] flex-col justify-end pb-16 pt-32 md:min-h-[48rem] md:justify-center md:pb-12 md:pt-32">
-        <div className="max-w-5xl">
+        <div className="mx-auto flex w-full max-w-5xl flex-col items-center text-center md:mx-0 md:items-start md:text-left">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
@@ -106,17 +106,27 @@ export default function Hero() {
               delay: 0.38,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="max-w-[30rem]"
+            className="max-w-[32rem]"
           >
-          <Image
-            src="/images/logo-ale1.webp"
-            alt="Ale Fuoco"
-            width={900}
-            height={420}
-            priority
-            className="h-auto w-full max-w-[22rem] md:max-w-[28rem] lg:max-w-[32rem]"
-          />
-        </motion.div>
+            <Image
+              src="/images/logo-ale1.webp"
+              alt="Ale Fuoco"
+              width={1000}
+              height={500}
+              priority
+              className="
+                h-auto
+                w-full
+                max-w-[22rem]
+                md:max-w-[28rem]
+                lg:max-w-[34rem]
+                brightness-105
+                contrast-105
+                drop-shadow-[0_0_18px_rgba(255,255,255,0.05)]
+                select-none
+              "
+            />
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -133,7 +143,7 @@ export default function Hero() {
               una experiencia.
             </p>
 
-            <div className="flex flex-col gap-3 sm:flex-row">
+            <div className="flex flex-col gap-2 sm:flex-row">
               <button
                 type="button"
                 onClick={() => scrollToSection('#galeria')}
@@ -225,7 +235,7 @@ export default function Hero() {
       <motion.button
         type="button"
         onClick={() => scrollToSection('#galeria')}
-        className="absolute bottom-5 right-5 z-20 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/15 text-white/70 backdrop-blur-sm md:hidden"
+        className="absolute bottom-2 left-1/2 z-20 flex h-11 w-11 -translate-x-1/2 items-center justify-center rounded-full border border-white/20 bg-black/15 text-white/70 backdrop-blur-sm md:hidden"
         aria-label="Ir a la galería"
         animate={{
           y: [0, 5, 0],
