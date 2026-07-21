@@ -35,7 +35,7 @@ export default function Hero() {
         }}
         className="absolute inset-0 z-0"
       >
-        <Image
+        {/* <Image
           src="/images/hero.webp"
           alt="Diseño de iluminación y producción técnica de Ale Fuoco"
           fill
@@ -43,7 +43,7 @@ export default function Hero() {
           quality={95}
           sizes="100vw"
           className="object-cover object-center"
-        />
+        /> */}
       </motion.div>
 
       {/* Overlays cinematográficos */}
@@ -81,7 +81,7 @@ export default function Hero() {
             </p>
           </motion.div>
 
-          <motion.h1
+          {/* <motion.h1
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -96,7 +96,27 @@ export default function Hero() {
             <span className="block pl-[0.2em] italic text-white/82">
               Fuoco
             </span>
-          </motion.h1>
+          </motion.h1> */}
+
+          <motion.div
+            initial={{ opacity: 0, y: 35 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1.05,
+              delay: 0.38,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            className="max-w-[30rem]"
+          >
+          <Image
+            src="/images/logo-ale1.webp"
+            alt="Ale Fuoco"
+            width={900}
+            height={420}
+            priority
+            className="h-auto w-full max-w-[22rem] md:max-w-[28rem] lg:max-w-[32rem]"
+          />
+        </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 24 }}
