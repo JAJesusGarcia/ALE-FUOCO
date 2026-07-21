@@ -3,10 +3,11 @@
 import {
   type ChangeEvent,
   type FormEvent,
+  type ReactNode,
   useRef,
   useState,
 } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useReducedMotion } from 'framer-motion'
 import {
   ArrowUpRight,
   Camera,
@@ -16,30 +17,37 @@ import {
   Phone,
 } from 'lucide-react'
 
+const WHATSAPP_NUMBER = '5493416679247'
+const PHONE_NUMBER = '+543416679247'
+
 const contactInfo = [
   {
     icon: MessageCircle,
     label: 'WhatsApp',
-    value: '+54 9 351 000 0000',
-    href: 'https://wa.me/5493510000000',
+    value: '+54 9 341 667 9247',
+    href: `https://wa.me/${WHATSAPP_NUMBER}`,
+    external: true,
   },
   {
     icon: Phone,
     label: 'Teléfono',
     value: '+54 341 667 9247',
-    href: 'tel:+543510000000',
+    href: `tel:${PHONE_NUMBER}`,
+    external: false,
   },
   {
     icon: Mail,
     label: 'Email',
     value: 'alejandrofuoco@hotmail.com',
     href: 'mailto:alejandrofuoco@hotmail.com',
+    external: false,
   },
   {
     icon: Camera,
     label: 'Instagram',
     value: '@ale_fuoco',
-    href: 'https://instagram.com/alefuoco',
+    href: 'https://www.instagram.com/ale_fuoco/',
+    external: true,
   },
 ]
 
@@ -69,8 +77,29 @@ const initialForm: ContactForm = {
   message: '',
 }
 
+const motionEase = [0.16, 1, 0.3, 1] as const
+
+const fieldClassName = `
+  w-full
+  border-0 border-b border-white/15
+  bg-transparent
+  px-0 py-3
+  font-body text-sm
+  text-foreground
+  outline-none
+  transition-colors duration-300
+  placeholder:text-muted-foreground/55
+  hover:border-white/30
+  focus:border-warm
+  focus:outline-none
+  focus:ring-0
+  disabled:cursor-not-allowed
+  disabled:opacity-50
+`
+
 export default function Contact() {
   const sectionRef = useRef<HTMLElement | null>(null)
+  const shouldReduceMotion = useReducedMotion()
 
   const inView = useInView(sectionRef, {
     once: true,
@@ -108,64 +137,176 @@ export default function Contact() {
       .filter(Boolean)
       .join('\n')
 
-    const whatsappUrl = `https://wa.me/5493510000000?text=${encodeURIComponent(
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
       message,
     )}`
 
-    window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
+    window.open(
+      whatsappUrl,
+      '_blank',
+      'noopener,noreferrer',
+    )
   }
+
+  const informationInitial = shouldReduceMotion
+    ? false
+    : {
+        opacity: 0,
+        y: 35,
+      }
+
+  const formInitial = shouldReduceMotion
+    ? false
+    : {
+        opacity: 0,
+        y: 35,
+      }
 
   return (
     <section
       ref={sectionRef}
       id="contacto"
-      className="relative overflow-hidden border-t border-white/10 bg-[oklch(0.095_0.007_55)]"
+      className="
+        relative overflow-hidden
+        border-t border-white/10
+        bg-[oklch(0.095_0.007_55)]
+      "
     >
-      {/* Ambient lights */}
-      <div className="pointer-events-none absolute -left-48 top-20 h-[32rem] w-[32rem] rounded-full bg-warm/8 blur-[150px]" />
+      {/* Luces ambientales desactivadas en móvil */}
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none
+          absolute -left-48 top-20
+          hidden size-[32rem]
+          rounded-full
+          bg-warm/8
+          blur-[150px]
+          md:block
+        "
+      />
 
-      <div className="pointer-events-none absolute -right-48 bottom-0 h-[28rem] w-[28rem] rounded-full bg-white/4 blur-[140px]" />
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none
+          absolute -right-48 bottom-0
+          hidden size-[28rem]
+          rounded-full
+          bg-white/4
+          blur-[140px]
+          lg:block
+        "
+      />
 
-      <div className="site-container relative section-spacing">
-        <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24 xl:gap-32">
-          {/* Information */}
+      <div
+        className="
+          relative mx-auto
+          w-full max-w-[90rem]
+          px-6 py-24
+          md:px-10 md:py-28
+          lg:px-14 lg:py-36
+          xl:px-16
+        "
+      >
+        <div
+          className="
+            grid gap-16
+            lg:grid-cols-[0.9fr_1.1fr]
+            lg:gap-24
+            xl:gap-32
+          "
+        >
+          {/* Información */}
           <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            initial={informationInitial}
+            animate={
+              inView || shouldReduceMotion
+                ? {
+                    opacity: 1,
+                    y: 0,
+                  }
+                : {}
+            }
             transition={{
-              duration: 0.9,
-              ease: [0.16, 1, 0.3, 1],
+              duration: shouldReduceMotion ? 0 : 0.9,
+              ease: motionEase,
             }}
           >
             <div className="mb-8 flex items-center gap-4">
-              <span className="h-px w-10 bg-warm" />
+              <span
+                aria-hidden="true"
+                className="h-px w-10 bg-warm"
+              />
 
-              <p className="section-eyebrow">
+              <p
+                className="
+                  font-body
+                  text-[0.58rem]
+                  font-medium uppercase
+                  tracking-[0.28em]
+                  text-warm
+                "
+              >
                 Contacto
               </p>
             </div>
 
-            <h2 className="max-w-[8ch] font-display text-[clamp(4rem,8vw,8rem)] font-light leading-[0.82] tracking-[-0.05em] text-foreground">
+            <h2
+              className="
+                max-w-[8ch]
+                font-display
+                text-[clamp(4rem,8vw,8rem)]
+                font-light
+                leading-[0.82]
+                tracking-[-0.05em]
+                text-foreground
+              "
+            >
               Tu evento
+
               <span className="block italic text-foreground/55">
                 empieza acá.
               </span>
             </h2>
 
-            <p className="mt-8 max-w-lg font-body text-base font-light leading-8 text-muted-foreground md:text-lg">
+            <p
+              className="
+                mt-8 max-w-lg
+                font-body
+                text-base font-light
+                leading-8
+                text-muted-foreground
+                md:text-lg
+              "
+            >
               Contanos qué querés lograr. Diseñamos una propuesta técnica y
               visual que combine iluminación, sonido y operación para crear una
               experiencia sólida de principio a fin.
             </p>
 
             <div className="mt-10 border-l border-warm/60 pl-5">
-              <p className="font-display text-xl font-light italic leading-relaxed text-foreground/75">
+              <p
+                className="
+                  font-display
+                  text-xl font-light italic
+                  leading-relaxed
+                  text-foreground/75
+                "
+              >
                 “La técnica no debería distraer. Debería hacer que todo se
                 sienta mejor.”
               </p>
             </div>
 
-            <ul className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <ul
+              className="
+                mt-12 grid gap-3
+                sm:grid-cols-2
+                lg:grid-cols-1
+                xl:grid-cols-2
+              "
+            >
               {contactInfo.map((item) => {
                 const Icon = item.icon
 
@@ -173,28 +314,73 @@ export default function Contact() {
                   <li key={item.label}>
                     <a
                       href={item.href}
-                      target={
-                        item.href.startsWith('http')
-                          ? '_blank'
-                          : undefined
-                      }
+                      target={item.external ? '_blank' : undefined}
                       rel={
-                        item.href.startsWith('http')
+                        item.external
                           ? 'noopener noreferrer'
                           : undefined
                       }
-                      className="group flex min-h-20 items-center gap-4 border border-white/10 bg-white/[0.025] px-4 py-4 transition-all duration-300 hover:border-warm/50 hover:bg-white/[0.045]"
+                      aria-label={`${item.label}: ${item.value}`}
+                      className="
+                        group flex min-h-20
+                        items-center gap-4
+                        border border-white/10
+                        bg-white/[0.025]
+                        px-4 py-4
+                        transition-colors duration-300
+                        hover:border-warm/50
+                        hover:bg-white/[0.045]
+                        focus-visible:border-warm
+                        focus-visible:outline-none
+                        focus-visible:ring-2
+                        focus-visible:ring-warm/45
+                        focus-visible:ring-offset-2
+                        focus-visible:ring-offset-background
+                      "
                     >
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 text-warm transition-all duration-300 group-hover:border-warm/50 group-hover:bg-warm group-hover:text-warm-foreground">
-                        <Icon size={16} strokeWidth={1.5} />
+                      <span
+                        className="
+                          flex size-10 shrink-0
+                          items-center justify-center
+                          rounded-full
+                          border border-white/10
+                          text-warm
+                          transition-colors duration-300
+                          md:group-hover:border-warm/50
+                          md:group-hover:bg-warm
+                          md:group-hover:text-warm-foreground
+                        "
+                      >
+                        <Icon
+                          size={16}
+                          strokeWidth={1.5}
+                          aria-hidden="true"
+                        />
                       </span>
 
                       <span className="min-w-0">
-                        <span className="block font-body text-[0.56rem] font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                        <span
+                          className="
+                            block
+                            font-body
+                            text-[0.56rem]
+                            font-medium uppercase
+                            tracking-[0.2em]
+                            text-muted-foreground
+                          "
+                        >
                           {item.label}
                         </span>
 
-                        <span className="mt-1 block truncate font-body text-sm text-foreground/75 transition-colors duration-300 group-hover:text-foreground">
+                        <span
+                          className="
+                            mt-1 block truncate
+                            font-body text-sm
+                            text-foreground/75
+                            transition-colors duration-300
+                            md:group-hover:text-foreground
+                          "
+                        >
                           {item.value}
                         </span>
                       </span>
@@ -204,41 +390,99 @@ export default function Contact() {
               })}
             </ul>
 
-            <div className="mt-8 flex items-center gap-3 font-body text-xs text-muted-foreground">
+            <div
+              className="
+                mt-8 flex items-center gap-3
+                font-body text-xs
+                text-muted-foreground
+              "
+            >
               <MapPin
                 size={14}
                 strokeWidth={1.5}
-                className="text-warm"
+                className="shrink-0 text-warm"
+                aria-hidden="true"
               />
 
-              <span>Rosario, Santa Fe.  Argentina · Disponibilidad para viajar</span>
+              <span>
+                Rosario, Santa Fe · Disponibilidad para viajar
+              </span>
             </div>
           </motion.div>
 
-          {/* Form */}
+          {/* Formulario */}
           <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            initial={formInitial}
+            animate={
+              inView || shouldReduceMotion
+                ? {
+                    opacity: 1,
+                    y: 0,
+                  }
+                : {}
+            }
             transition={{
-              duration: 0.9,
-              delay: 0.12,
-              ease: [0.16, 1, 0.3, 1],
+              duration: shouldReduceMotion ? 0 : 0.9,
+              delay: shouldReduceMotion ? 0 : 0.12,
+              ease: motionEase,
             }}
             className="relative"
           >
-            <div className="border border-white/10 bg-white/[0.025] p-6 backdrop-blur-sm sm:p-8 md:p-10">
-              <div className="mb-10 flex items-start justify-between gap-6 border-b border-white/10 pb-7">
+            <div
+              className="
+                border border-white/10
+                bg-white/[0.025]
+                p-6
+                sm:p-8
+                md:p-10
+                md:backdrop-blur-sm
+              "
+            >
+              <div
+                className="
+                  mb-10 flex
+                  items-start justify-between
+                  gap-6
+                  border-b border-white/10
+                  pb-7
+                "
+              >
                 <div>
-                  <p className="font-body text-[0.6rem] font-medium uppercase tracking-[0.22em] text-warm">
+                  <p
+                    className="
+                      font-body
+                      text-[0.6rem]
+                      font-medium uppercase
+                      tracking-[0.22em]
+                      text-warm
+                    "
+                  >
                     Nuevo proyecto
                   </p>
 
-                  <h3 className="mt-3 font-display text-3xl font-light text-foreground md:text-4xl">
+                  <h3
+                    className="
+                      mt-3
+                      font-display
+                      text-3xl font-light
+                      text-foreground
+                      md:text-4xl
+                    "
+                  >
                     Contanos la idea
                   </h3>
                 </div>
 
-                <span className="hidden font-body text-[0.55rem] uppercase tracking-[0.18em] text-muted-foreground sm:block">
+                <span
+                  className="
+                    hidden
+                    font-body
+                    text-[0.55rem] uppercase
+                    tracking-[0.18em]
+                    text-muted-foreground
+                    sm:block
+                  "
+                >
                   Respuesta directa
                   <br />
                   por WhatsApp
@@ -263,7 +507,7 @@ export default function Contact() {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="Tu nombre"
-                      className="contact-field"
+                      className={fieldClassName}
                     />
                   </Field>
 
@@ -277,10 +521,11 @@ export default function Contact() {
                       type="email"
                       required
                       autoComplete="email"
+                      inputMode="email"
                       value={form.email}
                       onChange={handleChange}
                       placeholder="tu@email.com"
-                      className="contact-field"
+                      className={fieldClassName}
                     />
                   </Field>
                 </div>
@@ -295,10 +540,11 @@ export default function Contact() {
                       name="phone"
                       type="tel"
                       autoComplete="tel"
+                      inputMode="tel"
                       value={form.phone}
                       onChange={handleChange}
                       placeholder="+54 9..."
-                      className="contact-field"
+                      className={fieldClassName}
                     />
                   </Field>
 
@@ -311,11 +557,11 @@ export default function Contact() {
                       name="service"
                       value={form.service}
                       onChange={handleChange}
-                      className="contact-field cursor-pointer"
+                      className={`${fieldClassName} cursor-pointer appearance-none`}
                     >
                       <option
                         value=""
-                        className="bg-background"
+                        className="bg-background text-foreground"
                       >
                         Seleccionar
                       </option>
@@ -324,7 +570,7 @@ export default function Contact() {
                         <option
                           key={service}
                           value={service}
-                          className="bg-background"
+                          className="bg-background text-foreground"
                         >
                           {service}
                         </option>
@@ -345,26 +591,68 @@ export default function Contact() {
                     value={form.message}
                     onChange={handleChange}
                     placeholder="Tipo de evento, fecha estimada, lugar, cantidad de personas y qué experiencia te gustaría crear..."
-                    className="contact-field resize-none"
+                    className={`${fieldClassName} resize-none`}
                   />
                 </Field>
 
-                <div className="flex flex-col gap-4 border-t border-white/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="max-w-xs font-body text-xs font-light leading-5 text-muted-foreground">
+                <div
+                  className="
+                    flex flex-col gap-4
+                    border-t border-white/10
+                    pt-7
+                    sm:flex-row
+                    sm:items-center
+                    sm:justify-between
+                  "
+                >
+                  <p
+                    className="
+                      max-w-xs
+                      font-body
+                      text-xs font-light
+                      leading-5
+                      text-muted-foreground
+                    "
+                  >
                     Al enviar, se abrirá WhatsApp con tu mensaje listo para
                     compartir.
                   </p>
 
                   <button
                     type="submit"
-                    className="focus-ring group flex min-w-52 items-center justify-between gap-8 bg-foreground px-6 py-4 font-body text-[0.62rem] font-medium uppercase tracking-[0.18em] text-background transition-all duration-300 hover:bg-warm hover:text-warm-foreground"
+                    className="
+                      group flex min-w-52
+                      items-center justify-between
+                      gap-8
+                      bg-foreground
+                      px-6 py-4
+                      font-body
+                      text-[0.62rem]
+                      font-medium uppercase
+                      tracking-[0.18em]
+                      text-background
+                      transition-colors duration-300
+                      hover:bg-warm
+                      hover:text-warm-foreground
+                      focus-visible:outline-none
+                      focus-visible:ring-2
+                      focus-visible:ring-warm
+                      focus-visible:ring-offset-2
+                      focus-visible:ring-offset-background
+                      active:scale-[0.99]
+                    "
                   >
                     Enviar consulta
 
                     <ArrowUpRight
                       size={16}
                       strokeWidth={1.5}
-                      className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                      aria-hidden="true"
+                      className="
+                        transition-transform duration-300
+                        md:group-hover:-translate-y-0.5
+                        md:group-hover:translate-x-0.5
+                      "
                     />
                   </button>
                 </div>
@@ -377,20 +665,30 @@ export default function Contact() {
   )
 }
 
+interface FieldProps {
+  label: string
+  htmlFor: string
+  children: ReactNode
+}
+
 function Field({
   label,
   htmlFor,
   children,
-}: {
-  label: string
-  htmlFor: string
-  children: React.ReactNode
-}) {
+}: FieldProps) {
   return (
     <div className="group flex flex-col gap-2">
       <label
         htmlFor={htmlFor}
-        className="font-body text-[0.58rem] font-medium uppercase tracking-[0.2em] text-muted-foreground transition-colors duration-300 group-focus-within:text-warm"
+        className="
+          font-body
+          text-[0.58rem]
+          font-medium uppercase
+          tracking-[0.2em]
+          text-muted-foreground
+          transition-colors duration-300
+          group-focus-within:text-warm
+        "
       >
         {label}
       </label>
@@ -399,243 +697,3 @@ function Field({
     </div>
   )
 }
-
-// 'use client'
-
-// import { useRef, useState } from 'react'
-// import { motion, useInView } from 'framer-motion'
-// import { Phone, Mail, ExternalLink, MessageSquare } from 'lucide-react'
-
-// const contactInfo = [
-//   {
-//     icon: MessageSquare,
-//     label: 'WhatsApp',
-//     value: '+54 9 351 000 0000',
-//     href: 'https://wa.me/5493510000000',
-//   },
-//   {
-//     icon: Phone,
-//     label: 'Teléfono',
-//     value: '+54 341 667 9247',
-//     href: 'tel:+543510000000',
-//   },
-//   {
-//     icon: Mail,
-//     label: 'Email',
-//     value: 'alejandrofuoco@hotmail.com',
-//     href: 'mailto:alejandrofuoco@hotmail.com',
-//   },
-//   {
-//     icon: ExternalLink,
-//     label: 'Instagram',
-//     value: '@ale_fuoco',
-//     href: 'https://instagram.com/alefuoco',
-//   },
-// ]
-
-// export default function Contact() {
-//   const ref = useRef(null)
-//   const inView = useInView(ref, { once: true, margin: '-60px' })
-
-//   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' })
-//   const [sent, setSent] = useState(false)
-
-//   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-//     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
-//   }
-
-//   const handleSubmit = (e: React.FormEvent) => {
-//     e.preventDefault()
-//     // TODO: integrate with Server Actions or Resend
-//     setSent(true)
-//   }
-
-//   return (
-//     <section id="contacto" className="bg-foreground py-24 md:py-36">
-//       <div ref={ref} className="max-w-7xl mx-auto px-6 md:px-12">
-//         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24">
-//           {/* Left col */}
-//           <motion.div
-//             initial={{ opacity: 0, y: 30 }}
-//             animate={inView ? { opacity: 1, y: 0 } : {}}
-//             transition={{ duration: 0.8 }}
-//           >
-//             <p
-//               className="text-xs tracking-[0.25em] uppercase text-background/50 mb-6"
-//               style={{ fontFamily: 'var(--font-body)' }}
-//             >
-//               Hablemos
-//             </p>
-//             <h2
-//               className="text-5xl md:text-7xl font-light text-background leading-none mb-10"
-//               style={{ fontFamily: 'var(--font-display)' }}
-//             >
-//               Contacto
-//             </h2>
-//             <p
-//               className="text-base md:text-lg text-background/60 leading-relaxed mb-12 max-w-sm"
-//               style={{ fontFamily: 'var(--font-body)' }}
-//             >
-//               ¿Tenés un evento en mente? Escribinos y contanos qué estás imaginando. La primera charla es sin
-//               compromisos.
-//             </p>
-
-//             <ul className="space-y-6">
-//               {contactInfo.map((item) => (
-//                 <li key={item.label}>
-//                   <a
-//                     href={item.href}
-//                     target="_blank"
-//                     rel="noopener noreferrer"
-//                     className="flex items-center gap-4 group"
-//                   >
-//                     <span className="flex items-center justify-center w-10 h-10 border border-background/20 text-background/60 group-hover:border-background/60 group-hover:text-background transition-colors duration-300">
-//                       <item.icon size={16} strokeWidth={1.5} />
-//                     </span>
-//                     <div>
-//                       <p
-//                         className="text-xs tracking-[0.1em] uppercase text-background/40 mb-0.5"
-//                         style={{ fontFamily: 'var(--font-body)' }}
-//                       >
-//                         {item.label}
-//                       </p>
-//                       <p
-//                         className="text-sm text-background/80 group-hover:text-background transition-colors duration-300"
-//                         style={{ fontFamily: 'var(--font-body)' }}
-//                       >
-//                         {item.value}
-//                       </p>
-//                     </div>
-//                   </a>
-//                 </li>
-//               ))}
-//             </ul>
-//           </motion.div>
-
-//           {/* Right col — Contact form */}
-//           <motion.div
-//             initial={{ opacity: 0, y: 30 }}
-//             animate={inView ? { opacity: 1, y: 0 } : {}}
-//             transition={{ duration: 0.8, delay: 0.15 }}
-//           >
-//             {sent ? (
-//               <div className="h-full flex flex-col items-start justify-center">
-//                 <p
-//                   className="text-4xl md:text-5xl font-light text-background leading-snug"
-//                   style={{ fontFamily: 'var(--font-display)' }}
-//                 >
-//                   Gracias por
-//                   <br />
-//                   <em>escribirnos.</em>
-//                 </p>
-//                 <p
-//                   className="mt-6 text-background/60 text-base"
-//                   style={{ fontFamily: 'var(--font-body)' }}
-//                 >
-//                   Nos pondremos en contacto contigo muy pronto.
-//                 </p>
-//               </div>
-//             ) : (
-//               <form onSubmit={handleSubmit} className="flex flex-col gap-6" noValidate>
-//                 {/* Name */}
-//                 <div className="flex flex-col gap-2">
-//                   <label
-//                     htmlFor="name"
-//                     className="text-xs tracking-[0.15em] uppercase text-background/50"
-//                     style={{ fontFamily: 'var(--font-body)' }}
-//                   >
-//                     Nombre
-//                   </label>
-//                   <input
-//                     id="name"
-//                     name="name"
-//                     type="text"
-//                     required
-//                     value={form.name}
-//                     onChange={handleChange}
-//                     placeholder="Tu nombre"
-//                     className="bg-transparent border-b border-background/20 focus:border-background/60 outline-none py-3 text-background placeholder:text-background/30 transition-colors duration-300 text-sm"
-//                     style={{ fontFamily: 'var(--font-body)' }}
-//                   />
-//                 </div>
-
-//                 {/* Email */}
-//                 <div className="flex flex-col gap-2">
-//                   <label
-//                     htmlFor="email"
-//                     className="text-xs tracking-[0.15em] uppercase text-background/50"
-//                     style={{ fontFamily: 'var(--font-body)' }}
-//                   >
-//                     Email
-//                   </label>
-//                   <input
-//                     id="email"
-//                     name="email"
-//                     type="email"
-//                     required
-//                     value={form.email}
-//                     onChange={handleChange}
-//                     placeholder="tu@email.com"
-//                     className="bg-transparent border-b border-background/20 focus:border-background/60 outline-none py-3 text-background placeholder:text-background/30 transition-colors duration-300 text-sm"
-//                     style={{ fontFamily: 'var(--font-body)' }}
-//                   />
-//                 </div>
-
-//                 {/* Phone */}
-//                 <div className="flex flex-col gap-2">
-//                   <label
-//                     htmlFor="phone"
-//                     className="text-xs tracking-[0.15em] uppercase text-background/50"
-//                     style={{ fontFamily: 'var(--font-body)' }}
-//                   >
-//                     Teléfono
-//                   </label>
-//                   <input
-//                     id="phone"
-//                     name="phone"
-//                     type="tel"
-//                     value={form.phone}
-//                     onChange={handleChange}
-//                     placeholder="+54 341 667 9247"
-//                     className="bg-transparent border-b border-background/20 focus:border-background/60 outline-none py-3 text-background placeholder:text-background/30 transition-colors duration-300 text-sm"
-//                     style={{ fontFamily: 'var(--font-body)' }}
-//                   />
-//                 </div>
-
-//                 {/* Message */}
-//                 <div className="flex flex-col gap-2">
-//                   <label
-//                     htmlFor="message"
-//                     className="text-xs tracking-[0.15em] uppercase text-background/50"
-//                     style={{ fontFamily: 'var(--font-body)' }}
-//                   >
-//                     Mensaje
-//                   </label>
-//                   <textarea
-//                     id="message"
-//                     name="message"
-//                     required
-//                     rows={4}
-//                     value={form.message}
-//                     onChange={handleChange}
-//                     placeholder="Contanos sobre tu evento..."
-//                     className="bg-transparent border-b border-background/20 focus:border-background/60 outline-none py-3 text-background placeholder:text-background/30 transition-colors duration-300 text-sm resize-none"
-//                     style={{ fontFamily: 'var(--font-body)' }}
-//                   />
-//                 </div>
-
-//                 <button
-//                   type="submit"
-//                   className="mt-4 self-start px-8 py-3 bg-background text-foreground text-xs tracking-[0.15em] uppercase transition-all duration-300 hover:bg-background/90 active:scale-95"
-//                   style={{ fontFamily: 'var(--font-body)' }}
-//                 >
-//                   Enviar mensaje
-//                 </button>
-//               </form>
-//             )}
-//           </motion.div>
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
