@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { ArrowDown, ArrowUpRight } from 'lucide-react'
-// import HeroCinematicRig from '@/components/effects/hero-cinematic-rig'
+import HeroCinematicRig from '@/components/effects/hero-cinematic-rig'
 
 export default function Hero() {
   const scrollToSection = (selector: string) => {
@@ -59,7 +59,7 @@ export default function Hero() {
       <div className="absolute left-[12%] top-[30%] z-[1] h-96 w-96 rounded-full bg-warm/10 blur-[120px]" />
 
       {/* Sistema técnico y efectos del Hero */}
-      {/* <HeroCinematicRig /> */}
+      <HeroCinematicRig />
 
       {/* Contenido principal */}
       <div className="site-container relative z-10 flex h-full min-h-[44rem] flex-col justify-end pb-16 pt-32 md:min-h-[48rem] md:justify-center md:pb-12 md:pt-32">
