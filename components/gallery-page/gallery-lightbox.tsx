@@ -3,8 +3,9 @@
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import Image from 'next/image'
-import { useCallback, useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import type { GalleryArchiveImage } from '@/data/gallery-images'
+import { createPortal } from 'react-dom'
 
 interface GalleryLightboxProps {
   images: GalleryArchiveImage[]
@@ -20,6 +21,11 @@ export default function GalleryLightbox({
   onChange,
 }: GalleryLightboxProps) {
   const shouldReduceMotion = useReducedMotion()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const showPrevious = useCallback(() => {
     if (activeIndex === null) {
@@ -74,7 +80,11 @@ export default function GalleryLightbox({
 
   const activeImage = activeIndex === null ? null : images[activeIndex]
 
-  return (
+  if (!mounted) {
+    return null
+  }
+
+  return createPortal(
     <AnimatePresence>
       {activeImage && activeIndex !== null && (
         <motion.div
@@ -102,41 +112,37 @@ export default function GalleryLightbox({
             duration: shouldReduceMotion ? 0 : 0.35,
           }}
           className="
-            fixed inset-0 z-[100]
-            flex flex-col
-            bg-black
-          "
+          fixed inset-0
+          z-[9999]
+          flex flex-col
+          bg-black
+        "
         >
           <div
             className="
-              flex h-20
-              items-center justify-between
-              border-b border-white/10
-              px-5
-              md:px-8
-            "
+            relative z-30
+            flex h-20 shrink-0
+            items-center justify-between
+            border-b border-white/10
+            bg-black
+            px-5
+            md:px-8
+          "
           >
             <div>
               <p
                 className="
-                  font-body
-                  text-[0.55rem]
-                  font-medium uppercase
-                  tracking-[0.22em]
-                  text-warm
-                "
+                font-body
+                text-[0.55rem]
+                font-medium uppercase
+                tracking-[0.22em]
+                text-warm
+              "
               >
                 {activeImage.category}
               </p>
 
-              <p
-                className="
-                  mt-1
-                  font-body
-                  text-xs
-                  text-white/45
-                "
-              >
+              <p className="mt-1 font-body text-xs text-white/45">
                 {String(activeIndex + 1).padStart(2, '0')} /{' '}
                 {String(images.length).padStart(2, '0')}
               </p>
@@ -147,25 +153,27 @@ export default function GalleryLightbox({
               onClick={onClose}
               aria-label="Cerrar imagen"
               className="
-                flex size-11
-                items-center justify-center
-                rounded-full
-                border border-white/15
-                text-white
-                transition-colors duration-300
-                hover:border-white
-                hover:bg-white
-                hover:text-black
-                focus-visible:outline-none
-                focus-visible:ring-2
-                focus-visible:ring-warm
-              "
+              relative z-50
+              flex size-12 shrink-0
+              items-center justify-center
+              rounded-full
+              border border-white/40
+              bg-white/10
+              text-white
+              transition-all duration-300
+              hover:border-white
+              hover:bg-white
+              hover:text-black
+              focus-visible:outline-none
+              focus-visible:ring-2
+              focus-visible:ring-warm
+            "
             >
-              <X size={19} strokeWidth={1.5} aria-hidden="true" />
+              <X size={24} strokeWidth={1.75} aria-hidden="true" />
             </button>
           </div>
 
-          <div className="relative flex-1 overflow-hidden">
+          <div className="relative min-h-0 flex-1 overflow-hidden">
             <motion.div
               key={activeImage.id}
               initial={
@@ -192,7 +200,9 @@ export default function GalleryLightbox({
                 fill
                 quality={95}
                 sizes="100vw"
-                className={`object-contain ${activeImage.position ?? 'object-center'}`}
+                className={`object-contain ${
+                  activeImage.position ?? 'object-center'
+                }`}
               />
             </motion.div>
 
@@ -201,24 +211,23 @@ export default function GalleryLightbox({
               onClick={showPrevious}
               aria-label="Imagen anterior"
               className="
-                absolute left-4 top-1/2
-                z-10
-                flex size-11
-                -translate-y-1/2
-                items-center justify-center
-                rounded-full
-                border border-white/15
-                bg-black/40
-                text-white
-                transition-colors duration-300
-                hover:border-white
-                hover:bg-white
-                hover:text-black
-                focus-visible:outline-none
-                focus-visible:ring-2
-                focus-visible:ring-warm
-                md:left-8
-              "
+              absolute left-4 top-1/2 z-20
+              flex size-11
+              -translate-y-1/2
+              items-center justify-center
+              rounded-full
+              border border-white/20
+              bg-black/60
+              text-white
+              transition-colors duration-300
+              hover:border-white
+              hover:bg-white
+              hover:text-black
+              focus-visible:outline-none
+              focus-visible:ring-2
+              focus-visible:ring-warm
+              md:left-8
+            "
             >
               <ChevronLeft size={20} strokeWidth={1.5} aria-hidden="true" />
             </button>
@@ -228,24 +237,23 @@ export default function GalleryLightbox({
               onClick={showNext}
               aria-label="Imagen siguiente"
               className="
-                absolute right-4 top-1/2
-                z-10
-                flex size-11
-                -translate-y-1/2
-                items-center justify-center
-                rounded-full
-                border border-white/15
-                bg-black/40
-                text-white
-                transition-colors duration-300
-                hover:border-white
-                hover:bg-white
-                hover:text-black
-                focus-visible:outline-none
-                focus-visible:ring-2
-                focus-visible:ring-warm
-                md:right-8
-              "
+              absolute right-4 top-1/2 z-20
+              flex size-11
+              -translate-y-1/2
+              items-center justify-center
+              rounded-full
+              border border-white/20
+              bg-black/60
+              text-white
+              transition-colors duration-300
+              hover:border-white
+              hover:bg-white
+              hover:text-black
+              focus-visible:outline-none
+              focus-visible:ring-2
+              focus-visible:ring-warm
+              md:right-8
+            "
             >
               <ChevronRight size={20} strokeWidth={1.5} aria-hidden="true" />
             </button>
@@ -253,35 +261,36 @@ export default function GalleryLightbox({
 
           <div
             className="
-              grid gap-3
-              border-t border-white/10
-              px-5 py-5
-              md:grid-cols-[1fr_auto]
-              md:items-end
-              md:px-8
-            "
+            relative z-30
+            grid shrink-0 gap-3
+            border-t border-white/10
+            bg-black
+            px-5 py-5
+            md:grid-cols-[1fr_auto]
+            md:items-end
+            md:px-8
+          "
           >
             <h2
               className="
-                font-display
-                text-3xl
-                font-light
-                tracking-[-0.03em]
-                text-white
-                md:text-4xl
-              "
+              font-display
+              text-3xl font-light
+              tracking-[-0.03em]
+              text-white
+              md:text-4xl
+            "
             >
               {activeImage.title}
             </h2>
 
             <p
               className="
-                font-body
-                text-[0.58rem]
-                font-medium uppercase
-                tracking-[0.2em]
-                text-white/40
-              "
+              font-body
+              text-[0.58rem]
+              font-medium uppercase
+              tracking-[0.2em]
+              text-white/40
+            "
             >
               {[activeImage.location, activeImage.year]
                 .filter(Boolean)
@@ -290,6 +299,7 @@ export default function GalleryLightbox({
           </div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body,
   )
 }
