@@ -3,6 +3,7 @@ import Contact from '@/components/contact'
 import SectionTransition from '@/components/effects/section-transition'
 import Gallery from '@/components/gallery'
 import Hero from '@/components/hero'
+import Services from '@/components/services'
 import Testimonials from '@/components/testimonials'
 
 export default function HomePage() {
@@ -10,19 +11,23 @@ export default function HomePage() {
     <main className="relative overflow-x-clip">
       <Hero />
 
-      <SectionTransition label="Selected works" number="01" />
+      <SectionTransition label="Services" number="01" />
+
+      <Services />
+
+      <SectionTransition label="Selected works" number="02" direction="left" />
 
       <Gallery />
 
-      <SectionTransition label="Profile" number="02" direction="left" />
+      <SectionTransition label="Profile" number="03" />
 
       <About />
 
-      <SectionTransition label="Testimonials" number="03" />
+      <SectionTransition label="Testimonials" number="04" direction="left" />
 
       <Testimonials />
 
-      <SectionTransition label="Contact channel" number="04" direction="left" />
+      <SectionTransition label="Contact channel" number="05" />
 
       <Contact />
     </main>
