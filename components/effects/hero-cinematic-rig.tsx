@@ -469,7 +469,7 @@ export default function HeroCinematicRig() {
         /> */}
 
         {/* Línea inferior */}
-        <div
+        {/* <div
           className={`absolute right-[clamp(1.5rem,4vw,4.5rem)]
             bottom-[1rem]
             left-[clamp(1.5rem,4vw,4.5rem)]
@@ -483,11 +483,11 @@ export default function HeroCinematicRig() {
             text-white/20
             xl:flex`}
         >
-          {/* <span>ARTNET</span> */}
-          {/* <span>CH 001–512</span> */}
-          {/* <span>LIGHT DESIGN</span> */}
-          {/* <span>LIVE OUTPUT</span> */}
-        </div>
+          <span>ARTNET</span>
+          <span>CH 001–512</span>
+          <span>LIGHT DESIGN</span>
+          <span>LIVE OUTPUT</span>
+        </div> */}
       </div>
 
       <style jsx>{`
