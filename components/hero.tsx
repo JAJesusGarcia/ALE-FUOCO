@@ -30,7 +30,7 @@ export default function Hero() {
       id="inicio"
       className="
         relative
-        h-[105svh]
+        h-[100svh]
         min-h-[44rem]
         w-full
         overflow-hidden
@@ -120,6 +120,21 @@ export default function Hero() {
       {/* Sistema técnico y efectos cinematográficos */}
       <HeroCinematicRig />
 
+      {/* Máscara inferior para separar el HUD de la información */}
+      <div
+        aria-hidden="true"
+        className="
+    pointer-events-none
+    absolute inset-x-0 bottom-0 z-[8]
+    hidden h-32
+    bg-gradient-to-t
+    from-background
+    via-background/95
+    to-transparent
+    md:block
+  "
+      />
+
       {/* Contenido principal */}
       <div
         className="
@@ -140,14 +155,16 @@ export default function Hero() {
       >
         <div
           className="
-            mx-auto flex
-            w-full max-w-5xl
-            flex-col items-center
-            text-center
-            md:mx-0
-            md:items-start
-            md:text-left
-          "
+    mx-auto flex
+    w-full max-w-5xl
+    flex-col items-center
+    text-center
+    md:mx-0
+    md:translate-y-8
+    md:items-start
+    md:text-left
+    lg:translate-y-10
+  "
         >
           {/* Descripción superior, solo tablet y escritorio */}
           <motion.div
@@ -221,15 +238,15 @@ export default function Hero() {
             <Image
               src="/images/logo-ale1.webp"
               alt="Ale Fuoco"
-              width={1000}
-              height={500}
+              width={800}
+              height={300}
               priority
               sizes="
-                (max-width: 389px) 18rem,
-                (max-width: 639px) 19rem,
-                (max-width: 767px) 21rem,
-                (max-width: 1023px) 28rem,
-                34rem
+                (max-width: 379px) 15rem,
+                (max-width: 629px) 16rem,
+                (max-width: 757px) 18rem,
+                (max-width: 1013px) 25rem,
+                31rem
               "
               className="
                 h-auto
