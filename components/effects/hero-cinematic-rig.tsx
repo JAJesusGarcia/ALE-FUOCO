@@ -1,12 +1,13 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import MasterOutputMeter from '@/components/effects/master-output-meter'
 
 const FPS = 25
 
-const desktopLaserLines = Array.from({ length: 9 }, (_, index) => index)
-const mobileLaserLines = Array.from({ length: 5 }, (_, index) => index)
-const audioBars = Array.from({ length: 18 }, (_, index) => index)
+// const desktopLaserLines = Array.from({ length: 9 }, (_, index) => index)
+// const mobileLaserLines = Array.from({ length: 5 }, (_, index) => index)
+// const audioBars = Array.from({ length: 18 }, (_, index) => index)
 
 function formatTimecode(totalFrames: number) {
   const frames = totalFrames % FPS
@@ -419,40 +420,8 @@ export default function HeroCinematicRig() {
           <SystemItem label="FPS" value="60" />
         </div>
 
-        {/* Medidor de audio */}
-        <div
-          className={`absolute right-[clamp(1.5rem,4vw,4.5rem)]
-            bottom-[clamp(12.5rem,9vw,8rem)]
-            hidden w-[10rem]
-            lg:block`}
-        >
-          <div
-            className={`mb-2 flex items-center justify-between
-              font-body text-[0.36rem]
-              font-medium uppercase
-              tracking-[0.17em]
-              text-white/25`}
-          >
-            <span>MASTER</span>
-            <span>-06 DB</span>
-          </div>
-
-          <div className={`flex h-10 items-end gap-[0.18rem]`}>
-            {audioBars.map((bar) => (
-              <span
-                key={bar}
-                className={`hero-audio-bar
-                  block min-h-px flex-1
-                  origin-bottom
-                  bg-[linear-gradient(180deg,rgba(255,223,191,0.6),rgba(244,161,92,0.15))]
-                  opacity-30`}
-                style={{
-                  animationDelay: `${bar * 70}ms`,
-                }}
-              />
-            ))}
-          </div>
-        </div>
+        {/* Medidor master vertical */}
+        <MasterOutputMeter />
 
         {/* Esquinas */}
         {/* <HudCorner
