@@ -142,7 +142,7 @@ export default function Hero() {
           h-full min-h-[44rem]
           w-full max-w-[90rem]
           flex-col justify-end
-          px-6 pb-16 pt-32
+          px-6 pb-16 pt-24
           md:min-h-[48rem]
           md:justify-center
           md:px-10
@@ -224,13 +224,13 @@ export default function Hero() {
               ease: motionEase,
             }}
             className="
-              w-full
-              max-w-[18rem]
-              min-[390px]:max-w-[19rem]
-              sm:max-w-[21rem]
-              md:max-w-[28rem]
-              lg:max-w-[34rem]
-            "
+  w-full
+  max-w-[13rem]
+  min-[390px]:max-w-[14rem]
+  sm:max-w-[16rem]
+  md:max-w-[28rem]
+  lg:max-w-[34rem]
+"
           >
             <Image
               src="/images/logo-ale1.webp"
@@ -276,13 +276,13 @@ export default function Hero() {
               ease: motionEase,
             }}
             className="
-  mt-5
+  mt-3
   grid
   w-full
   max-w-5xl
   grid-cols-1
   gap-6
-  sm:mt-7
+  sm:mt-5
   md:mt-10
   md:grid-cols-[minmax(0,1fr)_auto]
   md:items-end
@@ -294,7 +294,7 @@ export default function Hero() {
                 className="
       max-w-[22rem]
       font-display
-      text-[1.12rem]
+      text-[0.98rem]
       font-light italic
       leading-[1.75]
       text-white/70
