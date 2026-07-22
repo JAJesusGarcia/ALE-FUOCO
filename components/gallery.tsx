@@ -42,7 +42,7 @@ type GalleryItem =
 const galleryItems: GalleryItem[] = [
   {
     type: 'image',
-    src: '/images/gallery-1.webp',
+    src: '/images/gallery-01.webp',
     title: 'Escenarios con identidad propia',
     description:
       'Diseño lumínico pensado para acompañar la música, la arquitectura y cada momento del evento.',
@@ -55,7 +55,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     type: 'image',
-    src: '/images/gallery-2.webp',
+    src: '/images/gallery-02.webp',
     title: 'Cobertura clara y equilibrada',
     description:
       'Sistemas de sonido configurados para que cada palabra y cada canción se escuchen con claridad.',
@@ -68,7 +68,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     type: 'image',
-    src: '/images/gallery-3.webp',
+    src: '/images/gallery-03.webp',
     title: 'Coordinación técnica integral',
     description:
       'Planificación, montaje y coordinación de todos los sistemas técnicos durante el evento.',
@@ -81,7 +81,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     type: 'image',
-    src: '/images/gallery-4.webp',
+    src: '/images/gallery-04.webp',
     title: 'Impacto visual en gran formato',
     description:
       'Pantallas LED para shows, eventos corporativos y producciones que necesitan una comunicación visual de alto impacto.',
@@ -94,7 +94,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     type: 'image',
-    src: '/images/gallery-5.webp',
+    src: '/images/gallery-05.webp',
     title: 'Control en tiempo real',
     description:
       'Operación técnica de iluminación, sonido y sistemas durante todo el desarrollo del evento.',
@@ -107,7 +107,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     type: 'image',
-    src: '/images/gallery-6.webp',
+    src: '/images/gallery-06.webp',
     title: 'La música marca el momento',
     description:
       'Selección musical, mezcla en vivo y acompañamiento de cada momento para mantener la energía del evento.',
