@@ -160,10 +160,8 @@ export default function Hero() {
     flex-col items-center
     text-center
     md:mx-0
-    md:translate-y-8
     md:items-start
     md:text-left
-    lg:translate-y-10
   "
         >
           {/* Descripción superior, solo tablet y escritorio */}
@@ -279,56 +277,63 @@ export default function Hero() {
               ease: motionEase,
             }}
             className="
-  mt-5 flex
+  mt-5
+  grid
   w-full
-  max-w-3xl
-  flex-col
-  gap-4
+  max-w-5xl
+  grid-cols-1
+  gap-6
   sm:mt-7
-  sm:gap-5
   md:mt-10
+  md:grid-cols-[minmax(0,1fr)_auto]
+  md:items-end
+  md:gap-x-12
 "
           >
-            <p
-              className="
-                max-w-[22rem]
-                font-display
-                text-[1.12rem]
-                font-light italic
-                leading-[1.75]
-                text-white/70
-                sm:max-w-lg
-                sm:text-xl
-                md:text-2xl
-                md:leading-relaxed
-              "
-            >
-              Producción técnica integral para eventos sociales, corporativos y
-              privados.
-            </p>
-            <p
-              className="
-  max-w-xl
-  font-body
-  text-sm
-  leading-7
-  text-white/65
-  sm:text-base
-  md:text-lg
-  md:leading-8
-"
-            >
-              DJ, sonido profesional, iluminación, pantallas LED y producción
-              técnica para eventos sociales, corporativos y privados.
-            </p>
+            <div className="flex max-w-2xl flex-col gap-4">
+              <p
+                className="
+      max-w-[22rem]
+      font-display
+      text-[1.12rem]
+      font-light italic
+      leading-[1.75]
+      text-white/70
+      sm:max-w-lg
+      sm:text-xl
+      md:text-2xl
+      md:leading-relaxed
+    "
+              >
+                Producción técnica integral para eventos sociales, corporativos
+                y privados.
+              </p>
+
+              <p
+                className="
+      max-w-xl
+      font-body
+      text-sm
+      leading-7
+      text-white/65
+      sm:text-base
+      md:text-lg
+      md:leading-8
+    "
+              >
+                DJ, sonido profesional, iluminación, pantallas LED y producción
+                técnica para eventos sociales, corporativos y privados.
+              </p>
+            </div>
 
             <div
               className="
-                flex w-full
-                flex-col gap-2
-                sm:w-auto
-                sm:flex-row
-              "
+  flex w-full
+  flex-col gap-2
+  sm:w-auto
+  sm:flex-row
+  md:justify-self-end
+"
             >
               <button
                 type="button"
