@@ -63,8 +63,9 @@ export default function Hero() {
           priority
           quality={95}
           sizes="100vw"
-          className="object-cover object-center opacity-30"
+          className="object-cover object-center"
         />
+        <div className="absolute inset-0 bg-black/55" />
       </motion.div>
 
       {/* Oscurecimiento general */}

@@ -4,6 +4,7 @@ import { FaFacebookF, FaInstagram } from 'react-icons/fa6'
 
 const navLinks = [
   { label: 'Inicio', href: '#inicio' },
+  { label: 'Servicios', href: '#servicios' },
   { label: 'Galería', href: '#galeria' },
   { label: 'Sobre Ale', href: '#sobre' },
   { label: 'Comentarios', href: '#comentarios' },
