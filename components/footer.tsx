@@ -1,6 +1,7 @@
 import { ArrowUp, Mail, MapPin, Phone } from 'lucide-react'
 import Link from 'next/link'
 import { FaFacebookF, FaInstagram } from 'react-icons/fa6'
+import DeveloperSignature from '@/components/branding/signature'
 
 const footerLinks = [
   { label: 'Inicio', href: '/#inicio' },
@@ -424,6 +425,7 @@ export default function Footer() {
             </span>
           </a>
         </div>
+        <DeveloperSignature clientName="Ale Fuoco" />
       </div>
     </footer>
   )
