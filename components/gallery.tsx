@@ -107,7 +107,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     type: 'image',
-    src: '/images/gallery-06.webp',
+    src: '/images/gallery-07.webp',
     title: 'La música marca el momento',
     description:
       'Selección musical, mezcla en vivo y acompañamiento de cada momento para mantener la energía del evento.',
