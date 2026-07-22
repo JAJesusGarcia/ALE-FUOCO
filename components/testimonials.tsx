@@ -31,46 +31,46 @@ const initialTestimonials: PublicTestimonial[] = [
     comment:
       'Ale entendió perfectamente el clima que queríamos lograr. La iluminación acompañó cada momento de la noche y el sonido fue impecable. Todo se sintió cuidado, elegante y muy natural.',
   },
-  {
-    id: 'carolina-rodriguez',
-    name: 'Carolina Rodríguez',
-    event: 'Cumpleaños de 50',
-    service: 'Diseño de iluminación',
-    rating: 5,
-    createdAt: '2026-01-02T00:00:00.000Z',
-    comment:
-      'El lugar cambió por completo. Ale logró darle profundidad, calidez y personalidad a cada espacio sin que se sintiera exagerado. La iluminación terminó siendo una parte central de la experiencia.',
-  },
-  {
-    id: 'grupo-beltran',
-    name: 'Grupo Beltrán S.A.',
-    event: 'Gala corporativa',
-    service: 'Producción técnica',
-    rating: 5,
-    createdAt: '2026-01-03T00:00:00.000Z',
-    comment:
-      'Trabajamos con Ale para nuestra cena anual y la ejecución técnica fue impecable. Sonido claro, iluminación precisa y una operación muy profesional durante todo el evento.',
-  },
-  {
-    id: 'sofia-mendez',
-    name: 'Sofía Méndez',
-    event: 'Evento social',
-    service: 'Ambientación lumínica',
-    rating: 5,
-    createdAt: '2026-01-04T00:00:00.000Z',
-    comment:
-      'Ale consiguió que un espacio bastante simple se sintiera completamente distinto. Cada luz tenía un sentido y todo se adaptó perfectamente al ritmo de la noche.',
-  },
-  {
-    id: 'federacion-cultural',
-    name: 'Federación Cultural del Norte',
-    event: 'Evento cultural',
-    service: 'Sonido y operación',
-    rating: 5,
-    createdAt: '2026-01-05T00:00:00.000Z',
-    comment:
-      'Fue un placer trabajar con alguien tan comprometido con el resultado. Ale resolvió cada necesidad técnica con criterio, tranquilidad y mucha atención durante toda la jornada.',
-  },
+  // {
+  //   id: 'carolina-rodriguez',
+  //   name: 'Carolina Rodríguez',
+  //   event: 'Cumpleaños de 50',
+  //   service: 'Diseño de iluminación',
+  //   rating: 5,
+  //   createdAt: '2026-01-02T00:00:00.000Z',
+  //   comment:
+  //     'El lugar cambió por completo. Ale logró darle profundidad, calidez y personalidad a cada espacio sin que se sintiera exagerado. La iluminación terminó siendo una parte central de la experiencia.',
+  // },
+  // {
+  //   id: 'grupo-beltran',
+  //   name: 'Grupo Beltrán S.A.',
+  //   event: 'Gala corporativa',
+  //   service: 'Producción técnica',
+  //   rating: 5,
+  //   createdAt: '2026-01-03T00:00:00.000Z',
+  //   comment:
+  //     'Trabajamos con Ale para nuestra cena anual y la ejecución técnica fue impecable. Sonido claro, iluminación precisa y una operación muy profesional durante todo el evento.',
+  // },
+  // {
+  //   id: 'sofia-mendez',
+  //   name: 'Sofía Méndez',
+  //   event: 'Evento social',
+  //   service: 'Ambientación lumínica',
+  //   rating: 5,
+  //   createdAt: '2026-01-04T00:00:00.000Z',
+  //   comment:
+  //     'Ale consiguió que un espacio bastante simple se sintiera completamente distinto. Cada luz tenía un sentido y todo se adaptó perfectamente al ritmo de la noche.',
+  // },
+  // {
+  //   id: 'federacion-cultural',
+  //   name: 'Federación Cultural del Norte',
+  //   event: 'Evento cultural',
+  //   service: 'Sonido y operación',
+  //   rating: 5,
+  //   createdAt: '2026-01-05T00:00:00.000Z',
+  //   comment:
+  //     'Fue un placer trabajar con alguien tan comprometido con el resultado. Ale resolvió cada necesidad técnica con criterio, tranquilidad y mucha atención durante toda la jornada.',
+  // },
 ]
 
 interface FormState {
