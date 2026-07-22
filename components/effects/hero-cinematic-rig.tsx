@@ -483,10 +483,10 @@ export default function HeroCinematicRig() {
             text-white/20
             xl:flex`}
         >
-          <span>ARTNET</span>
-          <span>CH 001–512</span>
-          <span>LIGHT DESIGN</span>
-          <span>LIVE OUTPUT</span>
+          {/* <span>ARTNET</span> */}
+          {/* <span>CH 001–512</span> */}
+          {/* <span>LIGHT DESIGN</span> */}
+          {/* <span>LIVE OUTPUT</span> */}
         </div>
       </div>
 
