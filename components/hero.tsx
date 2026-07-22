@@ -502,7 +502,7 @@ export default function Hero() {
 
           <button
             type="button"
-            onClick={() => scrollToSection('#galeria')}
+            onClick={() => scrollToSection('#servicios')}
             className="
               group flex
               items-center gap-3
