@@ -70,6 +70,7 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
       `}
     >
       <body
+        id="top"
         className="
           min-h-screen
           overflow-x-clip

@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import { usePathname, useRouter } from 'next/navigation'
 
 const navLinks = [
   { label: 'Inicio', href: '#inicio' },
@@ -17,6 +18,8 @@ const motionEase = [0.16, 1, 0.3, 1] as const
 
 export default function Navbar() {
   const shouldReduceMotion = useReducedMotion()
+  const router = useRouter()
+  const pathname = usePathname()
 
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -97,22 +100,49 @@ export default function Navbar() {
     }
   }, [])
 
-  const handleNav = useCallback((href: string) => {
-    setMenuOpen(false)
+  // const handleNav = useCallback((href: string) => {
+  //   setMenuOpen(false)
 
-    window.requestAnimationFrame(() => {
-      const element = document.querySelector<HTMLElement>(href)
+  //   window.requestAnimationFrame(() => {
+  //     const element = document.querySelector<HTMLElement>(href)
 
-      if (!element) {
+  //     if (!element) {
+  //       return
+  //     }
+
+  //     element.scrollIntoView({
+  //       behavior: 'smooth',
+  //       block: 'start',
+  //     })
+  //   })
+  // }, [])
+
+  const handleNav = useCallback(
+    (href: string) => {
+      setMenuOpen(false)
+
+      if (pathname !== '/') {
+        router.push(`/${href}`)
         return
       }
 
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
+      window.requestAnimationFrame(() => {
+        const element = document.querySelector<HTMLElement>(href)
+
+        if (!element) {
+          return
+        }
+
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        })
+
+        window.history.replaceState(null, '', href)
       })
-    })
-  }, [])
+    },
+    [pathname, router],
+  )
 
   const toggleMenu = useCallback(() => {
     setMenuOpen((current) => !current)

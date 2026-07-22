@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import {
   ArrowDownRight,
   Lightbulb,
@@ -218,6 +219,125 @@ export default function Gallery() {
             />
           ))}
         </div>
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 25,
+          }}
+          animate={
+            headerInView
+              ? {
+                  opacity: 1,
+                  y: 0,
+                }
+              : {}
+          }
+          transition={{
+            duration: 0.85,
+            delay: 0.35,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+          className="
+    mt-16
+    border-t border-white/10
+    pt-10
+    md:mt-20
+    md:pt-12
+  "
+        >
+          <div
+            className="
+      grid gap-8
+      md:grid-cols-[1fr_auto]
+      md:items-end
+    "
+          >
+            <div>
+              <p
+                className="
+          font-body
+          text-[0.58rem]
+          font-medium uppercase
+          tracking-[0.24em]
+          text-warm
+        "
+              >
+                Archivo completo
+              </p>
+
+              <h3
+                className="
+          mt-4
+          max-w-[12ch]
+          font-display
+          text-[clamp(2.8rem,5vw,5.5rem)]
+          font-light
+          leading-[0.9]
+          tracking-[-0.04em]
+          text-foreground
+        "
+              >
+                Más eventos.
+                <span className="block italic text-foreground/45">
+                  Más historias.
+                </span>
+              </h3>
+            </div>
+
+            <div className="md:text-right">
+              <p
+                className="
+          mb-7
+          max-w-sm
+          font-body
+          text-sm
+          font-light
+          leading-7
+          text-muted-foreground
+        "
+              >
+                Explorá una selección ampliada de producciones, montajes y
+                momentos capturados durante distintos eventos.
+              </p>
+
+              <Link
+                href="/galeria"
+                className="
+          group
+          inline-flex items-center gap-5
+          border border-white/15
+          px-6 py-4
+          font-body
+          text-[0.6rem]
+          font-medium uppercase
+          tracking-[0.2em]
+          text-foreground
+          transition-all duration-300
+          hover:border-warm
+          hover:bg-warm
+          hover:text-warm-foreground
+          focus-visible:outline-none
+          focus-visible:ring-2
+          focus-visible:ring-warm
+          focus-visible:ring-offset-4
+          focus-visible:ring-offset-background
+        "
+              >
+                Explorar archivo
+                <ArrowDownRight
+                  size={16}
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                  className="
+            transition-transform duration-300
+            group-hover:translate-x-1
+            group-hover:translate-y-1
+          "
+                />
+              </Link>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

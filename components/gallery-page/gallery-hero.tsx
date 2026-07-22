@@ -1,7 +1,9 @@
 'use client'
 
 import { motion, useReducedMotion } from 'framer-motion'
+import { ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const motionEase = [0.16, 1, 0.3, 1] as const
 
@@ -26,7 +28,7 @@ export default function GalleryHero() {
       "
     >
       <Image
-        src="/images/gallery-1.webp"
+        src="/images/hero.webp"
         alt="Producción técnica e iluminación profesional de Ale Fuoco"
         fill
         priority
@@ -53,6 +55,68 @@ export default function GalleryHero() {
           bg-[linear-gradient(90deg,rgba(0,0,0,0.55),transparent_70%)]
         "
       />
+
+      <motion.div
+        initial={
+          shouldReduceMotion
+            ? false
+            : {
+                opacity: 0,
+                x: -20,
+              }
+        }
+        animate={{
+          opacity: 1,
+          x: 0,
+        }}
+        transition={{
+          duration: shouldReduceMotion ? 0 : 0.8,
+          delay: shouldReduceMotion ? 0 : 0.2,
+          ease: motionEase,
+        }}
+        className="
+          absolute left-6 top-24 z-20
+          md:left-10 md:top-28
+          lg:left-14
+          xl:left-16
+        "
+      >
+        <Link
+          href="/#galeria"
+          aria-label="Volver a la página principal"
+          className="
+            group
+            inline-flex items-center gap-3
+            border border-white/20
+            bg-black/15
+            px-4 py-3
+            font-body
+            text-[0.56rem]
+            font-medium uppercase
+            tracking-[0.2em]
+            text-white/75
+            transition-all duration-300
+            hover:border-white/50
+            hover:bg-black/35
+            hover:text-white
+            focus-visible:outline-none
+            focus-visible:ring-2
+            focus-visible:ring-warm
+            md:backdrop-blur-md
+          "
+        >
+          <ArrowLeft
+            size={15}
+            strokeWidth={1.5}
+            aria-hidden="true"
+            className="
+              transition-transform duration-300
+              group-hover:-translate-x-1
+            "
+          />
+          Volver al inicio
+        </Link>
+      </motion.div>
 
       <div
         className="

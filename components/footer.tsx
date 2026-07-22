@@ -1,14 +1,14 @@
 import { ArrowUp, Mail, MapPin, Phone } from 'lucide-react'
-
+import Link from 'next/link'
 import { FaFacebookF, FaInstagram } from 'react-icons/fa6'
 
-const navLinks = [
-  { label: 'Inicio', href: '#inicio' },
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Galería', href: '#galeria' },
-  { label: 'Sobre Ale', href: '#sobre' },
-  { label: 'Comentarios', href: '#comentarios' },
-  { label: 'Contacto', href: '#contacto' },
+const footerLinks = [
+  { label: 'Inicio', href: '/#inicio' },
+  { label: 'Servicios', href: '/#servicios' },
+  { label: 'Galería', href: '/#galeria' },
+  { label: 'Sobre Ale', href: '/#sobre' },
+  { label: 'Comentarios', href: '/#comentarios' },
+  { label: 'Contacto', href: '/#contacto' },
 ]
 
 const contactLinks = [
@@ -117,42 +117,42 @@ export default function Footer() {
           </div>
 
           <div className="md:justify-self-end">
-            <a
-              href="#contacto"
+            <Link
+              href="/#contacto"
               className="
-                group inline-flex min-w-56
-                items-center justify-between
-                gap-8
-                border border-white/15
-                px-6 py-4
-                font-body
-                text-[0.62rem]
-                font-medium uppercase
-                tracking-[0.2em]
-                text-foreground
-                transition-colors duration-300
-                hover:border-warm
-                hover:bg-warm
-                hover:text-warm-foreground
-                focus-visible:outline-none
-                focus-visible:ring-2
-                focus-visible:ring-warm
-                focus-visible:ring-offset-2
-                focus-visible:ring-offset-background
-              "
+    group inline-flex min-w-56
+    items-center justify-between
+    gap-8
+    border border-white/15
+    px-6 py-4
+    font-body
+    text-[0.62rem]
+    font-medium uppercase
+    tracking-[0.2em]
+    text-foreground
+    transition-colors duration-300
+    hover:border-warm
+    hover:bg-warm
+    hover:text-warm-foreground
+    focus-visible:outline-none
+    focus-visible:ring-2
+    focus-visible:ring-warm
+    focus-visible:ring-offset-2
+    focus-visible:ring-offset-background
+  "
             >
               Empezar un proyecto
               <span
                 aria-hidden="true"
                 className="
-                  text-lg
-                  transition-transform duration-300
-                  md:group-hover:translate-x-1
-                "
+      text-lg
+      transition-transform duration-300
+      md:group-hover:translate-x-1
+    "
               >
                 ↗
               </span>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -166,42 +166,42 @@ export default function Footer() {
           "
         >
           <div>
-            <a
-              href="#inicio"
+            <Link
+              href="/#inicio"
               className="
-                inline-flex flex-col
-                focus-visible:outline-none
-                focus-visible:ring-2
-                focus-visible:ring-warm
-                focus-visible:ring-offset-4
-                focus-visible:ring-offset-background
-              "
+    inline-flex flex-col
+    focus-visible:outline-none
+    focus-visible:ring-2
+    focus-visible:ring-warm
+    focus-visible:ring-offset-4
+    focus-visible:ring-offset-background
+  "
               aria-label="Volver al inicio"
             >
               <span
                 className="
-                  font-display
-                  text-4xl font-light
-                  tracking-[-0.03em]
-                  text-foreground
-                "
+      font-display
+      text-4xl font-light
+      tracking-[-0.03em]
+      text-foreground
+    "
               >
                 Ale Fuoco
               </span>
 
               <span
                 className="
-                  mt-2
-                  font-body
-                  text-[0.58rem]
-                  font-medium uppercase
-                  tracking-[0.28em]
-                  text-warm
-                "
+      mt-2
+      font-body
+      text-[0.58rem]
+      font-medium uppercase
+      tracking-[0.28em]
+      text-warm
+    "
               >
                 Producción de eventos
               </span>
-            </a>
+            </Link>
 
             <p
               className="
@@ -233,20 +233,20 @@ export default function Footer() {
             </p>
 
             <ul className="space-y-3">
-              {navLinks.map((link, index) => (
+              {footerLinks.map((link, index) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="
-                      group inline-flex
-                      items-center gap-3
-                      font-body text-sm
-                      text-foreground/65
-                      transition-colors duration-300
-                      hover:text-foreground
-                      focus-visible:outline-none
-                      focus-visible:text-foreground
-                    "
+          group inline-flex
+          items-center gap-3
+          font-body text-sm
+          text-foreground/65
+          transition-colors duration-300
+          hover:text-foreground
+          focus-visible:outline-none
+          focus-visible:text-foreground
+        "
                   >
                     <span
                       aria-hidden="true"
@@ -256,7 +256,7 @@ export default function Footer() {
                     </span>
 
                     <span>{link.label}</span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -391,34 +391,34 @@ export default function Footer() {
           </div>
 
           <a
-            href="#inicio"
+            href="#top"
             aria-label="Volver arriba"
             className="
-              group inline-flex w-fit
-              items-center gap-3
-              font-body
-              text-[0.6rem]
-              font-medium uppercase
-              tracking-[0.2em]
-              text-muted-foreground
-              transition-colors duration-300
-              hover:text-foreground
-              focus-visible:outline-none
-              focus-visible:text-foreground
-            "
+    group inline-flex w-fit
+    items-center gap-3
+    font-body
+    text-[0.6rem]
+    font-medium uppercase
+    tracking-[0.2em]
+    text-muted-foreground
+    transition-colors duration-300
+    hover:text-foreground
+    focus-visible:outline-none
+    focus-visible:text-foreground
+  "
           >
             Volver arriba
             <span
               className="
-                flex size-8
-                items-center justify-center
-                rounded-full
-                border border-white/10
-                transition-all duration-300
-                md:group-hover:-translate-y-1
-                md:group-hover:border-warm
-                md:group-hover:text-warm
-              "
+      flex size-8
+      items-center justify-center
+      rounded-full
+      border border-white/10
+      transition-all duration-300
+      md:group-hover:-translate-y-1
+      md:group-hover:border-warm
+      md:group-hover:text-warm
+    "
             >
               <ArrowUp size={13} strokeWidth={1.5} aria-hidden="true" />
             </span>
