@@ -121,19 +121,19 @@ export default function Hero() {
       <HeroCinematicRig />
 
       {/* Máscara inferior para separar el HUD de la información */}
-      <div
+      {/* <div
         aria-hidden="true"
         className="
-    pointer-events-none
-    absolute inset-x-0 bottom-0 z-[8]
-    hidden h-32
-    bg-gradient-to-t
-    from-background
-    via-background/95
-    to-transparent
-    md:block
-  "
-      />
+        pointer-events-none
+        absolute inset-x-0 bottom-0 z-[8]
+        hidden h-32
+        bg-gradient-to-t
+        from-background
+        via-background/95
+        to-transparent
+        md:block
+        "
+      /> */}
 
       {/* Contenido principal */}
       <div
