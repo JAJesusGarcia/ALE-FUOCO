@@ -33,6 +33,7 @@ export async function getTestimonialById(
 ): Promise<Testimonial | null> {
   const result = await get(getTestimonialPath(id), {
     access: ACCESS,
+    useCache: false,
   })
 
   if (!result || result.statusCode !== 200) {
@@ -53,6 +54,7 @@ export async function getAllTestimonials(): Promise<Testimonial[]> {
       try {
         const file = await get(blob.pathname, {
           access: ACCESS,
+          useCache: false,
         })
 
         if (!file || file.statusCode !== 200) {
@@ -60,7 +62,9 @@ export async function getAllTestimonials(): Promise<Testimonial[]> {
         }
 
         return streamToJson<Testimonial>(file.stream)
-      } catch {
+      } catch (error) {
+        console.error(`Error leyendo el testimonio ${blob.pathname}:`, error)
+
         return null
       }
     }),
