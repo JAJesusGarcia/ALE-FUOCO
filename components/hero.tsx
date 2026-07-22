@@ -539,7 +539,7 @@ export default function Hero() {
       {/* Indicador inferior móvil */}
       <motion.button
         type="button"
-        onClick={() => scrollToSection('#galeria')}
+        onClick={() => scrollToSection('#servicios')}
         aria-label="Ir a la galería"
         animate={
           shouldReduceMotion
