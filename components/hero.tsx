@@ -290,23 +290,23 @@ export default function Hero() {
 "
           >
             <div className="flex max-w-2xl flex-col gap-4">
-              <p
-                className="
-      max-w-[22rem]
-      font-display
-      text-[0.98rem]
-      font-light italic
-      leading-[1.75]
-      text-white/70
-      sm:max-w-lg
-      sm:text-xl
-      md:text-2xl
-      md:leading-relaxed
-    "
-              >
-                Producción técnica integral para eventos sociales, corporativos
-                y privados.
-              </p>
+           <p
+  className="
+    max-w-[22rem]
+    font-body
+    text-[1.08rem]
+    font-normal
+    not-italic
+    leading-[1.65]
+    text-white/90
+    sm:max-w-lg
+    sm:text-xl
+    md:text-2xl
+    md:leading-relaxed
+  "
+>
+  Producción técnica integral para eventos sociales, corporativos y privados.
+</p>
 
               <p
                 className="
