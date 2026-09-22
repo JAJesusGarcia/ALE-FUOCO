@@ -290,7 +290,7 @@ export default function Hero() {
 "
           >
             <div className="flex max-w-2xl flex-col gap-4">
-           <p
+          <p
   className="
     max-w-[22rem]
     font-body
@@ -305,7 +305,7 @@ export default function Hero() {
     md:leading-relaxed
   "
 >
-  Producción técnica integral para eventos sociales, corporativos y privados.
+  PRODUCCIÓN TÉCNICA INTEGRAL PARA EVENTOS SOCIALES, CORPORATIVOS Y PRIVADOS.
 </p>
 
               <p
